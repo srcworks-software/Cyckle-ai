@@ -27,7 +27,12 @@ In your terminal, run the following:
     make
 ```
 This will compile ```main.c``` into an exectuble which can be found inside the folder.
+
 # Parameters
 We may only have one parameter so far, but at least we have one!
 ## Token Modifier
 In order to modify the amount of tokens in CyLLM, type ```modtokens``` in the message box. It will pull up a window where you can modify the modtoken parameter. This does not save if you close the program, well at least not yet ;).
+
+# NOTICE
+This software is provided subject to the MIT License and may be republished or distributed only in accordance with the terms of the MIT License. 
+This software includes third party elements used under an applicable MIT License and this NOTICE represents the required disclosure and notice concerning publication and use of such elements under the applicable MIT License.   
