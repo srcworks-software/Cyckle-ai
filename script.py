@@ -33,8 +33,8 @@ def handle_input(event=None):
         messagebox.showinfo("Help", help_message)
     elif userinput.lower() == "about":
         about_message = (
-            'PyLLM - Another GPT-4 wrapper.\n'
-            'See the source code at: https://github.com/vaultdweller-2287/PyLLM'
+            'CyLLM - Another GPT-4 wrapper.\n'
+            'See the source code at: https://github.com/vaultdweller-2287/CyLLM'
         )
         messagebox.showinfo("About", about_message)
     else:
@@ -50,7 +50,7 @@ def handle_input(event=None):
 # init something something window
 main = tk.Tk()
 main.config(bg="#323236")
-main.title("PyLLM")
+main.title("CyLLM")
 
 # grids or something idk
 main.grid_rowconfigure(0, weight=1)
