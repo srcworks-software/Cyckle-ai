@@ -11,8 +11,19 @@ The files needed for this are:
 - ```dependency-fixer.sh``` (found in /install)
 - ```main.c```
 - ```script.py```
-Once you have downloaded these files from the repo, put them all in a folder (call it CyLLM or whatever)
+You are going to want to run ```git clone``` to obtain these.
+```
+    git clone https://github.com/vaultdweller-2287/CyLLM
+```
+If you do not have git installed, run the following (may vary depending on your distro of choice, but I use Debian so deal with it):
+```
+    sudo apt install git
+```
 ### Step 2: Install dependencies
+Before we start, ```cd``` into the folder you cloned the repo in.
+```
+    cd CyLLM
+```
 You will need to install the required dependencies through ```dependency-fixer```. Here's how to do it:
 ```
     sudo chmod +x dependency-fixer.sh
