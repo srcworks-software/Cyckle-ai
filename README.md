@@ -44,6 +44,15 @@ We may only have one parameter so far, but at least we have one!
 ## Token Modifier
 In order to modify the amount of tokens in CyLLM, type ```modtokens``` in the message box. It will pull up a window where you can modify the modtoken parameter. This does not save if you close the program, well at least not yet ;).
 
+# FAQ (Frequently Asked Questions)
+These are some questions that are probably never asked but just incase they are, here you go.
+## What model does CyLLM use?
+Despite using the *GPT*4all library, it actually utilizes ```llamacpp``` as it's model. However, we are planning to add the option to use a different model in the installer.
+## Will CyLLM be packaged into my distro's package repos?
+We are not sure about distro packaging yet but we are certain that CyLLM will be packaged sooner rather than later for Debian and maybe Ubuntu.
+## What system do I need for CyLLM?
+The exact specifications are not known but gpt4all requires any processor with AVX2 (Intel i3 2nd gen). The testing hardware was conducted on an i5-7200u with integrated graphics.
+
 # NOTICE
 This software is provided subject to the MIT License and may be republished or distributed only in accordance with the terms of the MIT License. 
 This software includes third party elements used under an applicable MIT License and this NOTICE represents the required disclosure and notice concerning publication and use of such elements under the applicable MIT License.   
