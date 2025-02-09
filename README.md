@@ -39,10 +39,16 @@ In your terminal, run the following:
 ```
 This will compile ```main.c``` into an exectuble which can be found inside the folder.
 
-# Parameters
-We may only have one parameter so far, but at least we have one!
+# Parameters/Commands
+The following parameters and commands will display and modify different information.
 ## Token Modifier
 In order to modify the amount of tokens in CyLLM, type ```modtokens``` in the message box. It will pull up a window where you can modify the modtoken parameter. This does not save if you close the program, well at least not yet ;).
+## Quit/Exit
+Pretty self-explanatory, quits the program. Type ```quit``` or ```exit``` to execute this.
+## About
+Once again, pretty self-explanatory, shows details about the program. Type ```about``` to execute this.
+## Help
+Provides a glossary for parameters and commands. type ```help``` to execute this.
 
 # FAQ (Frequently Asked Questions)
 These are some questions that are probably never asked but just incase they are, here you go.
