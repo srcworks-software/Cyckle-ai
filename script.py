@@ -34,6 +34,7 @@ def handle_input(event=None):
     elif userinput.lower() == "about":
         about_message = (
             'CyLLM - Another GPT-4 wrapper.\n'
+            'Licensed under MIT \n'
             'See the source code at: https://github.com/vaultdweller-2287/CyLLM'
         )
         messagebox.showinfo("About", about_message)
@@ -42,7 +43,7 @@ def handle_input(event=None):
             response = model.generate(userinput, max_tokens=modtokens)
             response_text.config(state=tk.NORMAL)
             response_text.delete(1.0, tk.END)
-            response_text.insert(tk.END, "GPT>>> " + response)
+            response_text.insert(tk.END, "CyLLM>>> " + response)
             response_text.config(state=tk.DISABLED)
             label1.config(text="YOU>>> " + userinput)
     entry.delete(0, tk.END)
