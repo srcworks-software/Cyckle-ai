@@ -1,5 +1,5 @@
 # CyLLM
-A TUI/CLI GPT4 wrapper built with the gpt4all python library that is locally run and utilizes cython (C-extensions for python).
+A graphical GPT4 wrapper built with the gpt4all python library that is locally run and utilizes cython (C-extensions for python).
 # Installation
 There are lots of methods to install and run CyLLM but I will keep it rational and use the most sensible one.
 ## Compile it from source
