@@ -26,8 +26,8 @@ Before we start, ```cd``` into the folder you cloned the repo in.
 ```
 You will need to install the required dependencies through ```dependency-fixer```. Here's how to do it:
 ```
-    sudo chmod +x dependency-fixer.sh
-    sudo ./dependency-fixer.sh
+    sudo chmod +x /install/dependency-fixer.sh
+    sudo ./install/dependency-fixer.sh
 ```
 The follow dependencies will be installed.
 ### Step 2.1 Unattended install wizard
