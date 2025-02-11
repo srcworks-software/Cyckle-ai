@@ -16,7 +16,8 @@ You are going to want to run ```git clone``` to obtain these.
     git clone https://github.com/vaultdweller-2287/Cyckle-ai
 ```
 Or, you could download the ```bin.tar``` file from the release notes in this github repo.
-If you do not have git installed, run the following (may vary depending on your distro of choice, but I use Debian so deal with it):
+
+If you do not have git installed, run the following (depends on your distro, but this is optimized for debian.):
 ```
     sudo apt install git
 ```
