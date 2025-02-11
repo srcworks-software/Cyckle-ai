@@ -33,9 +33,9 @@ def handle_input(event=None):
         messagebox.showinfo("Help", help_message)
     elif userinput.lower() == "about":
         about_message = (
-            'CyLLM - Another GPT-4 wrapper.\n'
+            'Cyckle - Another GPT-4 wrapper.\n'
             'Licensed under MIT \n'
-            'See the source code at: https://github.com/vaultdweller-2287/CyLLM'
+            'See the source code at: https://github.com/vaultdweller-2287/Cyckle'
         )
         messagebox.showinfo("About", about_message)
     else:
@@ -43,7 +43,7 @@ def handle_input(event=None):
             response = model.generate(userinput, max_tokens=modtokens)
             response_text.config(state=tk.NORMAL)
             response_text.delete(1.0, tk.END)
-            response_text.insert(tk.END, "CyLLM>>> " + response)
+            response_text.insert(tk.END, "Cyckle>>> " + response)
             response_text.config(state=tk.DISABLED)
             label1.config(text="YOU>>> " + userinput)
     entry.delete(0, tk.END)
@@ -51,7 +51,7 @@ def handle_input(event=None):
 # init something something window
 main = tk.Tk()
 main.config(bg="#323236")
-main.title("CyLLM")
+main.title("Cyckle")
 
 # grids or something idk
 main.grid_rowconfigure(0, weight=1)
