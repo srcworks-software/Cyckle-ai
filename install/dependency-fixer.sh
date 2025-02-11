@@ -7,5 +7,5 @@ clear
 echo "==Cyckle UNATTENDED INSTALLATION=="
 python3 -m wizard.py
 echo "==INSTALLATION COMPLETE=="
-echo "Type 'python3 -m main.py' to use PyLLM"
+echo "Type 'python3 -m main.py' to use Cyckle"
 echo "or execute the main executable."
