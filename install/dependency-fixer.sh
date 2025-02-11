@@ -4,7 +4,7 @@ sudo apt install -y gcc make build-essential
 pip install gpt4all --break-system-packages
 pip install cython --break-system-packages
 clear
-echo "==PyLLM UNATTENDED INSTALLATION=="
+echo "==Cyckle UNATTENDED INSTALLATION=="
 python3 -m wizard.py
 echo "==INSTALLATION COMPLETE=="
 echo "Type 'python3 -m main.py' to use PyLLM"
