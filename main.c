@@ -5,7 +5,7 @@
     "distutils": {
         "name": "main",
         "sources": [
-            "script.py"
+            "script.pyx"
         ]
     },
     "module_name": "main"
@@ -24,12 +24,12 @@ int main(int argc, char *argv[]) {
     Py_Initialize();
     
     // Execute the Python script file
-    fp = fopen("script.py", "r");
+    fp = fopen("script.pyx", "r");
     if (fp != NULL) {
-        PyRun_SimpleFile(fp, "script.py");
+        PyRun_SimpleFile(fp, "script.pyx");
         fclose(fp);
     } else {
-        fprintf(stderr, "Could not open script.py\n");
+        fprintf(stderr, "Could not open script.pyx\n");
     }
     
     Py_Finalize();
