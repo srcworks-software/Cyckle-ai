@@ -13,7 +13,7 @@ The files needed for this are:
 - ```script.py```
 You are going to want to run ```git clone``` to obtain these.
 ```
-    git clone https://github.com/vaultdweller-2287/Cyckle
+    git clone https://github.com/vaultdweller-2287/Cyckle-ai
 ```
 If you do not have git installed, run the following (may vary depending on your distro of choice, but I use Debian so deal with it):
 ```
@@ -22,11 +22,11 @@ If you do not have git installed, run the following (may vary depending on your 
 ### Step 2: Install dependencies
 Before we start, ```cd``` into the folder you cloned the repo in.
 ```
-    cd Cyckle
+    cd Cyckle-ai
 ```
 You will need to install the required dependencies through ```dependency-fixer```. Here's how to do it:
 ```
-    sudo chmod +x /install/dependency-fixer.sh
+    sudo chmod +x install/dependency-fixer.sh
     sudo ./install/dependency-fixer.sh
 ```
 The follow dependencies will be installed.
