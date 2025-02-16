@@ -21,6 +21,17 @@ If you do not have git installed, run the following (depends on your distro, but
 ```
     sudo apt install git
 ```
+### Step 1.1 putting python PATH in your .zshrc or .bashrc file
+Before running ```dependency-fixer```, you will need to add the following line to your ```.zshrc``` or ```.bashrc``` file.
+Run the following to access it:
+```
+    sudo nano ~/.zshrc
+```
+Once you have opened this file, add this line at the bottom:
+```
+    export PYTHONPATH=/home/user/directory/Cyckle-ai:$PYTHONPATH
+```
+Replace ```user``` with your username and replace ```directory``` with the directory in which you have cloned the git repo of Cyckle.
 ### Step 2: Install dependencies
 Before we start, ```cd``` into the folder you cloned the repo in.
 ```
