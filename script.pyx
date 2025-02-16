@@ -2,9 +2,23 @@ import cython
 import tkinter as tk
 from tkinter import simpledialog, messagebox
 from gpt4all import GPT4All
+import json
+from install.wizard import usedmodel
 
-model = GPT4All("Meta-Llama-3-8B-Instruct.Q4_0.gguf")  # downloads / loads a 4.66GB LLM
-modtokens = 96
+def read_tokens_from_json():
+    try:
+        with open("data.json", "r") as f:
+            data = json.load(f)
+            return data.get("tokens", 96)  
+    except FileNotFoundError:
+        return 96  # Just in case... juuuust in case... actually why the hell would you delete the json? 
+modtokens = read_tokens_from_json()
+
+usermodel = usedmodel
+
+data = {
+    "tokens" : modtokens
+}
 
 # functions, the backbone of python
 def handle_input(event=None):
@@ -19,7 +33,11 @@ def handle_input(event=None):
         new_limit = simpledialog.askinteger("Modtokens", "Enter new token limit:")
         if new_limit is not None:
             modtokens = new_limit
+            data["tokens"] = modtokens
             messagebox.showinfo("Modtokens", f"Token limit has been set to {modtokens}")
+            filename = "data.json"
+            with open(filename, 'w') as f:
+                json.dump(data, f, indent=4)
     elif userinput.lower() == "help":
         help_message = (
             'Type "exit" or "quit" to leave the program.\n'
@@ -39,8 +57,8 @@ def handle_input(event=None):
         )
         messagebox.showinfo("About", about_message)
     else:
-        with model.chat_session():
-            response = model.generate(userinput, max_tokens=modtokens)
+        with usermodel.chat_session():
+            response = usermodel.generate(userinput, max_tokens=modtokens)
             response_text.config(state=tk.NORMAL)
             response_text.delete(1.0, tk.END)
             response_text.insert(tk.END, "Cyckle>>> " + response)
