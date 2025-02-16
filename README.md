@@ -27,6 +27,10 @@ Run the following to access it:
 ```
     sudo nano ~/.zshrc
 ```
+or
+```
+    sudo nano ~/.bashrc
+```
 Once you have opened this file, add this line at the bottom:
 ```
     export PYTHONPATH=/home/user/directory/Cyckle-ai:$PYTHONPATH
