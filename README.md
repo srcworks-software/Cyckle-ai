@@ -1,4 +1,6 @@
 # Cyckle
+![Alt text](https://github.com/vaultdweller-2287/Cyckle-ai/blob/main/.github/cycklelogo.jpg)
+
 A graphical GPT4 wrapper built with the gpt4all python library that is locally run and utilizes cython (C-extensions for python).
 # Installation
 There are lots of methods to install and run Cyckle but I will keep it rational and use the most sensible one.
