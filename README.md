@@ -1,4 +1,6 @@
 # Cyckle
+![Alt text](https://github.com/vaultdweller-2287/Cyckle-ai/blob/main/.github/cycklelogo.jpg)
+
 A graphical GPT4 wrapper built with the gpt4all python library that is locally run and utilizes cython (C-extensions for python).
 # Installation
 There are lots of methods to install and run Cyckle but I will keep it rational and use the most sensible one.
@@ -21,6 +23,21 @@ If you do not have git installed, run the following (depends on your distro, but
 ```
     sudo apt install git
 ```
+### Step 1.1 putting python PATH in your .zshrc or .bashrc file
+Before running ```dependency-fixer```, you will need to add the following line to your ```.zshrc``` or ```.bashrc``` file.
+Run the following to access it:
+```
+    sudo nano ~/.zshrc
+```
+or
+```
+    sudo nano ~/.bashrc
+```
+Once you have opened this file, add this line at the bottom:
+```
+    export PYTHONPATH=/home/user/directory/Cyckle-ai:$PYTHONPATH
+```
+Replace ```user``` with your username and replace ```directory``` with the directory in which you have cloned the git repo of Cyckle.
 ### Step 2: Install dependencies
 Before we start, ```cd``` into the folder you cloned the repo in.
 ```
