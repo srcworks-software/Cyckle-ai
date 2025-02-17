@@ -1,17 +1,14 @@
 {
   "configurations": [
     {
-      "name": "Linux",
+      "name": "linux-gcc-x64",
       "includePath": [
-        "${workspaceFolder}/**",
-        "/usr/include/python3.13",
-        "/usr/local/include",
-        "/usr/include"
+        "${workspaceFolder}/**"
       ],
       "defines": [],
       "compilerPath": "/usr/bin/gcc",
-      "cStandard": "c11",
-      "cppStandard": "c++17",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
       "intelliSenseMode": "linux-gcc-x64"
     }
   ],

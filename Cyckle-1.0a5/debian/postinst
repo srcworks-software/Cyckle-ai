@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+# Commands to run after the package is installed
+echo "Running post-installation script..."
+
+# Add your custom post-installation commands here
+sudo chmod +x /usr/share/install/dependency-fixer.sh
+sudo ./dependency-fixer.sh
+python3 /usr/share/install/wizard.py
+
+# End of script
