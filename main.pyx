@@ -3,26 +3,32 @@ import tkinter as tk
 from tkinter import simpledialog, messagebox
 from gpt4all import GPT4All
 import json
-from install.wizard import usedmodel
 
-def read_tokens_from_json():
+# funny c stuff idk 
+cdef int modtokens
+
+# hehe json go brrrrrr
+cdef int read_tokens_from_json():
+    cdef dict data
     try:
         with open("data.json", "r") as f:
             data = json.load(f)
-            return data.get("tokens", 96)  
+            return data.get("tokens", 96)  # 96 is totally enough guys! Totally...
     except FileNotFoundError:
-        return 96  # Just in case... juuuust in case... actually why the hell would you delete the json? 
+        return 96  # Just in case... juuuust in case... actually why the hell would you delete the json?
+
 modtokens = read_tokens_from_json()
 
-usermodel = usedmodel
+usermodel = GPT4All.model("orca-mini-3b-gguf2-q4_0.gguf")
 
 data = {
-    "tokens" : modtokens
+    "tokens": modtokens
 }
 
 # functions, the backbone of python
-def handle_input(event=None):
+cpdef void handle_input(event=None):
     global modtokens  # hell yeah i love global variables
+    cdef str userinput
     userinput = entry.get()
     if userinput.lower() in ["exit", "quit"]:
         main.quit()
@@ -33,9 +39,9 @@ def handle_input(event=None):
         new_limit = simpledialog.askinteger("Modtokens", "Enter new token limit:")
         if new_limit is not None:
             modtokens = new_limit
-            data["tokens"] = modtokens
+            data["tokens"] = modtokens  # DAAAAAAAAAATTTTTTTTAAAAAAAAA
             messagebox.showinfo("Modtokens", f"Token limit has been set to {modtokens}")
-            filename = "data.json"
+            filename = "data.json"  # grrr quotation is bloat
             with open(filename, 'w') as f:
                 json.dump(data, f, indent=4)
     elif userinput.lower() == "help":
@@ -46,7 +52,7 @@ def handle_input(event=None):
             '\n'
             'Type "about" to learn more about this program.\n'
             '\n'
-            f'MODTOKEN PARAM IS CURRENTLY SET TO: {modtokens}'
+            f'MODTOKEN PARAM IS CURRENTLY SET TO: {modtokens}' # f strings are a blessing
         )
         messagebox.showinfo("Help", help_message)
     elif userinput.lower() == "about":
