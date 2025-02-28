@@ -49,7 +49,18 @@ In your terminal, run the following:
 ```
 This will compile ```main.c``` into an exectuble which can be found inside the folder.
 
-### Step 3.1: cleaning
+### Step 3.1
+If you get an error like:
+```
+    make: Nothing to be done for 'all'.
+```
+You will need to run the following:
+```
+    make clean
+```
+This will clean the directory and will prepare it for compilation. Once you have ran this, repeat step 3.
+
+### Step 3.2: cleaning
 
 Once everything is done, you may want to tidy up the directory, which can be done like so:
 ```
