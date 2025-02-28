@@ -2,13 +2,13 @@
 CC = gcc
 
 # flags (also requires dependency-fixer)
-CFLAGS = -I/usr/include/python3.13
+CFLAGS = -I/usr/include/python3.13 -fPIC
 
 # linker flags (libraries i think?)
-LDFLAGS = -lpython3.13
+LDFLAGS = -shared -lpython3.13
 
 # executable
-TARGET = main
+TARGET = main.so
 
 # source (c code)
 SRCS = main.c
@@ -27,8 +27,8 @@ $(TARGET): $(OBJS)
 clean:
 	rm -f $(OBJS) $(TARGET)
 
-# Run the program
+# run
 run: $(TARGET)
-	./$(TARGET)
+	python3 -c "import main"
 
 .PHONY: all clean run
