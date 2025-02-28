@@ -47,7 +47,7 @@ In your terminal, run the following:
 ```
     make
 ```
-This will compile ```main.c``` into an exectuble which can be found inside the folder.
+This will compile ```main.c``` into several binaries necessary for running Cyckle.
 
 ### Step 3.1
 If you get an error like:
@@ -68,6 +68,13 @@ Once everything is done, you may want to tidy up the directory, which can be don
 ```
 ```
     sudo ./clean.sh
+```
+### Step 4: Running
+
+Due to some very strange side effects of a patch we made to fix a header issue in ```main.c```, there is now only one way to run Cyckle. 
+
+```
+    make run
 ```
 
 # Parameters/Commands

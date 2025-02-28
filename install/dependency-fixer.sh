@@ -6,5 +6,4 @@ pip install cython --break-system-packages
 clear
 echo "==INSTALLATION COMPLETE=="
 echo "You can do the following to run Cyckle:"
-echo "Type 'python3 -m script.pyx'"
-echo "or execute the 'main' executable."
+echo "Type 'make run'"
