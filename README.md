@@ -49,7 +49,7 @@ In your terminal, run the following:
 ```
 This will compile ```main.c``` into several binaries necessary for running Cyckle.
 
-### Step 3.1
+### Step 3.1: INCASE OF ERROR!
 If you get an error like:
 ```
     make: Nothing to be done for 'all'.
