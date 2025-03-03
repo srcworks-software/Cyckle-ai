@@ -19,7 +19,7 @@ cdef int read_tokens_from_json():
 
 modtokens = read_tokens_from_json()
 
-usermodel = GPT4All("orca-mini-3b-gguf2-q4_0.gguf")
+usermodel = GPT4All("Phi-3-mini-4k-instruct.Q4_0.gguf")
 
 data = {
     "tokens": modtokens

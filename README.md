@@ -5,7 +5,35 @@ A graphical GPT4 wrapper built with the gpt4all python library that is locally r
 
 # Installation
 
-There are lots of methods to install and run Cyckle but I will keep it rational and use the most sensible one.
+There are 2 methods you can use to install Cyckle.
+
+## Download pre-compiled
+
+This is the easiest way to get Cyckle.
+
+
+### Step 1: Install prerequisites
+
+From the release notes, download the ```main``` executable and ```dependency-fixer.sh```.
+
+### Step 2: Fix dependencies
+
+We need to run ```dependency-fixer.sh``` in order to fix dependencies. (make sure you are ``cd```'d into the directory where you downloaded the files.) 
+```
+    sudo chmod +x install/dependeny-fixer.sh
+    sudo ./install/dependency-fixer.sh
+```
+
+### Step 3: Make the main executable... an *executable*!
+
+Since Linux must know whether or not an executable can actually execute, you must run the following.
+```
+    sudo chmod +x main
+```
+And to run it
+```
+    ./main
+```
 
 ## Compile it from source
 
@@ -71,10 +99,13 @@ Once everything is done, you may want to tidy up the directory, which can be don
 ```
 ### Step 4: Running
 
-Due to some very strange side effects of a patch we made to fix a header issue in ```main.c```, there is now only one way to run Cyckle. 
-
+Set the ```main``` exectuable as being able to execute:
 ```
-    make run
+    sudo chmod +x main
+```
+and then you can run it!
+```
+    ./main
 ```
 
 # Parameters/Commands
@@ -91,7 +122,7 @@ Provides a glossary for parameters and commands. type ```help``` to execute this
 # FAQ (Frequently Asked Questions)
 These are some questions that are probably never asked but just incase they are, here you go.
 ## What model does Cyckle use?
-Despite using the *GPT*4all library, it actually utilizes ```orca-mini``` (a llama based model) as it's model. We do not plan on adding anymore, though the model itself may change as we aim to have a more lightweight approach to local LLMs.
+Despite using the *GPT*4all library, it actually utilizes ```phi3``` as it's model. We do not plan on adding anymore, though the model itself may change as we aim to have a more lightweight approach to local LLMs.
 ## Will Cyckle be packaged into my distro's package repos?
 For the future we do plan on packaging for Debian 13 (Trixie) but we do not have plans for other distros.
 ## What system do I need for Cyckle?
