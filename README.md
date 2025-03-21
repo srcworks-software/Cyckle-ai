@@ -124,7 +124,7 @@ These are some questions that are probably never asked but just incase they are,
 ## What model does Cyckle use?
 Despite using the *GPT*4all library, it actually utilizes ```phi3``` as it's model. We do not plan on adding anymore, though the model itself may change as we aim to have a more lightweight approach to local LLMs.
 ## Will Cyckle be packaged into my distro's package repos?
-For the future we do plan on packaging for Debian 13 (Trixie) but we do not have plans for other distros.
+We do not plan on native packaging and are currently working on distributing via flatpak.
 ## What system do I need for Cyckle?
 The exact specifications are not known but gpt4all requires any processor with AVX2 (Intel i3 2nd gen). The testing hardware was conducted on an i5-7200u with integrated graphics.
 
