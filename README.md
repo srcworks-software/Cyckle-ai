@@ -18,7 +18,7 @@ From the release notes, download the ```main``` executable and ```dependency-fix
 
 ### Step 2: Fix dependencies
 
-We need to run ```dependency-fixer.sh``` in order to fix dependencies. (make sure you are ``cd```'d into the directory where you downloaded the files.) 
+We need to run ```dependency-fixer.sh``` in order to fix dependencies. (make sure you are cd'd into the directory where you downloaded the files.) 
 ```
     sudo chmod +x install/dependeny-fixer.sh
     sudo ./install/dependency-fixer.sh
