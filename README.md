@@ -1,39 +1,11 @@
 # Cyckle
 ![Alt text](https://github.com/vaultdweller-2287/Cyckle-ai/blob/main/.github/cycklelogo.jpg)
 
-A graphical GPT4 wrapper built with the gpt4all python library that is locally run and utilizes cython (C-extensions for python).
+A graphical Phi3 wrapper built with the gpt4all python library that is locally run and utilizes cython (C-extensions for python).
 
 # Installation
 
-There are 2 methods you can use to install Cyckle.
-
-## Download pre-compiled
-
-This is the easiest way to get Cyckle.
-
-
-### Step 1: Install prerequisites
-
-From the release notes, download the ```main``` executable and ```dependency-fixer.sh```.
-
-### Step 2: Fix dependencies
-
-We need to run ```dependency-fixer.sh``` in order to fix dependencies. (make sure you are cd'd into the directory where you downloaded the files.) 
-```
-    sudo chmod +x install/dependeny-fixer.sh
-    sudo ./install/dependency-fixer.sh
-```
-
-### Step 3: Make the main executable... an *executable*!
-
-Since Linux must know whether or not an executable can actually execute, you must run the following.
-```
-    sudo chmod +x main
-```
-And to run it
-```
-    ./main
-```
+This is currently the easiest method to install Cyckle.
 
 ## Compile it from source
 
@@ -42,70 +14,45 @@ As the title says, this method requires you to compile Cyckle from source. This 
 ### Step 1: Download prerequisites
 
 The files needed for this are:
-- ```makefile``` (found in /install)
-- ```wizard.py``` (found in /install)
-- ```dependency-fixer.sh``` (found in /install)
+- ```makefile```
+- ```dependency-fixer.sh``` 
 - ```main.c```
-- ```script.py```
+- ```setup.py```
 You are going to want to run ```git clone``` to obtain these.
-```
+```bash
     git clone https://github.com/vaultdweller-2287/Cyckle-ai
 ```
-Or, you could download the ```bin.tar``` file from the release notes in this github repo.
+Or, you could download the source code file from the release notes in this github repo.
 
 If you do not have git installed, run the following (depends on your distro, but this is optimized for debian.):
-```
+```bash
     sudo apt install git
 ```
 ### Step 2: Install dependencies
 
 Before we start, ```cd``` into the folder you cloned the repo in.
-```
+```bash
     cd Cyckle-ai
 ```
 You will need to install the required dependencies through ```dependency-fixer```. Here's how to do it:
-```
-    sudo chmod +x install/dependency-fixer.sh
+```bash
+    sudo chmod +x dependency-fixer.sh
     sudo ./install/dependency-fixer.sh
 ```
-The follow dependencies will be installed.
+The required dependencies will be installed along with the compilation of ```main.c```.
 
-### Step 3: Compile!
-In your terminal, run the following:
-```
-    make
-```
-This will compile ```main.c``` into several binaries necessary for running Cyckle.
-
-### Step 3.1: INCASE OF ERROR!
-If you get an error like:
-```
-    make: Nothing to be done for 'all'.
-```
-You will need to run the following:
-```
-    make clean
-```
-This will clean the directory and will prepare it for compilation. Once you have ran this, repeat step 3.
-
-### Step 3.2: cleaning
+### Step 3: Cleaning
 
 Once everything is done, you may want to tidy up the directory, which can be done like so:
-```
+```bash
     sudo chmod +x clean.sh
-```
-```
     sudo ./clean.sh
 ```
 ### Step 4: Running
 
-Set the ```main``` exectuable as being able to execute:
-```
-    sudo chmod +x main
-```
-and then you can run it!
-```
-    ./main
+Execute the executable through makefile.
+```bash
+    make run
 ```
 
 # Parameters/Commands
@@ -121,12 +68,15 @@ Provides a glossary for parameters and commands. type ```help``` to execute this
 
 # FAQ (Frequently Asked Questions)
 These are some questions that are probably never asked but just incase they are, here you go.
+
 ## What model does Cyckle use?
-Despite using the *GPT*4all library, it actually utilizes ```phi3``` as it's model. We do not plan on adding anymore, though the model itself may change as we aim to have a more lightweight approach to local LLMs.
+Despite using the *GPT*4all library, it actually utilizes ```phi3``` as it's model. We do not plan on adding anymore, though the model itself may change as we aim to have a more lightweight approach to local LLMs (or really, SLMs in our case).
+
 ## Will Cyckle be packaged into my distro's package repos?
-We do not plan on native packaging and are currently working on distributing via flatpak.
+Currently, any and all packaging systems have been SEVERELY painful to set up. So for as long as that is true, don't expect an easy-to-install Cyckle.
+
 ## What system do I need for Cyckle?
-The exact specifications are not known but gpt4all requires any processor with AVX2 (Intel i3 2nd gen). The testing hardware was conducted on an i5-7200u with integrated graphics.
+The exact specifications are not known but gpt4all requires any processor with AVX2 (Intel i3 2nd gen/AMD FX-1400 or above). The testing hardware was conducted on an i5-7200u with integrated graphics. RAM is also recommended to be around 8 or more gigabytes just to be safe.
 
 # NOTICE
 This software is provided subject to the MIT License and may be republished or distributed only in accordance with the terms of the MIT License. 
