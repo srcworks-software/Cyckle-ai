@@ -1,34 +1,29 @@
-# gcc (should be downloaded in dependency-fixer)
+PYTHON = python3
+
+PYTHON_INCLUDE = $(shell $(PYTHON) -c "import sysconfig; print(sysconfig.get_path('include'))")
+PYTHON_LIB = $(shell $(PYTHON) -c "import sysconfig; print(sysconfig.get_config_var('LIBDIR'))")
+PYTHON_VERSION = $(shell $(PYTHON) -c "import sysconfig; print(sysconfig.get_config_var('VERSION'))")
+
 CC = gcc
+CFLAGS = -I$(PYTHON_INCLUDE) -fPIC
+LDFLAGS = -shared -L$(PYTHON_LIB) -lpython$(PYTHON_VERSION)
 
-# flags (also requires dependency-fixer)
-CFLAGS = -I/usr/include/python3.13 -fPIC
-
-# linker flags (libraries i think?)
-LDFLAGS = -shared -lpython3.13
-
-# executable
 TARGET = main.so
-
-# source (c code)
-SRCS = main.c
-
-OBJS = $(SRCS:.c=.o)
+C_SRC = main.c
+OBJ = main.o
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $(TARGET) $(LDFLAGS)
+$(OBJ): $(C_SRC)
+	$(CC) $(CFLAGS) -c $(C_SRC) -o $(OBJ)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(TARGET): $(OBJ)
+	$(CC) $(OBJ) -o $(TARGET) $(LDFLAGS)
 
-# clean
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(TARGET) $(OBJ) *.pyc __pycache__/*
 
-# run
 run: $(TARGET)
-	python3 -c "import main"
+	$(PYTHON) -c "import main"
 
 .PHONY: all clean run
