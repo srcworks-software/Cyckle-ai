@@ -124,7 +124,7 @@ main.resizable(False, False)
 sw = main.winfo_screenwidth()
 sh = main.winfo_screenheight()
 swutil = sw*0.8
-shutil = sh*0.8
+shutil = sh*0.9
 main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")
 
 # grid config

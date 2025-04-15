@@ -6677,7 +6677,7 @@ if (!__Pyx_RefNanny) {
  * sw = main.winfo_screenwidth()
  * sh = main.winfo_screenheight()             # <<<<<<<<<<<<<<
  * swutil = sw*0.8
- * shutil = sh*0.8
+ * shutil = sh*0.9
  */
   __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_main); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -6694,7 +6694,7 @@ if (!__Pyx_RefNanny) {
  * sw = main.winfo_screenwidth()
  * sh = main.winfo_screenheight()
  * swutil = sw*0.8             # <<<<<<<<<<<<<<
- * shutil = sh*0.8
+ * shutil = sh*0.9
  * main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")
  */
   __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_sw); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 126, __pyx_L1_error)
@@ -6708,13 +6708,13 @@ if (!__Pyx_RefNanny) {
   /* "main.pyx":127
  * sh = main.winfo_screenheight()
  * swutil = sw*0.8
- * shutil = sh*0.8             # <<<<<<<<<<<<<<
+ * shutil = sh*0.9             # <<<<<<<<<<<<<<
  * main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")
  * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_sh); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_7 = PyNumber_Multiply(__pyx_t_5, __pyx_float_0_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_t_7 = PyNumber_Multiply(__pyx_t_5, __pyx_float_0_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_shutil, __pyx_t_7) < 0) __PYX_ERR(0, 127, __pyx_L1_error)
@@ -6722,7 +6722,7 @@ if (!__Pyx_RefNanny) {
 
   /* "main.pyx":128
  * swutil = sw*0.8
- * shutil = sh*0.8
+ * shutil = sh*0.9
  * main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")             # <<<<<<<<<<<<<<
  * 
  * # grid config
