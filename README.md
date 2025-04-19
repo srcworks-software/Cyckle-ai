@@ -17,7 +17,7 @@ The files needed for this are:
 - ```makefile```
 - ```dependency-fixer.sh``` 
 - ```main.c```
-- ```setup.py```
+- ```main.h```
 You are going to want to run ```git clone``` to obtain these.
 ```bash
     git clone https://github.com/vaultdweller-2287/Cyckle-ai
@@ -30,14 +30,14 @@ If you do not have git installed, run the following (depends on your distro, but
 ```
 ### Step 2: Install dependencies
 
-Before we start, ```cd``` into the folder you cloned the repo in.
+Before we start, ```cd``` into the ```src``` folder of Cyckle-ai.
 ```bash
-    cd Cyckle-ai
+    cd Cyckle-ai/src
 ```
 You will need to install the required dependencies through ```dependency-fixer```. Here's how to do it:
 ```bash
     sudo chmod +x dependency-fixer.sh
-    sudo ./install/dependency-fixer.sh
+    sudo ./dependency-fixer.sh
 ```
 The required dependencies will be installed along with the compilation of ```main.c```.
 
@@ -57,12 +57,23 @@ Execute the executable through makefile.
 
 # Parameters/Commands
 The following parameters and commands will display and modify different information.
+
 ## Token Modifier
-In order to modify the amount of tokens in Cyckle, type ```modtokens``` in the message box. It will pull up a window where you can modify the modtoken parameter. This does not save if you close the program, well at least not yet ;).
+In order to modify the amount of tokens in Cyckle, type ```modtokens``` in the message box. It will pull up a window where you can modify the modtoken parameter. This saves to a file named ```data.json```
+
+## Model Configuration
+If you are interested in swapping the model, type ```modelconfig``` in the message box. It will provide a window to type in which you can type a valid ID. Here is the list of models available.
+| Model ID |    Class   |
+|----------|------------|
+| Phi3-mini| Mini-Model |
+|Llama-3.2-1B| Mini Model |
+
 ## Quit/Exit
 Pretty self-explanatory, quits the program. Type ```quit``` or ```exit``` to execute this.
+
 ## About
 Once again, pretty self-explanatory, shows details about the program. Type ```about``` to execute this.
+
 ## Help
 Provides a glossary for parameters and commands. type ```help``` to execute this.
 
@@ -70,7 +81,7 @@ Provides a glossary for parameters and commands. type ```help``` to execute this
 These are some questions that are probably never asked but just incase they are, here you go.
 
 ## What model does Cyckle use?
-Despite using the *GPT*4all library, it actually utilizes ```phi3``` as it's model. We do not plan on adding anymore, though the model itself may change as we aim to have a more lightweight approach to local LLMs (or really, SLMs in our case).
+Despite using the *GPT*4all library, it actually utilizes ```phi3``` as it's default model but has the option to use several others.
 
 ## Will Cyckle be packaged into my distro's package repos?
 Currently, any and all packaging systems have been SEVERELY painful to set up. So for as long as that is true, don't expect an easy-to-install Cyckle.
