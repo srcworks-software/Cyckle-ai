@@ -76,7 +76,7 @@ Despite using the *GPT*4all library, it actually utilizes ```phi3``` as it's mod
 Currently, any and all packaging systems have been SEVERELY painful to set up. So for as long as that is true, don't expect an easy-to-install Cyckle.
 
 ## What system do I need for Cyckle?
-The exact specifications are not known but gpt4all requires any processor with AVX2 (Intel i3 2nd gen/AMD FX-1400 or above). The testing hardware was conducted on an i5-7200u with integrated graphics. RAM is also recommended to be around 8 or more gigabytes just to be safe.
+The exact specifications are not known but gpt4all requires any processor with AVX2 (Intel i3 2nd gen/AMD FX-4100 or above). The testing hardware was conducted on an i5-7200u with integrated graphics. RAM is also recommended to be around 8 or more gigabytes just to be safe.
 
 # NOTICE
 This software is provided subject to the MIT License and may be republished or distributed only in accordance with the terms of the MIT License. 
