@@ -98,7 +98,7 @@ cpdef void handle_input(event=None):
 
 cpdef void handle_history(event):
     global poshistory
-
+    
     if event.keysym == "Up":
         if poshistory > 0:
             poshistory -= 1
