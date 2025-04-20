@@ -1,1 +1,5 @@
-# might use later idk
+build/** linguist-vendored
+*.so linguist-generated
+*.o linguist-generated
+*.c linguist-generated
+*.h linguist-generated
