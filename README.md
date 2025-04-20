@@ -30,10 +30,9 @@ If you do not have git installed, run the following (depends on your distro, but
 ```
 ### Step 2: Install dependencies
 
-Before we start, ```cd``` into the ```src``` folder of Cyckle-ai.
+Before we start, ```cd``` into the folder you cloned Cyckle-ai.
 ```bash
-    cd Cyckle-ai/src
-```
+    cd Cyckle-ai```
 You will need to install the required dependencies through ```dependency-fixer```. Here's how to do it:
 ```bash
     sudo chmod +x dependency-fixer.sh
