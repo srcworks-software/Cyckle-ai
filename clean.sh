@@ -11,6 +11,10 @@ rm -rf build
 rm -rf install
 rm -rf .vscode
 rm -rf .github
+rm CONTRIBUTING.md
+rm .gitignore
+rm dependency-fixer.sh
+rm main.h
 rm .gitattributes
 rm LICENSE
 rm main.c

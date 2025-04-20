@@ -1,8 +1,8 @@
 ---
-name: Bug Report
+name: Bug Report🐛
 about: Help us improve Cyckle!
 title: ''
-labels: ''
+labels: 'bug'
 assignees: ''
 
 ---

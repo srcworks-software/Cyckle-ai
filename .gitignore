@@ -6,5 +6,3 @@ __pycache__/
 .Python
 pip-log.txt
 *.gguf
-handbook/
-*.ipynb

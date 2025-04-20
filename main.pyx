@@ -160,6 +160,13 @@ cpdef void handle_history(event):
             poshistory = len(cmdhistory)
             entry.delete(0, tk.END)
 
+def force_redraw():
+    main.update_idletasks()
+    main.update()
+
+def periodic_redraw():
+    force_redraw()
+    main.after(1000, periodic_redraw)
 
 # window config
 main = tk.Tk()
@@ -197,6 +204,12 @@ entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
 entry.bind("<Return>", handle_input) 
 entry.bind("<Up>", handle_history)
 entry.bind("<Down>", handle_history)
+
+#
+main.bind("<Map>", lambda e: force_redraw())
+main.bind("<Visibility>", lambda e: force_redraw())
+
+periodic_redraw()
 
 # start the main loop
 main.mainloop()
