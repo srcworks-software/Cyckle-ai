@@ -3,3 +3,4 @@ build/** linguist-vendored
 *.o linguist-generated
 *.c linguist-generated
 *.h linguist-generated
+*.ipynb linguist-vendored
