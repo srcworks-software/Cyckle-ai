@@ -5,3 +5,4 @@ __pycache__/
 *.pyd
 .Python
 pip-log.txt
+*.gguf
