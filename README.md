@@ -1,7 +1,9 @@
 # Cyckle
-![Alt text](https://github.com/vaultdweller-2287/Cyckle-ai/blob/main/.github/cycklelogo.jpg)
+![GitHub Repo stars](https://img.shields.io/github/stars/vaultdweller-2287/Cyckle-ai?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/vaultdweller-2287/Cyckle-ai?style=for-the-badge)
+![GitHub license](https://img.shields.io/github/license/vaultdweller-2287/Cyckle-ai?style=for-the-badge)
 
-A graphical Phi3 wrapper built with the gpt4all python library that is locally run and utilizes cython (C-extensions for python).
+![Alt text](https://github.com/vaultdweller-2287/Cyckle-ai/blob/main/.github/cycklelogo.jpg)
 
 # Installation
 
