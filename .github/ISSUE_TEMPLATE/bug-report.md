@@ -1,5 +1,5 @@
 ---
-name: Bug Report🐛
+name: 🐛Bug Report🐛
 about: Help us improve Cyckle!
 title: ''
 labels: 'bug'

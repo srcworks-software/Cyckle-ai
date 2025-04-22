@@ -1,5 +1,5 @@
 ---
-name: Enhancement🚀
+name: 🚀Enhancement🚀
 about: Help us improve Cyckle with your feature requests!
 title: ''
 labels: 'enhancement'

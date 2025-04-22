@@ -1,5 +1,5 @@
 ---
-name: Question🤔
+name: 🤔Question🤔
 about: Any general questions not mentioned in the FAQ or feature requests.
 title: ''
 labels: 'question'
