@@ -18,7 +18,7 @@ As the title says, this method requires you to compile Cyckle from source. This 
 
 #### Step 1: Install dependencies
 
-Before we start, past in the following command:
+Before we start, paste in the following command:
 ```bash
     cd Cyckle-ai/cyckle-chat
     sudo chmod +x dependency-fixer.sh
