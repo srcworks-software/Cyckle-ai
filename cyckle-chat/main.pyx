@@ -2,7 +2,6 @@
 import cython
 import tkinter as tk
 import psutil
-import multiprocessing
 from tkinter import simpledialog, messagebox
 from gpt4all import GPT4All
 import json
@@ -47,7 +46,7 @@ cdef str read_model_from_pxi():
     for model_name in model_priority:
         model_data = mini_models.get(model_name)
         if model_data:
-            print(f"Using model: {model_data['id']}")
+            print(f"[DEBUG] Using model: {model_data['id']}")
             return model_data['model']
         
     messagebox.showerror("Models", 'Models failed to initialize. Please try again.')
@@ -115,25 +114,6 @@ cpdef void handle_input(event=None):
         else:
             messagebox.showerror("Modtokens", f'The entry "{new_limit}" is not a valid integer. Please try again.')
 
-    elif userinput.lower() == "help":
-        help_message = (
-            'Type "exit" or "quit" to leave the program.\n'
-            '\n'
-            'Type "modtokens" to change the token limit.\n'
-            '\n'
-            'Type "about" to learn more about this program.\n'
-            '\n'
-            f'MODTOKEN PARAM IS CURRENTLY SET TO: {modtokens}' 
-        )
-        messagebox.showinfo("Help", help_message)
-
-    elif userinput.lower() == "about":
-        about_message = (
-            'Cyckle - Lightweight Phi3-mini wrapper.\n'
-            'Licensed under MIT \n'
-            'See the source code at: https://github.com/vaultdweller-2287/Cyckle-ai'
-        )
-        messagebox.showinfo("About", about_message)
     else:
         with usermodel.chat_session(system_prompt=system_prompt):
             response = usermodel.generate(userinput, max_tokens=modtokens, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
@@ -189,26 +169,25 @@ main.grid_columnconfigure(0, weight=1)
 
 # label widget for input display
 label1 = tk.Label(master=main, text="YOU>>>")
-label1.config(bg="#313438", fg="#ffffff", font=("TkDefaultFont", 20))
+label1.config(bg="#313438", fg="#ffffff", font=("DejaVu Sans", 20))
 label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
 
 # text widget for response
-response_text = tk.Text(master=main, wrap=tk.WORD, bg="#353a40", fg="#ffffff", font=("TkDefaultFont", 20))
+response_text = tk.Text(master=main, wrap=tk.WORD, bg="#353a40", fg="#ffffff", font=("DejaVu Sans", 20))
 response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
 response_text.config(state=tk.DISABLED) 
 
 # entry widget
 entry = tk.Entry(master=main, text="Type here...")
-entry.config(bg="#4e4e4e", fg="#000", relief=tk.GROOVE, font=("TkDefaultFont", 15), cursor="hand2")
+entry.config(bg="#4e4e4e", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
 entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
 entry.bind("<Return>", handle_input) 
 entry.bind("<Up>", handle_history)
 entry.bind("<Down>", handle_history)
 
-#
+# redraw system
 main.bind("<Map>", lambda e: force_redraw())
 main.bind("<Visibility>", lambda e: force_redraw())
-
 periodic_redraw()
 
 # start the main loop

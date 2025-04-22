@@ -10,3 +10,4 @@ clear
 echo "==INSTALLATION COMPLETE=="
 echo "You can do the following to run Cyckle:"
 echo "Type 'make run'"
+sudo chmod +x clean.sh
