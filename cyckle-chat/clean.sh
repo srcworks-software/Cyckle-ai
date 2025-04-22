@@ -8,14 +8,7 @@ rm setup.py
 rm Makefile
 rm README.md
 rm -rf build
-rm -rf install
-rm -rf .vscode
-rm -rf .github
-rm CONTRIBUTING.md
-rm .gitignore
 rm dependency-fixer.sh
 rm main.h
-rm .gitattributes
-rm LICENSE
 rm main.c
 echo "Unused files have been cleared."
