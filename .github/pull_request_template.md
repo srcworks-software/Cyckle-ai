@@ -1,8 +1,8 @@
 ---
-name: Generic
-about: If no other templates fit your criteria, use this.
+name: Template
+about: Contribute to Cyckle!
 title: ''
-labels: 'other' 
+labels: '' 
 assignees: ''
 
 ---
