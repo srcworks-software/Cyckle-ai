@@ -6,8 +6,8 @@ from tkinter import simpledialog, messagebox
 from gpt4all import GPT4All
 import json
 
-cdef public dict mini_models
-mini_models = {
+cdef public dict modeldict
+modeldict = {
     "Llama-3.2-1B": {
         "model": "Llama-3.2-1B-Instruct-Q4_0.gguf",
         "id": "llama3",
@@ -44,7 +44,7 @@ cdef str read_model_from_pxi():
     cdef list model_priority = ["Phi3-mini", "Llama-3.2-1B"]
 
     for model_name in model_priority:
-        model_data = mini_models.get(model_name)
+        model_data = modeldict.get(model_name)
         if model_data:
             print(f"[DEBUG] Using model: {model_data['id']}")
             return model_data['model']
@@ -91,7 +91,7 @@ cpdef void handle_input(event=None):
         new_model = simpledialog.askstring("Model Config", "Enter new model name:")
 
         if new_model:
-            for model_name, model_info in mini_models.items():
+            for model_name, model_info in modeldict.items():
                 if new_model.lower() == model_name.lower():
                     model = model_info['model']  # Update the model variable
                     usermodel = GPT4All(model, model_path="models", n_threads=threads)  # Reinitialize the usermodel with the new model
@@ -150,7 +150,7 @@ def periodic_redraw():
 
 # window config
 main = tk.Tk()
-main.config(bg="#323236")
+main.config(bg="#092332")
 main.title("Cyckle")
 main.resizable(False, False)
 
@@ -169,17 +169,17 @@ main.grid_columnconfigure(0, weight=1)
 
 # label widget for input display
 label1 = tk.Label(master=main, text="YOU>>>")
-label1.config(bg="#313438", fg="#ffffff", font=("DejaVu Sans", 20))
+label1.config(bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))
 label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
 
 # text widget for response
-response_text = tk.Text(master=main, wrap=tk.WORD, bg="#353a40", fg="#ffffff", font=("DejaVu Sans", 20))
+response_text = tk.Text(master=main, wrap=tk.WORD, bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))
 response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
 response_text.config(state=tk.DISABLED) 
 
 # entry widget
 entry = tk.Entry(master=main, text="Type here...")
-entry.config(bg="#4e4e4e", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
+entry.config(bg="#374c58", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
 entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
 entry.bind("<Return>", handle_input) 
 entry.bind("<Up>", handle_history)

@@ -2383,10 +2383,8 @@ static const char __pyx_k_strip[] = "strip";
 static const char __pyx_k_title[] = "title";
 static const char __pyx_k_top_k[] = "top_k";
 static const char __pyx_k_top_p[] = "top_p";
-static const char __pyx_k_313438[] = "#313438";
-static const char __pyx_k_323236[] = "#323236";
-static const char __pyx_k_353a40[] = "#353a40";
-static const char __pyx_k_4e4e4e[] = "#4e4e4e";
+static const char __pyx_k_092332[] = "#092332";
+static const char __pyx_k_374c58[] = "#374c58";
 static const char __pyx_k_Cyckle[] = "Cyckle>>> ";
 static const char __pyx_k_Down_2[] = "<Down>";
 static const char __pyx_k_GROOVE[] = "GROOVE";
@@ -2532,10 +2530,8 @@ typedef struct {
   #endif
   #if CYTHON_USE_MODULE_STATE
   #endif
-  PyObject *__pyx_kp_u_313438;
-  PyObject *__pyx_kp_u_323236;
-  PyObject *__pyx_kp_u_353a40;
-  PyObject *__pyx_kp_u_4e4e4e;
+  PyObject *__pyx_kp_u_092332;
+  PyObject *__pyx_kp_u_374c58;
   PyObject *__pyx_kp_u_50_50;
   PyObject *__pyx_kp_u_Current_model_configuration;
   PyObject *__pyx_kp_u_Current_token_limit_is_set_to;
@@ -2784,10 +2780,8 @@ static int __pyx_m_clear(PyObject *m) {
   #ifdef __Pyx_FusedFunction_USED
   Py_CLEAR(clear_module_state->__pyx_FusedFunctionType);
   #endif
-  Py_CLEAR(clear_module_state->__pyx_kp_u_313438);
-  Py_CLEAR(clear_module_state->__pyx_kp_u_323236);
-  Py_CLEAR(clear_module_state->__pyx_kp_u_353a40);
-  Py_CLEAR(clear_module_state->__pyx_kp_u_4e4e4e);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_092332);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_374c58);
   Py_CLEAR(clear_module_state->__pyx_kp_u_50_50);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Current_model_configuration);
   Py_CLEAR(clear_module_state->__pyx_kp_u_Current_token_limit_is_set_to);
@@ -3014,10 +3008,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   #ifdef __Pyx_FusedFunction_USED
   Py_VISIT(traverse_module_state->__pyx_FusedFunctionType);
   #endif
-  Py_VISIT(traverse_module_state->__pyx_kp_u_313438);
-  Py_VISIT(traverse_module_state->__pyx_kp_u_323236);
-  Py_VISIT(traverse_module_state->__pyx_kp_u_353a40);
-  Py_VISIT(traverse_module_state->__pyx_kp_u_4e4e4e);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_092332);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_374c58);
   Py_VISIT(traverse_module_state->__pyx_kp_u_50_50);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Current_model_configuration);
   Py_VISIT(traverse_module_state->__pyx_kp_u_Current_token_limit_is_set_to);
@@ -3256,10 +3248,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #endif
 #if CYTHON_USE_MODULE_STATE
 #endif
-#define __pyx_kp_u_313438 __pyx_mstate_global->__pyx_kp_u_313438
-#define __pyx_kp_u_323236 __pyx_mstate_global->__pyx_kp_u_323236
-#define __pyx_kp_u_353a40 __pyx_mstate_global->__pyx_kp_u_353a40
-#define __pyx_kp_u_4e4e4e __pyx_mstate_global->__pyx_kp_u_4e4e4e
+#define __pyx_kp_u_092332 __pyx_mstate_global->__pyx_kp_u_092332
+#define __pyx_kp_u_374c58 __pyx_mstate_global->__pyx_kp_u_374c58
 #define __pyx_kp_u_50_50 __pyx_mstate_global->__pyx_kp_u_50_50
 #define __pyx_kp_u_Current_model_configuration __pyx_mstate_global->__pyx_kp_u_Current_model_configuration
 #define __pyx_kp_u_Current_token_limit_is_set_to __pyx_mstate_global->__pyx_kp_u_Current_token_limit_is_set_to
@@ -6891,10 +6881,8 @@ static PyMethodDef __pyx_methods[] = {
 
 static int __Pyx_CreateStringTabAndInitStrings(void) {
   __Pyx_StringTabEntry __pyx_string_tab[] = {
-    {&__pyx_kp_u_313438, __pyx_k_313438, sizeof(__pyx_k_313438), 0, 1, 0, 0},
-    {&__pyx_kp_u_323236, __pyx_k_323236, sizeof(__pyx_k_323236), 0, 1, 0, 0},
-    {&__pyx_kp_u_353a40, __pyx_k_353a40, sizeof(__pyx_k_353a40), 0, 1, 0, 0},
-    {&__pyx_kp_u_4e4e4e, __pyx_k_4e4e4e, sizeof(__pyx_k_4e4e4e), 0, 1, 0, 0},
+    {&__pyx_kp_u_092332, __pyx_k_092332, sizeof(__pyx_k_092332), 0, 1, 0, 0},
+    {&__pyx_kp_u_374c58, __pyx_k_374c58, sizeof(__pyx_k_374c58), 0, 1, 0, 0},
     {&__pyx_kp_u_50_50, __pyx_k_50_50, sizeof(__pyx_k_50_50), 0, 1, 0, 0},
     {&__pyx_kp_u_Current_model_configuration, __pyx_k_Current_model_configuration, sizeof(__pyx_k_Current_model_configuration), 0, 1, 0, 0},
     {&__pyx_kp_u_Current_token_limit_is_set_to, __pyx_k_Current_token_limit_is_set_to, sizeof(__pyx_k_Current_token_limit_is_set_to), 0, 1, 0, 0},
@@ -7176,7 +7164,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "main.pyx":154
  * main = tk.Tk()
- * main.config(bg="#323236")
+ * main.config(bg="#092332")
  * main.title("Cyckle")             # <<<<<<<<<<<<<<
  * main.resizable(False, False)
  * 
@@ -7186,7 +7174,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__15);
 
   /* "main.pyx":155
- * main.config(bg="#323236")
+ * main.config(bg="#092332")
  * main.title("Cyckle")
  * main.resizable(False, False)             # <<<<<<<<<<<<<<
  * 
@@ -7232,7 +7220,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "main.pyx":172
  * # label widget for input display
  * label1 = tk.Label(master=main, text="YOU>>>")
- * label1.config(bg="#313438", fg="#ffffff", font=("DejaVu Sans", 20))             # <<<<<<<<<<<<<<
+ * label1.config(bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))             # <<<<<<<<<<<<<<
  * label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
  * 
  */
@@ -7243,7 +7231,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "main.pyx":182
  * # entry widget
  * entry = tk.Entry(master=main, text="Type here...")
- * entry.config(bg="#4e4e4e", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")             # <<<<<<<<<<<<<<
+ * entry.config(bg="#374c58", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")             # <<<<<<<<<<<<<<
  * entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
  * entry.bind("<Return>", handle_input)
  */
@@ -8068,7 +8056,7 @@ if (!__Pyx_RefNanny) {
  * 
  * # window config
  * main = tk.Tk()             # <<<<<<<<<<<<<<
- * main.config(bg="#323236")
+ * main.config(bg="#092332")
  * main.title("Cyckle")
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_tk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
@@ -8085,7 +8073,7 @@ if (!__Pyx_RefNanny) {
   /* "main.pyx":153
  * # window config
  * main = tk.Tk()
- * main.config(bg="#323236")             # <<<<<<<<<<<<<<
+ * main.config(bg="#092332")             # <<<<<<<<<<<<<<
  * main.title("Cyckle")
  * main.resizable(False, False)
  */
@@ -8096,7 +8084,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_bg, __pyx_kp_u_323236) < 0) __PYX_ERR(0, 153, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_bg, __pyx_kp_u_092332) < 0) __PYX_ERR(0, 153, __pyx_L1_error)
   __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_empty_tuple, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -8105,7 +8093,7 @@ if (!__Pyx_RefNanny) {
 
   /* "main.pyx":154
  * main = tk.Tk()
- * main.config(bg="#323236")
+ * main.config(bg="#092332")
  * main.title("Cyckle")             # <<<<<<<<<<<<<<
  * main.resizable(False, False)
  * 
@@ -8121,7 +8109,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "main.pyx":155
- * main.config(bg="#323236")
+ * main.config(bg="#092332")
  * main.title("Cyckle")
  * main.resizable(False, False)             # <<<<<<<<<<<<<<
  * 
@@ -8350,7 +8338,7 @@ if (!__Pyx_RefNanny) {
  * 
  * # label widget for input display
  * label1 = tk.Label(master=main, text="YOU>>>")             # <<<<<<<<<<<<<<
- * label1.config(bg="#313438", fg="#ffffff", font=("DejaVu Sans", 20))
+ * label1.config(bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))
  * label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_tk); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 171, __pyx_L1_error)
@@ -8375,7 +8363,7 @@ if (!__Pyx_RefNanny) {
   /* "main.pyx":172
  * # label widget for input display
  * label1 = tk.Label(master=main, text="YOU>>>")
- * label1.config(bg="#313438", fg="#ffffff", font=("DejaVu Sans", 20))             # <<<<<<<<<<<<<<
+ * label1.config(bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))             # <<<<<<<<<<<<<<
  * label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
  * 
  */
@@ -8386,7 +8374,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_7 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_bg, __pyx_kp_u_313438) < 0) __PYX_ERR(0, 172, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_bg, __pyx_kp_u_374c58) < 0) __PYX_ERR(0, 172, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_fg, __pyx_kp_u_ffffff) < 0) __PYX_ERR(0, 172, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_font, __pyx_tuple__20) < 0) __PYX_ERR(0, 172, __pyx_L1_error)
   __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 172, __pyx_L1_error)
@@ -8397,7 +8385,7 @@ if (!__Pyx_RefNanny) {
 
   /* "main.pyx":173
  * label1 = tk.Label(master=main, text="YOU>>>")
- * label1.config(bg="#313438", fg="#ffffff", font=("DejaVu Sans", 20))
+ * label1.config(bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))
  * label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)             # <<<<<<<<<<<<<<
  * 
  * # text widget for response
@@ -8423,7 +8411,7 @@ if (!__Pyx_RefNanny) {
   /* "main.pyx":176
  * 
  * # text widget for response
- * response_text = tk.Text(master=main, wrap=tk.WORD, bg="#353a40", fg="#ffffff", font=("DejaVu Sans", 20))             # <<<<<<<<<<<<<<
+ * response_text = tk.Text(master=main, wrap=tk.WORD, bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))             # <<<<<<<<<<<<<<
  * response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
  * response_text.config(state=tk.DISABLED)
  */
@@ -8445,7 +8433,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_wrap, __pyx_t_2) < 0) __PYX_ERR(0, 176, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_bg, __pyx_kp_u_353a40) < 0) __PYX_ERR(0, 176, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_bg, __pyx_kp_u_374c58) < 0) __PYX_ERR(0, 176, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_fg, __pyx_kp_u_ffffff) < 0) __PYX_ERR(0, 176, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_font, __pyx_tuple__20) < 0) __PYX_ERR(0, 176, __pyx_L1_error)
   __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_empty_tuple, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 176, __pyx_L1_error)
@@ -8457,7 +8445,7 @@ if (!__Pyx_RefNanny) {
 
   /* "main.pyx":177
  * # text widget for response
- * response_text = tk.Text(master=main, wrap=tk.WORD, bg="#353a40", fg="#ffffff", font=("DejaVu Sans", 20))
+ * response_text = tk.Text(master=main, wrap=tk.WORD, bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))
  * response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)             # <<<<<<<<<<<<<<
  * response_text.config(state=tk.DISABLED)
  * 
@@ -8481,7 +8469,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "main.pyx":178
- * response_text = tk.Text(master=main, wrap=tk.WORD, bg="#353a40", fg="#ffffff", font=("DejaVu Sans", 20))
+ * response_text = tk.Text(master=main, wrap=tk.WORD, bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))
  * response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
  * response_text.config(state=tk.DISABLED)             # <<<<<<<<<<<<<<
  * 
@@ -8511,7 +8499,7 @@ if (!__Pyx_RefNanny) {
  * 
  * # entry widget
  * entry = tk.Entry(master=main, text="Type here...")             # <<<<<<<<<<<<<<
- * entry.config(bg="#4e4e4e", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
+ * entry.config(bg="#374c58", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
  * entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_tk); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 181, __pyx_L1_error)
@@ -8536,7 +8524,7 @@ if (!__Pyx_RefNanny) {
   /* "main.pyx":182
  * # entry widget
  * entry = tk.Entry(master=main, text="Type here...")
- * entry.config(bg="#4e4e4e", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")             # <<<<<<<<<<<<<<
+ * entry.config(bg="#374c58", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")             # <<<<<<<<<<<<<<
  * entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
  * entry.bind("<Return>", handle_input)
  */
@@ -8547,7 +8535,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_bg, __pyx_kp_u_4e4e4e) < 0) __PYX_ERR(0, 182, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_bg, __pyx_kp_u_374c58) < 0) __PYX_ERR(0, 182, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_fg, __pyx_kp_u_ffffff) < 0) __PYX_ERR(0, 182, __pyx_L1_error)
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_tk); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -8566,7 +8554,7 @@ if (!__Pyx_RefNanny) {
 
   /* "main.pyx":183
  * entry = tk.Entry(master=main, text="Type here...")
- * entry.config(bg="#4e4e4e", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
+ * entry.config(bg="#374c58", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
  * entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)             # <<<<<<<<<<<<<<
  * entry.bind("<Return>", handle_input)
  * entry.bind("<Up>", handle_history)
@@ -8590,7 +8578,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
   /* "main.pyx":184
- * entry.config(bg="#4e4e4e", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
+ * entry.config(bg="#374c58", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
  * entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
  * entry.bind("<Return>", handle_input)             # <<<<<<<<<<<<<<
  * entry.bind("<Up>", handle_history)
