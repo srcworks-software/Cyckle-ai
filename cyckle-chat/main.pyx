@@ -1,8 +1,9 @@
 # cython: language_level=3
 import cython
 import tkinter as tk
+from tkinter import PhotoImage as pi
 import psutil
-from tkinter import simpledialog, messagebox
+from tkinter import simpledialog, messagebox, ttk
 from gpt4all import GPT4All
 import json
 
@@ -140,6 +141,56 @@ cpdef void handle_history(event):
             poshistory = len(cmdhistory)
             entry.delete(0, tk.END)
 
+root = tk.Tk()
+root.withdraw() 
+
+def maingui():
+    global response_text, entry, label1, main
+    splash.destroy()
+    # window config
+    main = tk.Tk()
+
+    style = ttk.Style(main)
+    style.theme_use("clam")
+    style.configure("TLabel", foreground="#ffffff", background="#092332")
+    style.configure("TEntry", foreground="#ffffff", fieldbackground="#092332", background="#092332")
+
+    main.config(bg="#092332")
+    main.title("Cyckle")
+    main.resizable(False, False)
+    periodic_redraw()
+
+    # window geometries
+    sw = main.winfo_screenwidth()
+    sh = main.winfo_screenheight()
+    swutil = sw*0.8
+    shutil = sh*0.9
+    main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")
+
+    # grid config
+    main.grid_rowconfigure(0, weight=1)
+    main.grid_rowconfigure(1, weight=1)
+    main.grid_rowconfigure(2, weight=0)
+    main.grid_columnconfigure(0, weight=1)
+
+    label1 = ttk.Label(master=main, text="YOU>>>")
+    label1.config(font=("DejaVu Sans", 20))
+    label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+
+    # text label
+    response_text = tk.Text(master=main, wrap=tk.WORD, bg="#1c1c1c", fg="#ffffff", font=("DejaVu Sans", 20), relief=tk.FLAT)
+    response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
+    response_text.config(state=tk.DISABLED)
+
+    # entry box
+    entry = ttk.Entry(master=main, font=("DejaVu Sans", 15))
+    entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
+    entry.bind("<Return>", handle_input)
+
+    # redraw system
+    main.bind("<Map>", lambda e: force_redraw())
+    main.bind("<Visibility>", lambda e: force_redraw())
+
 def force_redraw():
     main.update_idletasks()
     main.update()
@@ -148,47 +199,24 @@ def periodic_redraw():
     force_redraw()
     main.after(1000, periodic_redraw)
 
-# window config
-main = tk.Tk()
-main.config(bg="#092332")
-main.title("Cyckle")
-main.resizable(False, False)
+def center_window(win, width, height):
+    screen_width = win.winfo_screenwidth()
+    screen_height = win.winfo_screenheight()
 
-# window geometries
-sw = main.winfo_screenwidth()
-sh = main.winfo_screenheight()
-swutil = sw*0.8
-shutil = sh*0.9
-main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")
+    x = (screen_width // 2) - (width // 2)
+    y = (screen_height // 2) - (height // 2)
 
-# grid config
-main.grid_rowconfigure(0, weight=1)
-main.grid_rowconfigure(1, weight=1)
-main.grid_rowconfigure(2, weight=0)
-main.grid_columnconfigure(0, weight=1)
+    win.geometry(f"{width}x{height}+{x}+{y}")
 
-# label widget for input display
-label1 = tk.Label(master=main, text="YOU>>>")
-label1.config(bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))
-label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
-
-# text widget for response
-response_text = tk.Text(master=main, wrap=tk.WORD, bg="#374c58", fg="#ffffff", font=("DejaVu Sans", 20))
-response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
-response_text.config(state=tk.DISABLED) 
-
-# entry widget
-entry = tk.Entry(master=main, text="Type here...")
-entry.config(bg="#374c58", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
-entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
-entry.bind("<Return>", handle_input) 
-entry.bind("<Up>", handle_history)
-entry.bind("<Down>", handle_history)
-
-# redraw system
-main.bind("<Map>", lambda e: force_redraw())
-main.bind("<Visibility>", lambda e: force_redraw())
-periodic_redraw()
+splash = tk.Toplevel()
+splash.overrideredirect(True)
+center_window(splash, 600, 384)
+splashimg = pi(file="assets/splash.png")
+ 
+splash_label = tk.Label(splash, image=splashimg)
+splash_label.pack()
 
 # start the main loop
-main.mainloop()
+splash.after(5000, maingui)
+
+splash.mainloop()

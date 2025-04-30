@@ -28,7 +28,7 @@
   #define DL_IMPORT(_T) _T
 #endif
 
-__PYX_EXTERN_C PyObject *mini_models;
+__PYX_EXTERN_C PyObject *modeldict;
 
 #endif /* !__PYX_HAVE_API__main */
 
