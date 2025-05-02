@@ -1,24 +1,11 @@
 # cython: language_level=3
 import cython
 import tkinter as tk
+from tkinter import PhotoImage as pi
 import psutil
-from tkinter import simpledialog, messagebox
+from tkinter import simpledialog, messagebox, ttk
 from gpt4all import GPT4All
 import json
-
-cdef public dict mini_models
-mini_models = {
-    "Llama-3.2-1B": {
-        "model": "Llama-3.2-1B-Instruct-Q4_0.gguf",
-        "id": "llama3",
-        "purpose": "Ultra-light model for creative tasks."
-    },
-    "Phi3-mini": {
-        "model": "Phi-3-mini-4k-instruct.Q4_0.gguf",
-        "id": "phi3",
-        "purpose": "Lightweight model for logical and reasoning tasks."
-    }
-}
 
 cdef int modtokens
 cdef tuple optimize():
@@ -38,30 +25,11 @@ cdef int read_tokens_from_json():
             return data.get("tokens", 96) 
     except FileNotFoundError:
         return 256 
-
-cdef str read_model_from_pxi():
-    cdef dict model_data
-    cdef list model_priority = ["Phi3-mini", "Llama-3.2-1B"]
-
-    for model_name in model_priority:
-        model_data = mini_models.get(model_name)
-        if model_data:
-            print(f"[DEBUG] Using model: {model_data['id']}")
-            return model_data['model']
-        
-    messagebox.showerror("Models", 'Models failed to initialize. Please try again.')
-    return "Phi-3-mini-4k-instruct.Q4_0.gguf"
     
 modtokens = read_tokens_from_json()
 
 physcores, logicores = optimize()
 threads = min(logicores, 8)
-
-# normally using Phi-3-mini-4k-instruct.Q4_0.gguf
-model = read_model_from_pxi()
-cdef object usermodel = None
-if usermodel is None:
-    usermodel = GPT4All(model, model_path="models", n_threads=threads)
 
 print(f"[DEBUG] {threads} threads in use.")
 
@@ -70,6 +38,9 @@ data = {
 }
 
 system_prompt = '''You are Cyckle, a helpful AI assistant. Your responses should be clear, direct, and relevant to the user's questions. Aim to be informative yet concise.'''
+
+cdef object usermodel
+usermodel = GPT4All("Phi-3.5-mini-instruct-IQ3_XS.gguf", model_path="models", n_threads=threads)
 
 cpdef void handle_input(event=None):
     global modtokens , cmdhistory, poshistory, usermodel
@@ -80,24 +51,8 @@ cpdef void handle_input(event=None):
         cmdhistory.append(userinput)
         poshistory = len(cmdhistory)
 
-    if userinput.lower() in ["exit", "quit"]:
+    if userinput.lower() == "quit":
         main.quit()
-
-    elif userinput.lower() == "modelconfig":
-        global model
-        model_config = f'Current model configuration: {model}\n'
-        warning = 'WARNING: Changing the model may affect performance and behavior.'
-        messagebox.showwarning("Model Config", f"{model_config}\n{warning}")
-        new_model = simpledialog.askstring("Model Config", "Enter new model name:")
-
-        if new_model:
-            for model_name, model_info in mini_models.items():
-                if new_model.lower() == model_name.lower():
-                    model = model_info['model']  # Update the model variable
-                    usermodel = GPT4All(model, model_path="models", n_threads=threads)  # Reinitialize the usermodel with the new model
-                    messagebox.showinfo("Model Config", f"Model parameter has been set to: {model_info['id']}")
-                else:
-                    messagebox.showerror("Model Config", f'The entry "{new_model}" is not a valid model name. Please try again.')
 
     elif userinput.lower() == "modtokens":
         current_limit = f'Current token limit is set to {modtokens}'
@@ -140,6 +95,62 @@ cpdef void handle_history(event):
             poshistory = len(cmdhistory)
             entry.delete(0, tk.END)
 
+root = tk.Tk()
+root.withdraw() 
+
+def maingui():
+    global response_text, entry, label1, main, icon
+    splash.destroy()
+
+    # window config
+    icon = pi(file="assets/icon.png")
+    main = tk.Tk()
+    main.iconphoto(True, icon)
+
+    style = ttk.Style(main)
+    style.theme_use("clam")
+    style.configure("TLabel", foreground="#ffffff", background="#092332")
+    style.configure("TEntry", foreground="#ffffff", fieldbackground="#092332", background="#092332")
+
+    main.config(bg="#092332")
+    main.title("Cyckle")
+    main.resizable(False, False)
+    periodic_redraw()
+
+    # window geometries
+    sw = main.winfo_screenwidth()
+    sh = main.winfo_screenheight()
+    swutil = sw*0.8
+    shutil = sh*0.9
+    main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")
+
+    # grid config
+    main.grid_rowconfigure(0, weight=1)
+    main.grid_rowconfigure(1, weight=1)
+    main.grid_rowconfigure(2, weight=0)
+    main.grid_columnconfigure(0, weight=1)
+
+    label1 = ttk.Label(master=main, text="YOU>>>")
+    label1.config(font=("DejaVu Sans", 20))
+    label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+
+    # text label
+    response_text = tk.Text(master=main, wrap=tk.WORD, bg="#1c1c1c", fg="#ffffff", font=("DejaVu Sans", 20), relief=tk.FLAT)
+    response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
+    response_text.config(state=tk.DISABLED)
+
+    # entry box
+    entry = ttk.Entry(master=main, font=("DejaVu Sans", 15))
+    entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
+    entry.focus_set()
+    entry.bind("<Return>", handle_input)
+
+    # redraw system
+    main.bind("<Map>", lambda e: force_redraw())
+    main.bind("<Visibility>", lambda e: force_redraw())
+
+    main.mainloop()
+
 def force_redraw():
     main.update_idletasks()
     main.update()
@@ -148,47 +159,24 @@ def periodic_redraw():
     force_redraw()
     main.after(1000, periodic_redraw)
 
-# window config
-main = tk.Tk()
-main.config(bg="#323236")
-main.title("Cyckle")
-main.resizable(False, False)
+def center_window(win, width, height):
+    screen_width = win.winfo_screenwidth()
+    screen_height = win.winfo_screenheight()
 
-# window geometries
-sw = main.winfo_screenwidth()
-sh = main.winfo_screenheight()
-swutil = sw*0.8
-shutil = sh*0.9
-main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")
+    x = (screen_width // 2) - (width // 2)
+    y = (screen_height // 2) - (height // 2)
 
-# grid config
-main.grid_rowconfigure(0, weight=1)
-main.grid_rowconfigure(1, weight=1)
-main.grid_rowconfigure(2, weight=0)
-main.grid_columnconfigure(0, weight=1)
+    win.geometry(f"{width}x{height}+{x}+{y}")
 
-# label widget for input display
-label1 = tk.Label(master=main, text="YOU>>>")
-label1.config(bg="#313438", fg="#ffffff", font=("DejaVu Sans", 20))
-label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
-
-# text widget for response
-response_text = tk.Text(master=main, wrap=tk.WORD, bg="#353a40", fg="#ffffff", font=("DejaVu Sans", 20))
-response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
-response_text.config(state=tk.DISABLED) 
-
-# entry widget
-entry = tk.Entry(master=main, text="Type here...")
-entry.config(bg="#4e4e4e", fg="#ffffff", relief=tk.GROOVE, font=("DejaVu Sans", 15), cursor="hand2")
-entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
-entry.bind("<Return>", handle_input) 
-entry.bind("<Up>", handle_history)
-entry.bind("<Down>", handle_history)
-
-# redraw system
-main.bind("<Map>", lambda e: force_redraw())
-main.bind("<Visibility>", lambda e: force_redraw())
-periodic_redraw()
+splash = tk.Toplevel()
+splash.overrideredirect(True)
+center_window(splash, 600, 384)
+splashimg = pi(file="assets/splash.png")
+ 
+splash_label = tk.Label(splash, image=splashimg)
+splash_label.pack()
 
 # start the main loop
-main.mainloop()
+splash.after(5000, maingui)
+
+splash.mainloop()

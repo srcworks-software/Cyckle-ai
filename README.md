@@ -38,34 +38,34 @@ Execute the executable through makefile.
     make run
 ```
 
-## Parameters/Commands
+### Parameters/Commands
 The following parameters and commands will display and modify different information.
 
 #### Token Modifier
 In order to modify the amount of tokens in Cyckle, type ```modtokens``` in the message box. It will pull up a window where you can modify the modtoken parameter. This saves to a file named ```data.json```
 
-#### Model Configuration
-If you are interested in swapping the model, type ```modelconfig``` in the message box. It will provide a window to type in which you can type a valid ID. Here is the list of models available.
-| Model ID |    Class   |
-|----------|------------|
-| Phi3-mini| Mini-Model |
-|Llama-3.2-1B| Mini Model |
-
-#### Quit/Exit
-Pretty self-explanatory, quits the program. Type ```quit``` or ```exit``` to execute this.
+#### Quit
+Pretty self-explanatory, quits the program. Type ```quit``` to execute this.
 
 ### FAQ (Frequently Asked Questions)
 These are some questions that are probably never asked but just incase they are, here you go.
 
 #### What model does Cyckle use?
-Despite using the *GPT*4all library, it actually utilizes ```phi3``` as it's default model but has the option to use several others.
+Despite using the *GPT*4all library, it actually utilizes the ```phi``` family of models.
 
 #### Will Cyckle be packaged into my distro's package repos?
 Currently, any and all packaging systems have been SEVERELY painful to set up. So for as long as that is true, don't expect an easy-to-install Cyckle.
 
 #### What system do I need for Cyckle?
-Atleast 4 gigabytes of RAM with an Intel "Sandy Bridge"/AMD "Bulldozer" processor (Any CPU with AVX2)
+These days, you could run it on almost anything!
 
+| Specs | Minimum | Recommended |
+|-------|---------|-------------|
+| CPU   | Intel Sandy Bridge/AMD Bulldozer | Intel Haswell/AMD Excavator |
+| RAM   | 4GB | 8GB |
+| GPU   | Integrated | Dedicated |
+| HDD   | 1.8GB | 5GB |
+| OS    | Debian 12 | Debian 13 |
 # Cyckle Developer Handbook
 If you are interested in developing, contributing, or just want a better understanding of Cyckle's source code, check out our Jupyter Notebook file in the ```handbook/``` directory! 
 
