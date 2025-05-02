@@ -46,19 +46,21 @@ In order to modify the amount of tokens in Cyckle, type ```modtokens``` in the m
 
 #### Model Configuration
 If you are interested in swapping the model, type ```modelconfig``` in the message box. It will provide a window to type in which you can type a valid ID. Here is the list of models available.
-| Model ID |    Class   |
+| Model ID |    Model   |
 |----------|------------|
-| Phi3-mini| Mini-Model |
-|Llama-3.2-1B| Mini Model |
+|   mini   | Phi-3.5-Mini-Instruct |
+|   moe    | Phi-3.5-MoE-Instruct |
 
-#### Quit/Exit
-Pretty self-explanatory, quits the program. Type ```quit``` or ```exit``` to execute this.
+***Please note that it is case-sensitive***
+
+#### Quit
+Pretty self-explanatory, quits the program. Type ```quit``` to execute this.
 
 ### FAQ (Frequently Asked Questions)
 These are some questions that are probably never asked but just incase they are, here you go.
 
 #### What model does Cyckle use?
-Despite using the *GPT*4all library, it actually utilizes ```phi3``` as it's default model but has the option to use several others.
+Despite using the *GPT*4all library, it actually utilizes the ```phi``` family of models.
 
 #### Will Cyckle be packaged into my distro's package repos?
 Currently, any and all packaging systems have been SEVERELY painful to set up. So for as long as that is true, don't expect an easy-to-install Cyckle.

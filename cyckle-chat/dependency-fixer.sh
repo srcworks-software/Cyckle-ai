@@ -4,6 +4,7 @@ sudo apt install -y gcc make build-essential
 sudo apt install -y wget
 cd models
 wget https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/resolve/main/Phi-3.5-mini-instruct-IQ3_XS.gguf
+wget https://huggingface.co/abetlen/Phi-3.5-vision-instruct-gguf/resolve/main/Phi-3.5-3.8B-vision-instruct-mmproj-F16.gguf
 cd -
 python3 -m venv venv
 source venv/bin/activate

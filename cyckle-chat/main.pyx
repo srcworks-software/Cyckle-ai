@@ -7,20 +7,6 @@ from tkinter import simpledialog, messagebox, ttk
 from gpt4all import GPT4All
 import json
 
-cdef public dict modeldict
-modeldict = {
-    "Llama-3.2-1B": {
-        "model": "Llama-3.2-1B-Instruct-Q4_0.gguf",
-        "id": "llama3",
-        "purpose": "Ultra-light model for creative tasks."
-    },
-    "Phi3-mini": {
-        "model": "Phi-3-mini-4k-instruct.Q4_0.gguf",
-        "id": "phi3",
-        "purpose": "Lightweight model for logical and reasoning tasks."
-    }
-}
-
 cdef int modtokens
 cdef tuple optimize():
     cdef int physcores = psutil.cpu_count(logical=False)
@@ -39,30 +25,11 @@ cdef int read_tokens_from_json():
             return data.get("tokens", 96) 
     except FileNotFoundError:
         return 256 
-
-cdef str read_model_from_pxi():
-    cdef dict model_data
-    cdef list model_priority = ["Phi3-mini", "Llama-3.2-1B"]
-
-    for model_name in model_priority:
-        model_data = modeldict.get(model_name)
-        if model_data:
-            print(f"[DEBUG] Using model: {model_data['id']}")
-            return model_data['model']
-        
-    messagebox.showerror("Models", 'Models failed to initialize. Please try again.')
-    return "Phi-3-mini-4k-instruct.Q4_0.gguf"
     
 modtokens = read_tokens_from_json()
 
 physcores, logicores = optimize()
 threads = min(logicores, 8)
-
-# normally using Phi-3-mini-4k-instruct.Q4_0.gguf
-model = read_model_from_pxi()
-cdef object usermodel = None
-if usermodel is None:
-    usermodel = GPT4All(model, model_path="models", n_threads=threads)
 
 print(f"[DEBUG] {threads} threads in use.")
 
@@ -71,6 +38,9 @@ data = {
 }
 
 system_prompt = '''You are Cyckle, a helpful AI assistant. Your responses should be clear, direct, and relevant to the user's questions. Aim to be informative yet concise.'''
+
+cdef object usermodel
+usermodel = GPT4All("Phi-3.5-mini-instruct-IQ3_XS.gguf", model_path="models", n_threads=threads)
 
 cpdef void handle_input(event=None):
     global modtokens , cmdhistory, poshistory, usermodel
@@ -81,24 +51,8 @@ cpdef void handle_input(event=None):
         cmdhistory.append(userinput)
         poshistory = len(cmdhistory)
 
-    if userinput.lower() in ["exit", "quit"]:
+    if userinput.lower() == "quit":
         main.quit()
-
-    elif userinput.lower() == "modelconfig":
-        global model
-        model_config = f'Current model configuration: {model}\n'
-        warning = 'WARNING: Changing the model may affect performance and behavior.'
-        messagebox.showwarning("Model Config", f"{model_config}\n{warning}")
-        new_model = simpledialog.askstring("Model Config", "Enter new model name:")
-
-        if new_model:
-            for model_name, model_info in modeldict.items():
-                if new_model.lower() == model_name.lower():
-                    model = model_info['model']  # Update the model variable
-                    usermodel = GPT4All(model, model_path="models", n_threads=threads)  # Reinitialize the usermodel with the new model
-                    messagebox.showinfo("Model Config", f"Model parameter has been set to: {model_info['id']}")
-                else:
-                    messagebox.showerror("Model Config", f'The entry "{new_model}" is not a valid model name. Please try again.')
 
     elif userinput.lower() == "modtokens":
         current_limit = f'Current token limit is set to {modtokens}'
@@ -147,6 +101,7 @@ root.withdraw()
 def maingui():
     global response_text, entry, label1, main
     splash.destroy()
+    
     # window config
     main = tk.Tk()
 
@@ -185,11 +140,14 @@ def maingui():
     # entry box
     entry = ttk.Entry(master=main, font=("DejaVu Sans", 15))
     entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
+    entry.focus_set()
     entry.bind("<Return>", handle_input)
 
     # redraw system
     main.bind("<Map>", lambda e: force_redraw())
     main.bind("<Visibility>", lambda e: force_redraw())
+
+    main.mainloop()
 
 def force_redraw():
     main.update_idletasks()
