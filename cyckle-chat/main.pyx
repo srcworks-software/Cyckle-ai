@@ -99,11 +99,13 @@ root = tk.Tk()
 root.withdraw() 
 
 def maingui():
-    global response_text, entry, label1, main
+    global response_text, entry, label1, main, icon
     splash.destroy()
-    
+
     # window config
+    icon = pi(file="assets/icon.png")
     main = tk.Tk()
+    main.iconphoto(True, icon)
 
     style = ttk.Style(main)
     style.theme_use("clam")
