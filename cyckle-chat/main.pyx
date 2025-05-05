@@ -1,11 +1,12 @@
 # cython: language_level=3
 import cython
 import tkinter as tk
-from tkinter import PhotoImage as pi
 import psutil
+import json
+import random
 from tkinter import simpledialog, messagebox, ttk
 from gpt4all import GPT4All
-import json
+from tkinter import PhotoImage as pi
 
 def stream(token_id, token):
     response_text.config(state=tk.NORMAL)
@@ -54,18 +55,22 @@ cdef object usermodel
 usermodel = GPT4All("Phi-3.5-mini-instruct-IQ3_XS.gguf", model_path="models", n_threads=threads)
 
 cpdef void handle_input(event=None):
+    print("[DEBUG] Keypress registered")
     global modtokens , cmdhistory, poshistory, usermodel
     cdef str userinput
     userinput = entry.get()
+    print(f"[DEBUG] Input: '{userinput}'")
 
     if userinput.strip():
         cmdhistory.append(userinput)
         poshistory = len(cmdhistory)
 
     if userinput.lower() == "quit":
+        print("[DEBUG] Quitting")
         main.quit()
 
     elif userinput.lower() == "modtokens":
+        print("[DEBUG] Modtoken command running")
         current_limit = f'Current token limit is set to {modtokens}'
         warning = 'WARNING: HIGHER TOKEN LIMITS MAY CAUSE HIGHER USAGE OF RESOURCES! DO THIS AT YOUR OWN RISK.'
         messagebox.showwarning("Modtokens", f"{current_limit}\n{warning}")
@@ -102,6 +107,21 @@ cpdef void handle_input(event=None):
             )
     entry.delete(0, tk.END)
 
+cpdef void random_placeholder(event):
+    global used_placeholder
+    placeholders = ["Ask anything", "Quench your wonder", "What's on your mind?", "Your query awaits", "Unleash your curiosity", "Seek information"]
+    used_placeholder = random.choice(placeholders)
+
+cpdef entry_focus(event):
+    if entry.get() == used_placeholder:
+        entry.delete(0, tk.END)
+        entry.config(foreground="#ffffff")
+
+cpdef entry_unfocus(event):
+    if entry.get() == '':
+        entry.insert(0, used_placeholder)
+        entry.config(foreground="#D3D3D3")
+
 cpdef void handle_history(event):
     global poshistory
     if event.keysym == "Up":
@@ -122,10 +142,12 @@ root = tk.Tk()
 root.withdraw() 
 
 def maingui():
-    global response_text, entry, label1, main, icon, splashimg
+    global response_text, entry, label1, main, icon, splashimg, used_placeholder
+    used_placeholder = ""
     splash.destroy()
 
     # window config
+    print("[DEBUG] GUI starting")
     main = tk.Toplevel()
     icon = pi(file="assets/icon.png")
     main.iconphoto(True, icon)
@@ -166,13 +188,16 @@ def maingui():
     entry = ttk.Entry(master=main, font=("DejaVu Sans", 15))
     entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
     entry.focus_set()
+    random_placeholder(None)
     entry.bind("<Return>", handle_input)
+    entry.bind("<FocusIn>", entry_focus)
+    entry.bind("<FocusOut>", entry_unfocus)
+    entry.bind("<Up>", handle_history)
+    entry.bind("<Down>", handle_history)
 
     # redraw system
     main.bind("<Map>", lambda e: force_redraw())
     main.bind("<Visibility>", lambda e: force_redraw())
-
-    main.mainloop()
 
 def force_redraw():
     main.update_idletasks()
@@ -199,7 +224,5 @@ splashimg = pi(file="assets/splash.png")
 splash_label = tk.Label(splash, image=splashimg)
 splash_label.pack()
 
-# start the main loop
 splash.after(5000, maingui)
-
 splash.mainloop()
