@@ -7,6 +7,17 @@ from tkinter import simpledialog, messagebox, ttk
 from gpt4all import GPT4All
 import json
 
+def stream(token_id, token):
+    response_text.config(state=tk.NORMAL)
+    response_text.insert(tk.END, token)
+    response_text.config(state=tk.DISABLED)
+    response_text.see(tk.END)
+    response_text.update_idletasks()
+    return True
+
+icon = None
+splashimg = None
+
 cdef int modtokens
 cdef tuple optimize():
     cdef int physcores = psutil.cpu_count(logical=False)
@@ -70,13 +81,25 @@ cpdef void handle_input(event=None):
             messagebox.showerror("Modtokens", f'The entry "{new_limit}" is not a valid integer. Please try again.')
 
     else:
+        global streamed_output
+        streamed_output = ""
+
+        response_text.config(state=tk.NORMAL)
+        response_text.delete(1.0, tk.END)
+        response_text.config(state=tk.DISABLED)
+        label1.config(text="YOU>>> " + userinput)
+
         with usermodel.chat_session(system_prompt=system_prompt):
-            response = usermodel.generate(userinput, max_tokens=modtokens, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
-            response_text.config(state=tk.NORMAL)
-            response_text.delete(1.0, tk.END)
-            response_text.insert(tk.END, "Cyckle>>> " + response)
-            response_text.config(state=tk.DISABLED)
-            label1.config(text="YOU>>> " + userinput)
+            usermodel.generate(
+            userinput, 
+            callback=stream,
+            max_tokens=modtokens, 
+            temp=0.3, 
+            top_k=25, 
+            top_p=0.9, 
+            repeat_penalty=1.1, 
+            n_batch=8
+            )
     entry.delete(0, tk.END)
 
 cpdef void handle_history(event):
@@ -99,12 +122,12 @@ root = tk.Tk()
 root.withdraw() 
 
 def maingui():
-    global response_text, entry, label1, main, icon
+    global response_text, entry, label1, main, icon, splashimg
     splash.destroy()
 
     # window config
+    main = tk.Toplevel()
     icon = pi(file="assets/icon.png")
-    main = tk.Tk()
     main.iconphoto(True, icon)
 
     style = ttk.Style(main)
