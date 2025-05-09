@@ -1,8 +1,8 @@
-![Alt text](https://github.com/vaultdweller-2287/Cyckle-ai/blob/main/.github/cycklelogo.jpg)
+![Alt text](https://github.com/srcworks-software/Cyckle-ai/blob/main/.github/cycklelogo.jpg)
 
-![GitHub Repo stars](https://img.shields.io/github/stars/vaultdweller-2287/Cyckle-ai?style=for-the-badge)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/vaultdweller-2287/Cyckle-ai?style=for-the-badge)
-![GitHub license](https://img.shields.io/github/license/vaultdweller-2287/Cyckle-ai?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/srcworks-software/Cyckle-ai?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/srcworks-software/Cyckle-ai?style=for-the-badge)
+![GitHub license](https://img.shields.io/github/license/srcworks-software/Cyckle-ai?style=for-the-badge)
 
 # Cyckle Chat
 
@@ -19,6 +19,10 @@ As the title says, this method requires you to compile Cyckle from source. This 
 #### Step 1: Install dependencies
 
 Before we start, paste in the following command:
+```bash
+    git clone https://github.com/srcworks-software/Cyckle-ai
+```
+
 ```bash
     cd Cyckle-ai/cyckle-chat
     sudo chmod +x dependency-fixer.sh
