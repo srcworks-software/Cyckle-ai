@@ -14,6 +14,8 @@ from tkinter import simpledialog, messagebox, ttk
 import psutil
 from gpt4all import GPT4All
 import json
+import gc
+import sys
 
 cdef int modtokens
 cdef tuple optimize():
@@ -196,6 +198,25 @@ def maingui():
 
     main.mainloop()
 
+cpdef low_mem_warn(mem_warn_mb=1024):
+    unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
+    return unalloc_mem < mem_warn_mb
+
+cpdef low_mem_crticial(mem_warn_mb=512):
+    unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
+
+cpdef sys_watchdog():
+    if low_mem_warn(1024):
+        print(f"[WATCHDOG] Low memory detected, please attempt to free resources outside of the main Cyckle application.")
+        gc.collect()
+    if low_mem_crticial(512):
+        print(f"[WATCHDOG] Memory is critically low, exiting main Cyckle application.")
+        gc.collect()
+        sys.exit(1)
+    else:
+        print(f"[WATCHDOG] Memory is sufficient, continuing operation.")
+    main.after(5000, sys_watchdog)
+
 cpdef force_redraw():
     main.update_idletasks()
     main.update()
@@ -224,6 +245,8 @@ cpdef clean_up():
         entry.destroy()
         label1.destroy()
         main.destroy()
+        gc.collect()
+        sys.exit(0)
     except: pass
 
 splash = tk.Toplevel()
