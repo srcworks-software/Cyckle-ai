@@ -146,6 +146,7 @@ def maingui():
 
     style = ttk.Style(main)
     style.theme_use("clam")
+    style.configure("TButton", background="#1c1c1c", foreground="#ffffff")
     style.configure("TLabel", foreground="#ffffff", background="#092332")
     style.configure("TEntry", foreground="#ffffff", fieldbackground="#092332", background="#092332")
 
@@ -183,7 +184,7 @@ def maingui():
     entry.bind("<Down>", handle_history)
 
     # analysis button
-    csv_button = ttk.Button(master=main, text="ligmaballs", command=handle_csv)
+    csv_button = ttk.Button(master=main, text="Analyze CSV", command=handle_csv, style="TButton")
     csv_button.grid(row=3, column=0, sticky="ew", padx=10, pady=(0, 10))
 
     # redraw system
