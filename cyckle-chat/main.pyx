@@ -1,9 +1,17 @@
 # cython: language_level=3
+# Note to self: here's how to start a venv:
+"""
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install -r requirements.txt
+"""
 import cython
+import csv
 import tkinter as tk
+from tkinter import filedialog as fd
 from tkinter import PhotoImage as pi
-import psutil
 from tkinter import simpledialog, messagebox, ttk
+import psutil
 from gpt4all import GPT4All
 import json
 
@@ -43,6 +51,7 @@ cdef object usermodel
 usermodel = GPT4All("Phi-3.5-mini-instruct-IQ3_XS.gguf", model_path="models", n_threads=threads)
 
 cpdef void handle_input(event=None):
+    print(f"[DEBUG] Input registered.")
     global modtokens , cmdhistory, poshistory, usermodel
     cdef str userinput
     userinput = entry.get()
@@ -52,9 +61,11 @@ cpdef void handle_input(event=None):
         poshistory = len(cmdhistory)
 
     if userinput.lower() == "quit":
+        print(f"[DEBUG] User requested to quit.")
         main.quit()
 
     elif userinput.lower() == "modtokens":
+        print(f"[DEBUG] User requested to modify token limit.")
         current_limit = f'Current token limit is set to {modtokens}'
         warning = 'WARNING: HIGHER TOKEN LIMITS MAY CAUSE HIGHER USAGE OF RESOURCES! DO THIS AT YOUR OWN RISK.'
         messagebox.showwarning("Modtokens", f"{current_limit}\n{warning}")
@@ -70,6 +81,7 @@ cpdef void handle_input(event=None):
             messagebox.showerror("Modtokens", f'The entry "{new_limit}" is not a valid integer. Please try again.')
 
     else:
+        print(f"[DEBUG] Forwarding input to model.")
         with usermodel.chat_session(system_prompt=system_prompt):
             response = usermodel.generate(userinput, max_tokens=modtokens, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
             response_text.config(state=tk.NORMAL)
@@ -95,16 +107,41 @@ cpdef void handle_history(event):
             poshistory = len(cmdhistory)
             entry.delete(0, tk.END)
 
+cpdef void handle_csv(event=None):
+    global response_text, main, label1
+    main.filename = fd.askopenfilename(initialdir = "/",title = "Open CSV file",filetypes = (("CSV files","*.csv"),("All files","*.*")))
+    
+    if main.filename:
+        try:
+            with open(main.filename, newline='') as csvfile:
+                reader = csv.reader(csvfile)
+                data = [row for row in reader]
+                csv_str = "\n".join([", ".join(row) for row in data])
+                response_text.config(state=tk.NORMAL)
+                response_text.delete(1.0, tk.END)
+                response_text.insert(tk.END, "Analyzing CSV...")
+            with usermodel.chat_session(system_prompt=system_prompt):
+                csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
+                response_text.config(state=tk.NORMAL)
+                response_text.delete(1.0, tk.END)
+                response_text.insert(tk.END, "Cyckle>>> " + csvresponse)
+                response_text.config(state=tk.DISABLED)
+        except Exception as e:
+            print(f"[DEBUG] Failed to read CSV file: {e}")
+
 root = tk.Tk()
 root.withdraw() 
 
 def maingui():
-    global response_text, entry, label1, main, icon
+    global main, label1, entry, response_text
     splash.destroy()
+    
+    main = tk.Toplevel()
+    main.config(bg="#092332")
+    main.title("Cyckle")
+    main.resizable(False, False)
 
-    # window config
     icon = pi(file="assets/icon.png")
-    main = tk.Tk()
     main.iconphoto(True, icon)
 
     style = ttk.Style(main)
@@ -112,9 +149,6 @@ def maingui():
     style.configure("TLabel", foreground="#ffffff", background="#092332")
     style.configure("TEntry", foreground="#ffffff", fieldbackground="#092332", background="#092332")
 
-    main.config(bg="#092332")
-    main.title("Cyckle")
-    main.resizable(False, False)
     periodic_redraw()
 
     # window geometries
@@ -125,14 +159,15 @@ def maingui():
     main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")
 
     # grid config
-    main.grid_rowconfigure(0, weight=1)
-    main.grid_rowconfigure(1, weight=1)
+    main.grid_rowconfigure(0, weight=2)
+    main.grid_rowconfigure(1, weight=5)
     main.grid_rowconfigure(2, weight=0)
     main.grid_columnconfigure(0, weight=1)
+    main.grid_rowconfigure(0, minsize=50)
 
     label1 = ttk.Label(master=main, text="YOU>>>")
     label1.config(font=("DejaVu Sans", 20))
-    label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+    label1.grid(row=0, column=0, sticky="nw", padx=10, pady=10)
 
     # text label
     response_text = tk.Text(master=main, wrap=tk.WORD, bg="#1c1c1c", fg="#ffffff", font=("DejaVu Sans", 20), relief=tk.FLAT)
@@ -144,22 +179,31 @@ def maingui():
     entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
     entry.focus_set()
     entry.bind("<Return>", handle_input)
+    entry.bind("<Up>", handle_history)
+    entry.bind("<Down>", handle_history)
+
+    # analysis button
+    csv_button = ttk.Button(master=main, text="ligmaballs", command=handle_csv)
+    csv_button.grid(row=3, column=0, sticky="ew", padx=10, pady=(0, 10))
 
     # redraw system
     main.bind("<Map>", lambda e: force_redraw())
     main.bind("<Visibility>", lambda e: force_redraw())
 
+    # me when my code has had undetected memory leaks for 3 months
+    main.protocol("WM_DELETE_WINDOW", lambda: (clean_up(), main.destroy()))
+
     main.mainloop()
 
-def force_redraw():
+cpdef force_redraw():
     main.update_idletasks()
     main.update()
 
-def periodic_redraw():
+cpdef periodic_redraw():
     force_redraw()
     main.after(1000, periodic_redraw)
 
-def center_window(win, width, height):
+cpdef center_window(win, width, height):
     screen_width = win.winfo_screenwidth()
     screen_height = win.winfo_screenheight()
 
@@ -167,6 +211,19 @@ def center_window(win, width, height):
     y = (screen_height // 2) - (height // 2)
 
     win.geometry(f"{width}x{height}+{x}+{y}")
+
+cpdef clean_up():
+    global usermodel, response_text, entry, label1
+    try:
+        usermodel = None 
+    except: pass
+
+    try:
+        response_text.destroy()
+        entry.destroy()
+        label1.destroy()
+        main.destroy()
+    except: pass
 
 splash = tk.Toplevel()
 splash.overrideredirect(True)
