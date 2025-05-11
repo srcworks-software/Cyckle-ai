@@ -94,13 +94,13 @@ cpdef void handle_input(event=None):
 
     else:
         print(f"[DEBUG] Forwarding input to model.")
+        label1.config(text="YOU>>> " + userinput)
         with usermodel.chat_session(system_prompt=system_prompt):
             response = usermodel.generate(userinput, max_tokens=modtokens, callback=stream, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
             response_text.config(state=tk.NORMAL)
             response_text.delete(1.0, tk.END)
             response_text.insert(tk.END, "Cyckle>>> " + response)
             response_text.config(state=tk.DISABLED)
-            label1.config(text="YOU>>> " + userinput)
     entry.delete(0, tk.END)
 
 cpdef void random_placeholder(event):
