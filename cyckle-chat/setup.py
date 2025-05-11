@@ -5,12 +5,23 @@ extensions = [
     Extension(
         name="main",
         sources=["main.pyx"],
-        extra_compile_args=["-fPIC"],
+        extra_compile_args=["-O3","-fPIC"],
     )
 ]
 
 setup(
     name="CyckleAI",
-    ext_modules=cythonize(extensions, language_level="3", cache=True),
+    ext_modules=cythonize(
+        extensions,
+        compiler_directives={
+            "language_level": 3,
+            "boundscheck": False,
+            "wraparound": False,
+            "cdivision": True,
+            "nonecheck": False,
+        },
+        annotate=True,
+        cache=True
+    ),
     zip_safe=False,
 )

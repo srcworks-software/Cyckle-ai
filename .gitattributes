@@ -4,3 +4,4 @@ build/** linguist-vendored
 *.c linguist-generated
 *.h linguist-generated
 *.ipynb linguist-vendored
+*.html linguist-generated

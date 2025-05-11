@@ -1,10 +1,11 @@
-# cython: language_level=3
+# cython: language_level=3, boundscheck=True, wraparound=True
 # Note to self: here's how to start a venv:
 """
 python3 -m venv venv
 source venv/bin/activate
 python3 -m pip install -r requirements.txt
 """
+
 import cython
 import csv
 import tkinter as tk
@@ -16,6 +17,7 @@ from gpt4all import GPT4All
 import json
 import gc
 import sys
+import random
 
 cdef int modtokens
 cdef tuple optimize():
@@ -52,6 +54,14 @@ system_prompt = '''You are Cyckle, a helpful AI assistant. Your responses should
 cdef object usermodel
 usermodel = GPT4All("Phi-3.5-mini-instruct-IQ3_XS.gguf", model_path="models", n_threads=threads)
 
+def stream(token_id, token):
+    response_text.config(state=tk.NORMAL)
+    response_text.insert(tk.END, token)
+    response_text.config(state=tk.DISABLED)
+    response_text.see(tk.END)
+    response_text.update_idletasks()
+    return True
+
 cpdef void handle_input(event=None):
     print(f"[DEBUG] Input registered.")
     global modtokens , cmdhistory, poshistory, usermodel
@@ -85,13 +95,28 @@ cpdef void handle_input(event=None):
     else:
         print(f"[DEBUG] Forwarding input to model.")
         with usermodel.chat_session(system_prompt=system_prompt):
-            response = usermodel.generate(userinput, max_tokens=modtokens, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
+            response = usermodel.generate(userinput, max_tokens=modtokens, callback=stream, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
             response_text.config(state=tk.NORMAL)
             response_text.delete(1.0, tk.END)
             response_text.insert(tk.END, "Cyckle>>> " + response)
             response_text.config(state=tk.DISABLED)
             label1.config(text="YOU>>> " + userinput)
     entry.delete(0, tk.END)
+
+cpdef void random_placeholder(event):
+    global used_placeholder
+    placeholders = ["Ask anything", "Quench your wonder", "What's on your mind?", "Your query awaits", "Unleash your curiosity", "Seek information"]
+    used_placeholder = random.choice(placeholders)
+
+cpdef entry_focus(event):
+    if entry.get() == used_placeholder:
+        entry.delete(0, tk.END)
+        entry.config(foreground="#ffffff")
+
+cpdef entry_unfocus(event):
+    if entry.get() == '':
+        entry.insert(0, used_placeholder)
+        entry.config(foreground="#D3D3D3")
 
 cpdef void handle_history(event):
     global poshistory
@@ -123,7 +148,7 @@ cpdef void handle_csv(event=None):
                 response_text.delete(1.0, tk.END)
                 response_text.insert(tk.END, "Analyzing CSV...")
             with usermodel.chat_session(system_prompt=system_prompt):
-                csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
+                csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, callback=stream, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
                 response_text.config(state=tk.NORMAL)
                 response_text.delete(1.0, tk.END)
                 response_text.insert(tk.END, "Cyckle>>> " + csvresponse)
@@ -180,8 +205,10 @@ def maingui():
     # entry box
     entry = ttk.Entry(master=main, font=("DejaVu Sans", 15))
     entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
-    entry.focus_set()
+    random_placeholder(None)
     entry.bind("<Return>", handle_input)
+    entry.bind("<FocusIn>", entry_focus)
+    entry.bind("<FocusOut>", entry_unfocus)
     entry.bind("<Up>", handle_history)
     entry.bind("<Down>", handle_history)
 
