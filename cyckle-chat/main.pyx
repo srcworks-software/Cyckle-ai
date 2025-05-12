@@ -75,6 +75,9 @@ cpdef void handle_input(event=None):
     if userinput.lower() == "quit":
         print(f"[DEBUG] User requested to quit.")
         main.quit()
+        gc.collect()
+        sys.exit(0)
+        return
 
     elif userinput.lower() == "modtokens":
         print(f"[DEBUG] User requested to modify token limit.")
@@ -95,6 +98,10 @@ cpdef void handle_input(event=None):
     else:
         print(f"[DEBUG] Forwarding input to model.")
         label1.config(text="YOU>>> " + userinput)
+        response_text.config(state=tk.NORMAL)
+        response_text.delete(1.0, tk.END)
+        response_text.insert(tk.END, "\n")
+        response_text.config(state=tk.DISABLED)
         with usermodel.chat_session(system_prompt=system_prompt):
             response = usermodel.generate(userinput, max_tokens=modtokens, callback=stream, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
             response_text.config(state=tk.NORMAL)
@@ -136,7 +143,7 @@ cpdef void handle_history(event):
 
 cpdef void handle_csv(event=None):
     global response_text, main, label1
-    main.filename = fd.askopenfilename(initialdir = "/",title = "Open CSV file",filetypes = (("CSV files","*.csv"),("All files","*.*")))
+    main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV file",filetypes = (("CSV files","*.csv"),("All files","*.*")))
     
     if main.filename:
         try:
@@ -147,6 +154,7 @@ cpdef void handle_csv(event=None):
                 response_text.config(state=tk.NORMAL)
                 response_text.delete(1.0, tk.END)
                 response_text.insert(tk.END, "Analyzing CSV...")
+                label1.config(text="CSV>>> " +main.filename)
             with usermodel.chat_session(system_prompt=system_prompt):
                 csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, callback=stream, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
                 response_text.config(state=tk.NORMAL)
@@ -193,9 +201,10 @@ def maingui():
     main.grid_columnconfigure(0, weight=1)
     main.grid_rowconfigure(0, minsize=50)
 
-    label1 = ttk.Label(master=main, text="YOU>>>")
+    label1 = ttk.Label(master=main, text="YOU>>>", anchor="w")
     label1.config(font=("DejaVu Sans", 20))
-    label1.grid(row=0, column=0, sticky="nw", padx=10, pady=10)
+    label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=(20, 10))
+    main.grid_rowconfigure(0, minsize=70)
 
     # text label
     response_text = tk.Text(master=main, wrap=tk.WORD, bg="#1c1c1c", fg="#ffffff", font=("DejaVu Sans", 20), relief=tk.FLAT)
@@ -214,7 +223,7 @@ def maingui():
 
     # analysis button
     csv_button = ttk.Button(master=main, text="Analyze CSV", command=handle_csv, style="TButton")
-    csv_button.grid(row=3, column=0, sticky="ew", padx=10, pady=(0, 10))
+    csv_button.grid(row=3, column=0, sticky="ew", padx=10, pady=(10, 10))
 
     # redraw system
     main.bind("<Map>", lambda e: force_redraw())
@@ -223,26 +232,9 @@ def maingui():
     # me when my code has had undetected memory leaks for 3 months
     main.protocol("WM_DELETE_WINDOW", lambda: (clean_up(), main.destroy()))
 
+    sys_watchdog()
+
     main.mainloop()
-
-cpdef low_mem_warn(mem_warn_mb=1024):
-    unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
-    return unalloc_mem < mem_warn_mb
-
-cpdef low_mem_crticial(mem_warn_mb=512):
-    unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
-
-cpdef sys_watchdog():
-    if low_mem_warn(1024):
-        print(f"[WATCHDOG] Low memory detected, please attempt to free resources outside of the main Cyckle application.")
-        gc.collect()
-    if low_mem_crticial(512):
-        print(f"[WATCHDOG] Memory is critically low, exiting main Cyckle application.")
-        gc.collect()
-        sys.exit(1)
-    else:
-        print(f"[WATCHDOG] Memory is sufficient, continuing operation.")
-    main.after(5000, sys_watchdog)
 
 cpdef force_redraw():
     main.update_idletasks()
@@ -274,7 +266,28 @@ cpdef clean_up():
         main.destroy()
         gc.collect()
         sys.exit(0)
+        quit()
+        return
     except: pass
+
+cpdef low_mem_warn(mem_warn_mb=1024):
+    unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
+    return unalloc_mem < mem_warn_mb
+
+cpdef bint low_mem_crticial(mem_warn_mb=512):
+    unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
+    return unalloc_mem < mem_warn_mb
+
+cpdef sys_watchdog():
+    if low_mem_warn(1024):
+        print(f"[WATCHDOG] Low memory detected, please attempt to free resources outside of the main Cyckle application.")
+    if low_mem_crticial(512):
+        print(f"[WATCHDOG] Memory is critically low, exiting main Cyckle application.")
+        gc.collect()
+        sys.exit(1)
+    else:
+        print(f"[WATCHDOG] Memory is sufficient, continuing operation.")
+    main.after(5000, sys_watchdog)
 
 splash = tk.Toplevel()
 splash.overrideredirect(True)

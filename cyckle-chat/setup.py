@@ -20,7 +20,6 @@ setup(
             "cdivision": True,
             "nonecheck": False,
         },
-        annotate=True,
         cache=True
     ),
     zip_safe=False,
