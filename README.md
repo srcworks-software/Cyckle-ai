@@ -51,7 +51,7 @@ In order to modify the amount of tokens in Cyckle, type ```modtokens``` in the m
 #### Quit
 Pretty self-explanatory, quits the program. Type ```quit``` to execute this.
 
-### FAQ (Frequently Asked Questions)
+## FAQ (Frequently Asked Questions)
 These are some questions that are probably never asked but just incase they are, here you go.
 
 #### What model does Cyckle use?
