@@ -70,6 +70,7 @@ These days, you could run it on almost anything!
 | GPU   | Integrated | Dedicated |
 
 ***Note***
+
 While Cyckle was tested on Debian 13, I check compatibility with Python versions supported by Debian 12 and I believe you should be fine on Debian 12. If not, let me know!
 
 # Cyckle Developer Handbook
