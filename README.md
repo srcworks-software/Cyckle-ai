@@ -68,8 +68,10 @@ These days, you could run it on almost anything!
 | CPU   | Intel Sandy Bridge/AMD Bulldozer | Intel Haswell/AMD Excavator |
 | RAM   | 4GB | 8GB |
 | GPU   | Integrated | Dedicated |
-| HDD   | 1.8GB | 5GB |
-| OS    | Debian 12 | Debian 13 |
+
+***Note***
+While Cyckle was tested on Debian 13, I check compatibility with Python versions supported by Debian 12 and I believe you should be fine on Debian 12. If not, let me know!
+
 # Cyckle Developer Handbook
 If you are interested in developing, contributing, or just want a better understanding of Cyckle's source code, check out our Jupyter Notebook file in the ```handbook/``` directory! 
 
