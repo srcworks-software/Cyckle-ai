@@ -162,7 +162,7 @@ cpdef void handle_csv(event=None):
                 response_text.insert(tk.END, "Cyckle>>> " + csvresponse)
                 response_text.config(state=tk.DISABLED)
         except Exception as e:
-            print(f"[DEBUG] Failed to read CSV file: {e}")
+            print(f"[CSV] Failed to read CSV file: {e}")
 
 root = tk.Tk()
 root.withdraw() 
