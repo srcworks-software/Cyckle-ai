@@ -18,6 +18,11 @@ import json
 import gc
 import sys
 import random
+import threading
+import pyttsx3
+import time
+import queue
+import re
 
 cdef int modtokens
 cdef tuple optimize():
@@ -54,13 +59,48 @@ system_prompt = '''You are Cyckle, a helpful AI assistant. Your responses should
 cdef object usermodel
 usermodel = GPT4All("Phi-3.5-mini-instruct-IQ3_XS.gguf", model_path="models", n_threads=threads)
 
+cdef str sentence_buffer = ""
 def stream(token_id, token):
+    global sentence_buffer
     response_text.config(state=tk.NORMAL)
     response_text.insert(tk.END, token)
     response_text.config(state=tk.DISABLED)
     response_text.see(tk.END)
     response_text.update_idletasks()
+
+    sentence_buffer += token
+    if re.search(r"[.!?]['\")\]]?\s$", sentence_buffer):
+        tts_queue.put(sentence_buffer.strip())
+        sentence_buffer = ""
     return True
+    return True
+
+cdef object tts_engine = pyttsx3.init()
+tts_engine.setProperty('rate', 150)
+tts_engine.setProperty('volume', 0.85)
+tts_engine.setProperty('voice', tts_engine.getProperty('voices')[1].id)
+
+cdef str tts_buffer = ""
+cdef object tts_lock = threading.Lock()
+cdef stop_tts = False
+cdef object tts_queue = queue.Queue()
+
+cpdef tts_runner():
+    global stop_tts
+    while not stop_tts:
+        try:
+            chunk = tts_queue.get(timeout=1)
+            if chunk is None:
+                break
+            chunk += " ..."
+
+            tts_engine.say(chunk)
+            tts_engine.runAndWait()
+            tts_engine.stop() 
+        except queue.Empty:
+            continue
+        except Exception as e:
+            print(f"[TTS] Error: {e}")
 
 cpdef void handle_input(event=None):
     print(f"[DEBUG] Input registered.")
@@ -232,7 +272,10 @@ def maingui():
     # me when my code has had undetected memory leaks for 3 months
     main.protocol("WM_DELETE_WINDOW", lambda: (clean_up(), main.destroy()))
 
+    # function calls
     sys_watchdog()
+    tts_thread = threading.Thread(target=tts_runner, daemon=True)
+    tts_thread.start()
 
     main.mainloop()
 
