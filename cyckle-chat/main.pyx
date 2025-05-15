@@ -78,7 +78,8 @@ def stream(token_id, token):
 cdef object tts_engine = pyttsx3.init()
 tts_engine.setProperty('rate', 150)
 tts_engine.setProperty('volume', 0.85)
-tts_engine.setProperty('voice', tts_engine.getProperty('voices')[1].id)
+voices = tts_engine.getProperty('voices')
+tts_engine.setProperty('voice', voices[33].id)
 
 cdef str tts_buffer = ""
 cdef object tts_lock = threading.Lock()
