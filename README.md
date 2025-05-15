@@ -28,6 +28,7 @@ Before we start, paste in the following command:
     sudo chmod +x dependency-fixer.sh
     sudo ./dependency-fixer.sh
 ```
+
 #### Step 1.1: Cleaning
 
 If you would like to clean up the directory, do the following:
@@ -46,13 +47,16 @@ Execute the executable through makefile.
 The following parameters and commands will display and modify different information.
 
 #### Token Modifier
-In order to modify the amount of tokens in Cyckle, type ```modtokens``` in the message box. It will pull up a window where you can modify the modtoken parameter. This saves to a file named ```data.json```
+In order to modify the amount of tokens in Cyckle, type ```modtokens``` in the message box. It will pull up a window where you can modify the modtoken parameter. This saves to a file named ```data.json```.
 
 #### Quit
 Pretty self-explanatory, quits the program. Type ```quit``` to execute this.
 
+#### CSV Analysis
+You can have Cyckle analyze the information of a CSV file. To get started, click the "Analyze CSV" button below the entry box, choose the desired file in the pop-up window, and Cyckle will start analyzing! 
+
 ## FAQ (Frequently Asked Questions)
-These are some questions that are probably never asked but just incase they are, here you go.
+These questions were never actually asked, but I just wanted to clarify some information.
 
 #### What model does Cyckle use?
 Despite using the *GPT*4all library, it actually utilizes the ```phi``` family of models.
@@ -69,12 +73,13 @@ These days, you could run it on almost anything!
 | RAM   | 4GB | 8GB |
 | GPU   | Integrated | Dedicated |
 
-***Note***
-
-While Cyckle was tested on Debian 13, I check compatibility with Python versions supported by Debian 12 and I believe you should be fine on Debian 12. If not, let me know!
+***Note*** - While Cyckle was tested on Debian 13, I believe all of the dependencies will work on Debian 12. If not, let me know!
 
 # Cyckle Developer Handbook
 If you are interested in developing, contributing, or just want a better understanding of Cyckle's source code, check out our Jupyter Notebook file in the ```handbook/``` directory! 
+
+# Contributing
+Read our ```CONTRIBUTING.md``` for information regarding contributions to Cyckle.
 
 # NOTICE
 This software is provided subject to the MIT License and may be republished or distributed only in accordance with the terms of the MIT License. 
