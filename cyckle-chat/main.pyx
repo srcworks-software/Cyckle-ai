@@ -73,7 +73,6 @@ def stream(token_id, token):
         tts_queue.put(sentence_buffer.strip())
         sentence_buffer = ""
     return True
-    return True
 
 cdef object tts_engine = pyttsx3.init()
 tts_engine.setProperty('rate', 150)
@@ -184,9 +183,29 @@ cpdef void handle_history(event):
 
 cpdef void handle_csv(event=None):
     global response_text, main, label1
-    main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV file",filetypes = (("CSV files","*.csv"),("All files","*.*")))
+    main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV/TSV file",filetypes = (("CSV/TSV files","*.csv *.tsv"),("All files","*.*")))
     
-    if main.filename:
+    if main.filename.endswith(".tsv"):
+        try:
+            with open(main.filename, newline='') as tsvfile:
+                reader = csv.reader(tsvfile)
+                data = [row for row in reader]
+                tsv_str = "\n".join([", ".join(row) for row in data])
+                response_text.config(state=tk.NORMAL)
+                response_text.delete(1.0, tk.END)
+                response_text.insert(tk.END, "Analyzing TSV...")
+                label1.config(text="TSV>>> " +main.filename)
+            with usermodel.chat_session(system_prompt=system_prompt):
+                print("[TSV] Generating analysis")
+                tsvresponse = usermodel.generate(tsv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)
+                response_text.config(state=tk.NORMAL)
+                response_text.delete(1.0, tk.END)
+                response_text.insert(tk.END, "Cyckle>>> " + tsvresponse)
+                response_text.config(state=tk.DISABLED)
+        except Exception as e:
+            print(f"[TSV] Failed to read TSV file: {e}")
+
+    if main.filename.endswith(".csv"):
         try:
             with open(main.filename, newline='') as csvfile:
                 reader = csv.reader(csvfile)
@@ -197,7 +216,8 @@ cpdef void handle_csv(event=None):
                 response_text.insert(tk.END, "Analyzing CSV...")
                 label1.config(text="CSV>>> " +main.filename)
             with usermodel.chat_session(system_prompt=system_prompt):
-                csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, callback=stream, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
+                print("[CSV] Generating analysis")
+                csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)
                 response_text.config(state=tk.NORMAL)
                 response_text.delete(1.0, tk.END)
                 response_text.insert(tk.END, "Cyckle>>> " + csvresponse)
