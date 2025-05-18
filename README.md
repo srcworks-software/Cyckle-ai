@@ -10,11 +10,31 @@ The graphical chatbot interface of Cyckle.
 
 ## Installation
 
-This is currently the easiest method to install Cyckle.
+You can currently install Cyckle with either method.
+
+### Installing from PyPi (Recommended)
+
+This method utilizes ```pip``` for installing Cyckle.
+
+#### Step 1: Installing
+
+Using ```pip```, run the following:
+```bash
+    pip install cyckleai
+```
+***Note*** - We recommend installing Cyckle globally instead of within an isolated environment (like a ```venv```).
+
+#### Step 2: Running
+
+Simply just run this command:
+```
+    cyckle
+```
+And you are on your way!
 
 ### Compile it from source
 
-As the title says, this method requires you to compile Cyckle from source. This is pretty easy as it utilizes makefile.
+As the title says, this method requires you to compile Cyckle from source.
 
 #### Step 1: Install dependencies
 
@@ -43,7 +63,7 @@ Execute the executable through makefile.
     make run
 ```
 
-### Parameters/Commands
+## Parameters/Commands
 The following parameters and commands will display and modify different information.
 
 #### Token Modifier
