@@ -10,40 +10,25 @@ The graphical chatbot interface of Cyckle.
 
 ## Installation
 
-This is currently the easiest method to install Cyckle.
+This utilizes ```pip``` for installing Cyckle.
 
-### Compile it from source
+#### Step 1: Installing
 
-As the title says, this method requires you to compile Cyckle from source. This is pretty easy as it utilizes makefile.
-
-#### Step 1: Install dependencies
-
-Before we start, paste in the following command:
+Using ```pip```, run the following:
 ```bash
-    git clone https://github.com/srcworks-software/Cyckle-ai
+    pip install cyckleai
 ```
-
-```bash
-    cd Cyckle-ai/cyckle-chat
-    sudo chmod +x dependency-fixer.sh
-    sudo ./dependency-fixer.sh
-```
-
-#### Step 1.1: Cleaning
-
-If you would like to clean up the directory, do the following:
-```bash
-    sudo ./clean.sh
-```
+***Note*** - We recommend installing Cyckle globally instead of within an isolated environment (like a ```venv```).
 
 #### Step 2: Running
 
-Execute the executable through makefile.
-```bash
-    make run
+Simply just run this command:
 ```
+    cyckle
+```
+And you are on your way!
 
-### Parameters/Commands
+## Parameters/Commands
 The following parameters and commands will display and modify different information.
 
 #### Token Modifier
