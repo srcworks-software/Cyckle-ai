@@ -51,7 +51,7 @@ These questions were never actually asked, but I just wanted to clarify some inf
 Despite using the *GPT*4all library, it actually utilizes the ```phi``` family of models.
 
 #### Will Cyckle be packaged into my distro's package repos?
-Currently, any and all packaging systems have been SEVERELY painful to set up. So for as long as that is true, don't expect an easy-to-install Cyckle.
+Even better; we're on PyPi! Just install ```pip``` and you can easily install Cyckle on your system!
 
 #### What system do I need for Cyckle?
 These days, you could run it on almost anything!
