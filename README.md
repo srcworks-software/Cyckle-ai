@@ -12,6 +12,10 @@ The graphical chatbot interface of Cyckle.
 
 This utilizes ```pip``` for installing Cyckle.
 
+### Installing from PyPi
+
+This method utilizes ```pip``` for installing Cyckle.
+
 #### Step 1: Installing
 
 Using ```pip```, run the following:
@@ -58,7 +62,7 @@ These days, you could run it on almost anything!
 | RAM   | 4GB | 8GB |
 | GPU   | Integrated | Dedicated |
 
-***Note*** - While Cyckle was tested on Debian 13, I believe all of the dependencies will work on Debian 12. If not, let me know!
+***Note*** - While Cyckle was tested on Debian 13, I believe all of the dependencies should work on Debian 12. If not, let me know!
 
 # Cyckle Developer Handbook
 If you are interested in developing, contributing, or just want a better understanding of Cyckle's source code, check out our Jupyter Notebook file in the ```handbook/``` directory! 

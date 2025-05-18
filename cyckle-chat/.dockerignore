@@ -1,0 +1,7 @@
+.git
+dist
+build
+*.pyc
+__pycache__
+.venv
+wheelhouse
