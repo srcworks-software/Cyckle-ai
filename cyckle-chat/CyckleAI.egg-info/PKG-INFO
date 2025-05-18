@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: CyckleAI
+Version: 1.3.0
+Requires-Dist: gpt4all>=1.0.0
+Requires-Dist: cython>=3.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: psutil>=5.9.0
+Requires-Dist: setuptools>=69.0.0
+Requires-Dist: ipykernel>=6.0.0
+Requires-Dist: pyttsx3<2.0.0
+Dynamic: requires-dist

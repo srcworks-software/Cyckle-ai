@@ -6,3 +6,5 @@ __pycache__/
 .Python
 pip-log.txt
 *.gguf
+*.whl
+wheelhouse/
