@@ -6,12 +6,12 @@
         "extra_compile_args": [
             "-fPIC"
         ],
-        "name": "main",
+        "name": "cyckleapp.main",
         "sources": [
-            "main.pyx"
+            "cyckleapp/main.pyx"
         ]
     },
-    "module_name": "main"
+    "module_name": "cyckleapp.main"
 }
 END: Cython Metadata */
 
@@ -1119,8 +1119,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__main
-#define __PYX_HAVE_API__main
+#define __PYX_HAVE__cyckleapp__main
+#define __PYX_HAVE_API__cyckleapp__main
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -1327,7 +1327,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char* const __pyx_f[] = {
-  "main.pyx",
+  "cyckleapp/main.pyx",
 };
 /* #### Code section: utility_code_proto_before_types ### */
 /* Atomics.proto */
@@ -1494,55 +1494,55 @@ static const char* const __pyx_f[] = {
 /* #### Code section: type_declarations ### */
 
 /*--- Type declarations ---*/
-struct __pyx_opt_args_4main_handle_input;
-struct __pyx_opt_args_4main_handle_csv;
-struct __pyx_opt_args_4main_low_mem_warn;
-struct __pyx_opt_args_4main_low_mem_crticial;
+struct __pyx_opt_args_9cyckleapp_4main_handle_input;
+struct __pyx_opt_args_9cyckleapp_4main_handle_csv;
+struct __pyx_opt_args_9cyckleapp_4main_low_mem_warn;
+struct __pyx_opt_args_9cyckleapp_4main_low_mem_crticial;
 
-/* "main.pyx":104
+/* "cyckleapp/main.pyx":104
  *             print(f"[TTS] Error: {e}")
  * 
  * cpdef void handle_input(event=None):             # <<<<<<<<<<<<<<
  *     print(f"[DEBUG] Input registered.")
  *     global modtokens , cmdhistory, poshistory, usermodel
 */
-struct __pyx_opt_args_4main_handle_input {
+struct __pyx_opt_args_9cyckleapp_4main_handle_input {
   int __pyx_n;
   PyObject *event;
 };
 
-/* "main.pyx":183
+/* "cyckleapp/main.pyx":183
  *             entry.delete(0, tk.END)
  * 
  * cpdef void handle_csv(event=None):             # <<<<<<<<<<<<<<
  *     global response_text, main, label1
  *     main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV/TSV file",filetypes = (("CSV/TSV files","*.csv *.tsv"),("All files","*.*")))
 */
-struct __pyx_opt_args_4main_handle_csv {
+struct __pyx_opt_args_9cyckleapp_4main_handle_csv {
   int __pyx_n;
   PyObject *event;
 };
 
-/* "main.pyx":336
+/* "cyckleapp/main.pyx":336
  *     except: pass
  * 
  * cpdef low_mem_warn(mem_warn_mb=1024):             # <<<<<<<<<<<<<<
  *     unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
  *     return unalloc_mem < mem_warn_mb
 */
-struct __pyx_opt_args_4main_low_mem_warn {
+struct __pyx_opt_args_9cyckleapp_4main_low_mem_warn {
   int __pyx_n;
   PyObject *mem_warn_mb;
 };
 
-/* "main.pyx":340
+/* "cyckleapp/main.pyx":340
  *     return unalloc_mem < mem_warn_mb
  * 
  * cpdef bint low_mem_crticial(mem_warn_mb=512):             # <<<<<<<<<<<<<<
  *     unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
  *     return unalloc_mem < mem_warn_mb
 */
-struct __pyx_opt_args_4main_low_mem_crticial {
+struct __pyx_opt_args_9cyckleapp_4main_low_mem_crticial {
   int __pyx_n;
   PyObject *mem_warn_mb;
 };
@@ -2422,40 +2422,40 @@ static int __Pyx_State_RemoveModule(void*);
 
 /* Module declarations from "cython" */
 
-/* Module declarations from "main" */
-static int __pyx_v_4main_modtokens;
-static PyObject *__pyx_v_4main_cmdhistory = 0;
-static int __pyx_v_4main_poshistory;
-static PyObject *__pyx_v_4main_usermodel = 0;
-static PyObject *__pyx_v_4main_sentence_buffer = 0;
-static PyObject *__pyx_v_4main_tts_engine = 0;
-static PyObject *__pyx_v_4main_tts_buffer = 0;
-static PyObject *__pyx_v_4main_tts_lock = 0;
-static PyObject *__pyx_v_4main_stop_tts = 0;
-static PyObject *__pyx_v_4main_tts_queue = 0;
-static PyObject *__pyx_f_4main_optimize(void); /*proto*/
-static int __pyx_f_4main_read_tokens_from_json(void); /*proto*/
-static PyObject *__pyx_f_4main_tts_runner(int __pyx_skip_dispatch); /*proto*/
-static void __pyx_f_4main_handle_input(int __pyx_skip_dispatch, struct __pyx_opt_args_4main_handle_input *__pyx_optional_args); /*proto*/
-static void __pyx_f_4main_random_placeholder(PyObject *, int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_4main_entry_focus(PyObject *, int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_4main_entry_unfocus(PyObject *, int __pyx_skip_dispatch); /*proto*/
-static void __pyx_f_4main_handle_history(PyObject *, int __pyx_skip_dispatch); /*proto*/
-static void __pyx_f_4main_handle_csv(int __pyx_skip_dispatch, struct __pyx_opt_args_4main_handle_csv *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_4main_force_redraw(int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_4main_periodic_redraw(int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_4main_center_window(PyObject *, PyObject *, PyObject *, int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_4main_clean_up(int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_4main_low_mem_warn(int __pyx_skip_dispatch, struct __pyx_opt_args_4main_low_mem_warn *__pyx_optional_args); /*proto*/
-static int __pyx_f_4main_low_mem_crticial(int __pyx_skip_dispatch, struct __pyx_opt_args_4main_low_mem_crticial *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_4main_sys_watchdog(int __pyx_skip_dispatch); /*proto*/
+/* Module declarations from "cyckleapp.main" */
+static int __pyx_v_9cyckleapp_4main_modtokens;
+static PyObject *__pyx_v_9cyckleapp_4main_cmdhistory = 0;
+static int __pyx_v_9cyckleapp_4main_poshistory;
+static PyObject *__pyx_v_9cyckleapp_4main_usermodel = 0;
+static PyObject *__pyx_v_9cyckleapp_4main_sentence_buffer = 0;
+static PyObject *__pyx_v_9cyckleapp_4main_tts_engine = 0;
+static PyObject *__pyx_v_9cyckleapp_4main_tts_buffer = 0;
+static PyObject *__pyx_v_9cyckleapp_4main_tts_lock = 0;
+static PyObject *__pyx_v_9cyckleapp_4main_stop_tts = 0;
+static PyObject *__pyx_v_9cyckleapp_4main_tts_queue = 0;
+static PyObject *__pyx_f_9cyckleapp_4main_optimize(void); /*proto*/
+static int __pyx_f_9cyckleapp_4main_read_tokens_from_json(void); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_tts_runner(int __pyx_skip_dispatch); /*proto*/
+static void __pyx_f_9cyckleapp_4main_handle_input(int __pyx_skip_dispatch, struct __pyx_opt_args_9cyckleapp_4main_handle_input *__pyx_optional_args); /*proto*/
+static void __pyx_f_9cyckleapp_4main_random_placeholder(PyObject *, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_entry_focus(PyObject *, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_entry_unfocus(PyObject *, int __pyx_skip_dispatch); /*proto*/
+static void __pyx_f_9cyckleapp_4main_handle_history(PyObject *, int __pyx_skip_dispatch); /*proto*/
+static void __pyx_f_9cyckleapp_4main_handle_csv(int __pyx_skip_dispatch, struct __pyx_opt_args_9cyckleapp_4main_handle_csv *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_force_redraw(int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_periodic_redraw(int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_center_window(PyObject *, PyObject *, PyObject *, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_clean_up(int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_low_mem_warn(int __pyx_skip_dispatch, struct __pyx_opt_args_9cyckleapp_4main_low_mem_warn *__pyx_optional_args); /*proto*/
+static int __pyx_f_9cyckleapp_4main_low_mem_crticial(int __pyx_skip_dispatch, struct __pyx_opt_args_9cyckleapp_4main_low_mem_crticial *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_sys_watchdog(int __pyx_skip_dispatch); /*proto*/
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "main"
-extern int __pyx_module_is_main_main;
-int __pyx_module_is_main_main = 0;
+#define __Pyx_MODULE_NAME "cyckleapp.main"
+extern int __pyx_module_is_main_cyckleapp__main;
+int __pyx_module_is_main_cyckleapp__main = 0;
 
-/* Implementation of "main" */
+/* Implementation of "cyckleapp.main" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_print;
 static PyObject *__pyx_builtin_open;
@@ -2500,6 +2500,7 @@ static const char __pyx_k_get[] = "get";
 static const char __pyx_k_j_A[] = "\230j\250\014\260A";
 static const char __pyx_k_pop[] = "pop";
 static const char __pyx_k_put[] = "put";
+static const char __pyx_k_q_1[] = "\200\001\330\004\005\330\004\010\210\n\220!\330\004\n\210&\220\001\220\026\220q\330\004\n\210)\2201";
 static const char __pyx_k_row[] = "row";
 static const char __pyx_k_say[] = "say";
 static const char __pyx_k_see[] = "see";
@@ -2645,7 +2646,6 @@ static const char __pyx_k_endswith[] = "endswith";
 static const char __pyx_k_filename[] = "filename";
 static const char __pyx_k_generate[] = "generate";
 static const char __pyx_k_geometry[] = "geometry";
-static const char __pyx_k_main_pyx[] = "main.pyx";
 static const char __pyx_k_mainloop[] = "mainloop";
 static const char __pyx_k_protocol[] = "protocol";
 static const char __pyx_k_q_r_HA_r[] = "\320\000\037\230q\330\004\022\220&\230\017\240r\250\033\260H\270A\330\004\013\210<\220r\230\021";
@@ -2661,6 +2661,7 @@ static const char __pyx_k_available[] = "available";
 static const char __pyx_k_configure[] = "configure";
 static const char __pyx_k_cpu_count[] = "cpu_count";
 static const char __pyx_k_data_json[] = "data.json";
+static const char __pyx_k_deiconify[] = "deiconify";
 static const char __pyx_k_filetypes[] = "filetypes";
 static const char __pyx_k_iconphoto[] = "iconphoto";
 static const char __pyx_k_logicores[] = "logicores";
@@ -2712,6 +2713,7 @@ static const char __pyx_k_center_window[] = "center_window";
 static const char __pyx_k_entry_unfocus[] = "entry_unfocus";
 static const char __pyx_k_response_text[] = "response_text";
 static const char __pyx_k_system_prompt[] = "system_prompt";
+static const char __pyx_k_cyckleapp_main[] = "cyckleapp.main";
 static const char __pyx_k_handle_history[] = "handle_history";
 static const char __pyx_k_repeat_penalty[] = "repeat_penalty";
 static const char __pyx_k_threads_in_use[] = " threads in use.";
@@ -2739,6 +2741,7 @@ static const char __pyx_k_1_RRg_h_B_B_C_vWAQ[] = "\200\001\330\004\005\330\004\0
 static const char __pyx_k_Quench_your_wonder[] = "Quench your wonder";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static const char __pyx_k_cyckleapp_main_pyx[] = "cyckleapp/main.pyx";
 static const char __pyx_k_random_placeholder[] = "random_placeholder";
 static const char __pyx_k_winfo_screenheight[] = "winfo_screenheight";
 static const char __pyx_k_What_s_on_your_mind[] = "What's on your mind?";
@@ -2772,25 +2775,26 @@ static const char __pyx_k_uHCq_b_Ba_Jaq_hc_b_1L_Ba_Jaq_AQ[] = "\200\001\330\004\
 static const char __pyx_k_Phi_3_mini_4k_instruct_Q4_0_gguf[] = "Phi-3-mini-4k-instruct.Q4_0.gguf";
 static const char __pyx_k_You_are_Cyckle_a_helpful_AI_assi[] = "You are Cyckle, a helpful AI assistant. Your responses should be clear, direct, and relevant to the user's questions. Aim to be informative yet concise.";
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_token_id, PyObject *__pyx_v_token); /* proto */
-static PyObject *__pyx_pf_4main_2tts_runner(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_4main_4handle_input(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
-static PyObject *__pyx_pf_4main_6random_placeholder(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
-static PyObject *__pyx_pf_4main_8entry_focus(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
-static PyObject *__pyx_pf_4main_10entry_unfocus(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
-static PyObject *__pyx_pf_4main_12handle_history(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
-static PyObject *__pyx_pf_4main_14handle_csv(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_token_id, PyObject *__pyx_v_token); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_2tts_runner(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_4handle_input(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_6random_placeholder(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_8entry_focus(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_10entry_unfocus(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_12handle_history(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_14handle_csv(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_e); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda1(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_e); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_4main_18force_redraw(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_4main_20periodic_redraw(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_4main_22center_window(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_win, PyObject *__pyx_v_width, PyObject *__pyx_v_height); /* proto */
-static PyObject *__pyx_pf_4main_24clean_up(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_4main_26low_mem_warn(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mem_warn_mb); /* proto */
-static PyObject *__pyx_pf_4main_28low_mem_crticial(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mem_warn_mb); /* proto */
-static PyObject *__pyx_pf_4main_30sys_watchdog(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_18force_redraw(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_20periodic_redraw(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_22center_window(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_win, PyObject *__pyx_v_width, PyObject *__pyx_v_height); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_24clean_up(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_26low_mem_warn(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mem_warn_mb); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_28low_mem_crticial(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mem_warn_mb); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_30sys_watchdog(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_9cyckleapp_4main_32main(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 /* SmallCodeConfig */
@@ -2834,8 +2838,8 @@ typedef struct {
   __Pyx_CachedCFunction __pyx_umethod_PyUnicode_Type__lower;
   __Pyx_CachedCFunction __pyx_umethod_PyUnicode_Type__strip;
   PyObject *__pyx_tuple[16];
-  PyObject *__pyx_codeobj_tab[19];
-  PyObject *__pyx_string_tab[289];
+  PyObject *__pyx_codeobj_tab[20];
+  PyObject *__pyx_string_tab[291];
   PyObject *__pyx_float_0_2;
   PyObject *__pyx_float_0_3;
   PyObject *__pyx_float_0_8;
@@ -3012,183 +3016,185 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_kp_u_csv_2 __pyx_string_tab[109]
 #define __pyx_n_u_csv_button __pyx_string_tab[110]
 #define __pyx_kp_u_csv_tsv __pyx_string_tab[111]
-#define __pyx_n_u_daemon __pyx_string_tab[112]
-#define __pyx_n_u_data __pyx_string_tab[113]
-#define __pyx_kp_u_data_json __pyx_string_tab[114]
-#define __pyx_n_u_delete __pyx_string_tab[115]
-#define __pyx_n_u_destroy __pyx_string_tab[116]
-#define __pyx_n_u_dump __pyx_string_tab[117]
-#define __pyx_n_u_e __pyx_string_tab[118]
-#define __pyx_n_u_endswith __pyx_string_tab[119]
-#define __pyx_n_u_enter __pyx_string_tab[120]
-#define __pyx_n_u_entry __pyx_string_tab[121]
-#define __pyx_n_u_entry_focus __pyx_string_tab[122]
-#define __pyx_n_u_entry_unfocus __pyx_string_tab[123]
-#define __pyx_n_u_event __pyx_string_tab[124]
-#define __pyx_n_u_ew __pyx_string_tab[125]
-#define __pyx_n_u_exit __pyx_string_tab[126]
-#define __pyx_n_u_exit_2 __pyx_string_tab[127]
-#define __pyx_n_u_fd __pyx_string_tab[128]
-#define __pyx_kp_u_ffffff __pyx_string_tab[129]
-#define __pyx_n_u_fg __pyx_string_tab[130]
-#define __pyx_n_u_fieldbackground __pyx_string_tab[131]
-#define __pyx_n_u_file __pyx_string_tab[132]
-#define __pyx_n_u_filedialog __pyx_string_tab[133]
-#define __pyx_n_u_filename __pyx_string_tab[134]
-#define __pyx_n_u_filetypes __pyx_string_tab[135]
-#define __pyx_n_u_font __pyx_string_tab[136]
-#define __pyx_n_u_force_redraw __pyx_string_tab[137]
-#define __pyx_n_u_foreground __pyx_string_tab[138]
-#define __pyx_n_u_func __pyx_string_tab[139]
-#define __pyx_n_u_gc __pyx_string_tab[140]
-#define __pyx_n_u_generate __pyx_string_tab[141]
-#define __pyx_n_u_geometry __pyx_string_tab[142]
-#define __pyx_n_u_get __pyx_string_tab[143]
-#define __pyx_n_u_getProperty __pyx_string_tab[144]
-#define __pyx_n_u_gpt4all __pyx_string_tab[145]
-#define __pyx_n_u_grid __pyx_string_tab[146]
-#define __pyx_n_u_grid_columnconfigure __pyx_string_tab[147]
-#define __pyx_n_u_grid_rowconfigure __pyx_string_tab[148]
-#define __pyx_n_u_handle_csv __pyx_string_tab[149]
-#define __pyx_n_u_handle_history __pyx_string_tab[150]
-#define __pyx_n_u_handle_input __pyx_string_tab[151]
-#define __pyx_n_u_height __pyx_string_tab[152]
-#define __pyx_kp_u_home __pyx_string_tab[153]
-#define __pyx_n_u_icon __pyx_string_tab[154]
-#define __pyx_n_u_iconphoto __pyx_string_tab[155]
-#define __pyx_n_u_id __pyx_string_tab[156]
-#define __pyx_n_u_image __pyx_string_tab[157]
-#define __pyx_n_u_indent __pyx_string_tab[158]
-#define __pyx_n_u_init __pyx_string_tab[159]
-#define __pyx_n_u_initialdir __pyx_string_tab[160]
-#define __pyx_n_u_initializing __pyx_string_tab[161]
-#define __pyx_n_u_insert __pyx_string_tab[162]
-#define __pyx_n_u_is_coroutine __pyx_string_tab[163]
-#define __pyx_kp_u_is_not_a_valid_integer_Please_t __pyx_string_tab[164]
-#define __pyx_n_u_json __pyx_string_tab[165]
-#define __pyx_n_u_keysym __pyx_string_tab[166]
-#define __pyx_n_u_label1 __pyx_string_tab[167]
-#define __pyx_n_u_lambda __pyx_string_tab[168]
-#define __pyx_n_u_load __pyx_string_tab[169]
-#define __pyx_n_u_logical __pyx_string_tab[170]
-#define __pyx_n_u_logicores __pyx_string_tab[171]
-#define __pyx_n_u_low_mem_crticial __pyx_string_tab[172]
-#define __pyx_n_u_low_mem_warn __pyx_string_tab[173]
-#define __pyx_n_u_lower __pyx_string_tab[174]
-#define __pyx_n_u_main __pyx_string_tab[175]
-#define __pyx_n_u_main_2 __pyx_string_tab[176]
-#define __pyx_kp_u_main_pyx __pyx_string_tab[177]
-#define __pyx_n_u_maingui __pyx_string_tab[178]
-#define __pyx_n_u_maingui_locals_lambda __pyx_string_tab[179]
-#define __pyx_n_u_mainloop __pyx_string_tab[180]
-#define __pyx_n_u_master __pyx_string_tab[181]
-#define __pyx_n_u_max_tokens __pyx_string_tab[182]
-#define __pyx_n_u_mem_warn_mb __pyx_string_tab[183]
-#define __pyx_n_u_messagebox __pyx_string_tab[184]
-#define __pyx_n_u_minsize __pyx_string_tab[185]
-#define __pyx_n_u_model_path __pyx_string_tab[186]
-#define __pyx_n_u_models __pyx_string_tab[187]
-#define __pyx_n_u_modtokens __pyx_string_tab[188]
-#define __pyx_n_u_module __pyx_string_tab[189]
-#define __pyx_n_u_n_batch __pyx_string_tab[190]
-#define __pyx_n_u_n_threads __pyx_string_tab[191]
-#define __pyx_n_u_name __pyx_string_tab[192]
-#define __pyx_n_u_newline __pyx_string_tab[193]
-#define __pyx_n_u_nsew __pyx_string_tab[194]
-#define __pyx_n_u_open __pyx_string_tab[195]
-#define __pyx_n_u_overrideredirect __pyx_string_tab[196]
-#define __pyx_n_u_pack __pyx_string_tab[197]
-#define __pyx_n_u_padx __pyx_string_tab[198]
-#define __pyx_n_u_pady __pyx_string_tab[199]
-#define __pyx_n_u_periodic_redraw __pyx_string_tab[200]
-#define __pyx_n_u_physcores __pyx_string_tab[201]
-#define __pyx_n_u_pi __pyx_string_tab[202]
-#define __pyx_n_u_pop __pyx_string_tab[203]
-#define __pyx_n_u_print __pyx_string_tab[204]
-#define __pyx_n_u_protocol __pyx_string_tab[205]
-#define __pyx_n_u_psutil __pyx_string_tab[206]
-#define __pyx_n_u_put __pyx_string_tab[207]
-#define __pyx_n_u_pyttsx3 __pyx_string_tab[208]
-#define __pyx_n_u_qualname __pyx_string_tab[209]
-#define __pyx_n_u_queue __pyx_string_tab[210]
-#define __pyx_n_u_quit __pyx_string_tab[211]
-#define __pyx_n_u_r __pyx_string_tab[212]
-#define __pyx_n_u_random __pyx_string_tab[213]
-#define __pyx_n_u_random_placeholder __pyx_string_tab[214]
-#define __pyx_n_u_rate __pyx_string_tab[215]
-#define __pyx_n_u_re __pyx_string_tab[216]
-#define __pyx_n_u_reader __pyx_string_tab[217]
-#define __pyx_n_u_relief __pyx_string_tab[218]
-#define __pyx_n_u_repeat_penalty __pyx_string_tab[219]
-#define __pyx_n_u_resizable __pyx_string_tab[220]
-#define __pyx_n_u_response_text __pyx_string_tab[221]
-#define __pyx_n_u_root __pyx_string_tab[222]
-#define __pyx_n_u_row __pyx_string_tab[223]
-#define __pyx_n_u_runAndWait __pyx_string_tab[224]
-#define __pyx_kp_u_s __pyx_string_tab[225]
-#define __pyx_n_u_say __pyx_string_tab[226]
-#define __pyx_n_u_search __pyx_string_tab[227]
-#define __pyx_n_u_see __pyx_string_tab[228]
-#define __pyx_n_u_setProperty __pyx_string_tab[229]
-#define __pyx_n_u_sh __pyx_string_tab[230]
-#define __pyx_n_u_showerror __pyx_string_tab[231]
-#define __pyx_n_u_showinfo __pyx_string_tab[232]
-#define __pyx_n_u_showwarning __pyx_string_tab[233]
-#define __pyx_n_u_shutil __pyx_string_tab[234]
-#define __pyx_n_u_simpledialog __pyx_string_tab[235]
-#define __pyx_n_u_spec __pyx_string_tab[236]
-#define __pyx_n_u_splash __pyx_string_tab[237]
-#define __pyx_n_u_splash_label __pyx_string_tab[238]
-#define __pyx_n_u_splashimg __pyx_string_tab[239]
-#define __pyx_n_u_start __pyx_string_tab[240]
-#define __pyx_n_u_state __pyx_string_tab[241]
-#define __pyx_n_u_sticky __pyx_string_tab[242]
-#define __pyx_n_u_stop __pyx_string_tab[243]
-#define __pyx_n_u_stream __pyx_string_tab[244]
-#define __pyx_n_u_strip __pyx_string_tab[245]
-#define __pyx_n_u_style __pyx_string_tab[246]
-#define __pyx_n_u_sw __pyx_string_tab[247]
-#define __pyx_n_u_swutil __pyx_string_tab[248]
-#define __pyx_n_u_sys __pyx_string_tab[249]
-#define __pyx_n_u_sys_watchdog __pyx_string_tab[250]
-#define __pyx_n_u_system_prompt __pyx_string_tab[251]
-#define __pyx_n_u_target __pyx_string_tab[252]
-#define __pyx_n_u_temp __pyx_string_tab[253]
-#define __pyx_n_u_test __pyx_string_tab[254]
-#define __pyx_n_u_text __pyx_string_tab[255]
-#define __pyx_n_u_theme_use __pyx_string_tab[256]
-#define __pyx_n_u_threading __pyx_string_tab[257]
-#define __pyx_n_u_threads __pyx_string_tab[258]
-#define __pyx_kp_u_threads_in_use __pyx_string_tab[259]
-#define __pyx_n_u_timeout __pyx_string_tab[260]
-#define __pyx_n_u_title __pyx_string_tab[261]
-#define __pyx_n_u_tk __pyx_string_tab[262]
-#define __pyx_n_u_tkinter __pyx_string_tab[263]
-#define __pyx_n_u_token __pyx_string_tab[264]
-#define __pyx_n_u_token_id __pyx_string_tab[265]
-#define __pyx_n_u_tokens __pyx_string_tab[266]
-#define __pyx_n_u_top_k __pyx_string_tab[267]
-#define __pyx_n_u_top_p __pyx_string_tab[268]
-#define __pyx_kp_u_tsv __pyx_string_tab[269]
-#define __pyx_n_u_ttk __pyx_string_tab[270]
-#define __pyx_n_u_tts_runner __pyx_string_tab[271]
-#define __pyx_n_u_tts_thread __pyx_string_tab[272]
-#define __pyx_n_u_update __pyx_string_tab[273]
-#define __pyx_n_u_update_idletasks __pyx_string_tab[274]
-#define __pyx_n_u_used_placeholder __pyx_string_tab[275]
-#define __pyx_n_u_virtual_memory __pyx_string_tab[276]
-#define __pyx_n_u_voice __pyx_string_tab[277]
-#define __pyx_n_u_voices __pyx_string_tab[278]
-#define __pyx_n_u_volume __pyx_string_tab[279]
-#define __pyx_n_u_w __pyx_string_tab[280]
-#define __pyx_n_u_weight __pyx_string_tab[281]
-#define __pyx_n_u_width __pyx_string_tab[282]
-#define __pyx_n_u_win __pyx_string_tab[283]
-#define __pyx_n_u_winfo_screenheight __pyx_string_tab[284]
-#define __pyx_n_u_winfo_screenwidth __pyx_string_tab[285]
-#define __pyx_n_u_withdraw __pyx_string_tab[286]
-#define __pyx_n_u_wrap __pyx_string_tab[287]
-#define __pyx_n_u_x __pyx_string_tab[288]
+#define __pyx_n_u_cyckleapp_main __pyx_string_tab[112]
+#define __pyx_kp_u_cyckleapp_main_pyx __pyx_string_tab[113]
+#define __pyx_n_u_daemon __pyx_string_tab[114]
+#define __pyx_n_u_data __pyx_string_tab[115]
+#define __pyx_kp_u_data_json __pyx_string_tab[116]
+#define __pyx_n_u_deiconify __pyx_string_tab[117]
+#define __pyx_n_u_delete __pyx_string_tab[118]
+#define __pyx_n_u_destroy __pyx_string_tab[119]
+#define __pyx_n_u_dump __pyx_string_tab[120]
+#define __pyx_n_u_e __pyx_string_tab[121]
+#define __pyx_n_u_endswith __pyx_string_tab[122]
+#define __pyx_n_u_enter __pyx_string_tab[123]
+#define __pyx_n_u_entry __pyx_string_tab[124]
+#define __pyx_n_u_entry_focus __pyx_string_tab[125]
+#define __pyx_n_u_entry_unfocus __pyx_string_tab[126]
+#define __pyx_n_u_event __pyx_string_tab[127]
+#define __pyx_n_u_ew __pyx_string_tab[128]
+#define __pyx_n_u_exit __pyx_string_tab[129]
+#define __pyx_n_u_exit_2 __pyx_string_tab[130]
+#define __pyx_n_u_fd __pyx_string_tab[131]
+#define __pyx_kp_u_ffffff __pyx_string_tab[132]
+#define __pyx_n_u_fg __pyx_string_tab[133]
+#define __pyx_n_u_fieldbackground __pyx_string_tab[134]
+#define __pyx_n_u_file __pyx_string_tab[135]
+#define __pyx_n_u_filedialog __pyx_string_tab[136]
+#define __pyx_n_u_filename __pyx_string_tab[137]
+#define __pyx_n_u_filetypes __pyx_string_tab[138]
+#define __pyx_n_u_font __pyx_string_tab[139]
+#define __pyx_n_u_force_redraw __pyx_string_tab[140]
+#define __pyx_n_u_foreground __pyx_string_tab[141]
+#define __pyx_n_u_func __pyx_string_tab[142]
+#define __pyx_n_u_gc __pyx_string_tab[143]
+#define __pyx_n_u_generate __pyx_string_tab[144]
+#define __pyx_n_u_geometry __pyx_string_tab[145]
+#define __pyx_n_u_get __pyx_string_tab[146]
+#define __pyx_n_u_getProperty __pyx_string_tab[147]
+#define __pyx_n_u_gpt4all __pyx_string_tab[148]
+#define __pyx_n_u_grid __pyx_string_tab[149]
+#define __pyx_n_u_grid_columnconfigure __pyx_string_tab[150]
+#define __pyx_n_u_grid_rowconfigure __pyx_string_tab[151]
+#define __pyx_n_u_handle_csv __pyx_string_tab[152]
+#define __pyx_n_u_handle_history __pyx_string_tab[153]
+#define __pyx_n_u_handle_input __pyx_string_tab[154]
+#define __pyx_n_u_height __pyx_string_tab[155]
+#define __pyx_kp_u_home __pyx_string_tab[156]
+#define __pyx_n_u_icon __pyx_string_tab[157]
+#define __pyx_n_u_iconphoto __pyx_string_tab[158]
+#define __pyx_n_u_id __pyx_string_tab[159]
+#define __pyx_n_u_image __pyx_string_tab[160]
+#define __pyx_n_u_indent __pyx_string_tab[161]
+#define __pyx_n_u_init __pyx_string_tab[162]
+#define __pyx_n_u_initialdir __pyx_string_tab[163]
+#define __pyx_n_u_initializing __pyx_string_tab[164]
+#define __pyx_n_u_insert __pyx_string_tab[165]
+#define __pyx_n_u_is_coroutine __pyx_string_tab[166]
+#define __pyx_kp_u_is_not_a_valid_integer_Please_t __pyx_string_tab[167]
+#define __pyx_n_u_json __pyx_string_tab[168]
+#define __pyx_n_u_keysym __pyx_string_tab[169]
+#define __pyx_n_u_label1 __pyx_string_tab[170]
+#define __pyx_n_u_lambda __pyx_string_tab[171]
+#define __pyx_n_u_load __pyx_string_tab[172]
+#define __pyx_n_u_logical __pyx_string_tab[173]
+#define __pyx_n_u_logicores __pyx_string_tab[174]
+#define __pyx_n_u_low_mem_crticial __pyx_string_tab[175]
+#define __pyx_n_u_low_mem_warn __pyx_string_tab[176]
+#define __pyx_n_u_lower __pyx_string_tab[177]
+#define __pyx_n_u_main __pyx_string_tab[178]
+#define __pyx_n_u_main_2 __pyx_string_tab[179]
+#define __pyx_n_u_maingui __pyx_string_tab[180]
+#define __pyx_n_u_maingui_locals_lambda __pyx_string_tab[181]
+#define __pyx_n_u_mainloop __pyx_string_tab[182]
+#define __pyx_n_u_master __pyx_string_tab[183]
+#define __pyx_n_u_max_tokens __pyx_string_tab[184]
+#define __pyx_n_u_mem_warn_mb __pyx_string_tab[185]
+#define __pyx_n_u_messagebox __pyx_string_tab[186]
+#define __pyx_n_u_minsize __pyx_string_tab[187]
+#define __pyx_n_u_model_path __pyx_string_tab[188]
+#define __pyx_n_u_models __pyx_string_tab[189]
+#define __pyx_n_u_modtokens __pyx_string_tab[190]
+#define __pyx_n_u_module __pyx_string_tab[191]
+#define __pyx_n_u_n_batch __pyx_string_tab[192]
+#define __pyx_n_u_n_threads __pyx_string_tab[193]
+#define __pyx_n_u_name __pyx_string_tab[194]
+#define __pyx_n_u_newline __pyx_string_tab[195]
+#define __pyx_n_u_nsew __pyx_string_tab[196]
+#define __pyx_n_u_open __pyx_string_tab[197]
+#define __pyx_n_u_overrideredirect __pyx_string_tab[198]
+#define __pyx_n_u_pack __pyx_string_tab[199]
+#define __pyx_n_u_padx __pyx_string_tab[200]
+#define __pyx_n_u_pady __pyx_string_tab[201]
+#define __pyx_n_u_periodic_redraw __pyx_string_tab[202]
+#define __pyx_n_u_physcores __pyx_string_tab[203]
+#define __pyx_n_u_pi __pyx_string_tab[204]
+#define __pyx_n_u_pop __pyx_string_tab[205]
+#define __pyx_n_u_print __pyx_string_tab[206]
+#define __pyx_n_u_protocol __pyx_string_tab[207]
+#define __pyx_n_u_psutil __pyx_string_tab[208]
+#define __pyx_n_u_put __pyx_string_tab[209]
+#define __pyx_n_u_pyttsx3 __pyx_string_tab[210]
+#define __pyx_n_u_qualname __pyx_string_tab[211]
+#define __pyx_n_u_queue __pyx_string_tab[212]
+#define __pyx_n_u_quit __pyx_string_tab[213]
+#define __pyx_n_u_r __pyx_string_tab[214]
+#define __pyx_n_u_random __pyx_string_tab[215]
+#define __pyx_n_u_random_placeholder __pyx_string_tab[216]
+#define __pyx_n_u_rate __pyx_string_tab[217]
+#define __pyx_n_u_re __pyx_string_tab[218]
+#define __pyx_n_u_reader __pyx_string_tab[219]
+#define __pyx_n_u_relief __pyx_string_tab[220]
+#define __pyx_n_u_repeat_penalty __pyx_string_tab[221]
+#define __pyx_n_u_resizable __pyx_string_tab[222]
+#define __pyx_n_u_response_text __pyx_string_tab[223]
+#define __pyx_n_u_root __pyx_string_tab[224]
+#define __pyx_n_u_row __pyx_string_tab[225]
+#define __pyx_n_u_runAndWait __pyx_string_tab[226]
+#define __pyx_kp_u_s __pyx_string_tab[227]
+#define __pyx_n_u_say __pyx_string_tab[228]
+#define __pyx_n_u_search __pyx_string_tab[229]
+#define __pyx_n_u_see __pyx_string_tab[230]
+#define __pyx_n_u_setProperty __pyx_string_tab[231]
+#define __pyx_n_u_sh __pyx_string_tab[232]
+#define __pyx_n_u_showerror __pyx_string_tab[233]
+#define __pyx_n_u_showinfo __pyx_string_tab[234]
+#define __pyx_n_u_showwarning __pyx_string_tab[235]
+#define __pyx_n_u_shutil __pyx_string_tab[236]
+#define __pyx_n_u_simpledialog __pyx_string_tab[237]
+#define __pyx_n_u_spec __pyx_string_tab[238]
+#define __pyx_n_u_splash __pyx_string_tab[239]
+#define __pyx_n_u_splash_label __pyx_string_tab[240]
+#define __pyx_n_u_splashimg __pyx_string_tab[241]
+#define __pyx_n_u_start __pyx_string_tab[242]
+#define __pyx_n_u_state __pyx_string_tab[243]
+#define __pyx_n_u_sticky __pyx_string_tab[244]
+#define __pyx_n_u_stop __pyx_string_tab[245]
+#define __pyx_n_u_stream __pyx_string_tab[246]
+#define __pyx_n_u_strip __pyx_string_tab[247]
+#define __pyx_n_u_style __pyx_string_tab[248]
+#define __pyx_n_u_sw __pyx_string_tab[249]
+#define __pyx_n_u_swutil __pyx_string_tab[250]
+#define __pyx_n_u_sys __pyx_string_tab[251]
+#define __pyx_n_u_sys_watchdog __pyx_string_tab[252]
+#define __pyx_n_u_system_prompt __pyx_string_tab[253]
+#define __pyx_n_u_target __pyx_string_tab[254]
+#define __pyx_n_u_temp __pyx_string_tab[255]
+#define __pyx_n_u_test __pyx_string_tab[256]
+#define __pyx_n_u_text __pyx_string_tab[257]
+#define __pyx_n_u_theme_use __pyx_string_tab[258]
+#define __pyx_n_u_threading __pyx_string_tab[259]
+#define __pyx_n_u_threads __pyx_string_tab[260]
+#define __pyx_kp_u_threads_in_use __pyx_string_tab[261]
+#define __pyx_n_u_timeout __pyx_string_tab[262]
+#define __pyx_n_u_title __pyx_string_tab[263]
+#define __pyx_n_u_tk __pyx_string_tab[264]
+#define __pyx_n_u_tkinter __pyx_string_tab[265]
+#define __pyx_n_u_token __pyx_string_tab[266]
+#define __pyx_n_u_token_id __pyx_string_tab[267]
+#define __pyx_n_u_tokens __pyx_string_tab[268]
+#define __pyx_n_u_top_k __pyx_string_tab[269]
+#define __pyx_n_u_top_p __pyx_string_tab[270]
+#define __pyx_kp_u_tsv __pyx_string_tab[271]
+#define __pyx_n_u_ttk __pyx_string_tab[272]
+#define __pyx_n_u_tts_runner __pyx_string_tab[273]
+#define __pyx_n_u_tts_thread __pyx_string_tab[274]
+#define __pyx_n_u_update __pyx_string_tab[275]
+#define __pyx_n_u_update_idletasks __pyx_string_tab[276]
+#define __pyx_n_u_used_placeholder __pyx_string_tab[277]
+#define __pyx_n_u_virtual_memory __pyx_string_tab[278]
+#define __pyx_n_u_voice __pyx_string_tab[279]
+#define __pyx_n_u_voices __pyx_string_tab[280]
+#define __pyx_n_u_volume __pyx_string_tab[281]
+#define __pyx_n_u_w __pyx_string_tab[282]
+#define __pyx_n_u_weight __pyx_string_tab[283]
+#define __pyx_n_u_width __pyx_string_tab[284]
+#define __pyx_n_u_win __pyx_string_tab[285]
+#define __pyx_n_u_winfo_screenheight __pyx_string_tab[286]
+#define __pyx_n_u_winfo_screenwidth __pyx_string_tab[287]
+#define __pyx_n_u_withdraw __pyx_string_tab[288]
+#define __pyx_n_u_wrap __pyx_string_tab[289]
+#define __pyx_n_u_x __pyx_string_tab[290]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
 static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
@@ -3210,8 +3216,8 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   __Pyx_State_RemoveModule(NULL);
   #endif
   for (int i=0; i<16; ++i) { Py_CLEAR(clear_module_state->__pyx_tuple[i]); }
-  for (int i=0; i<19; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<289; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<20; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<291; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   Py_CLEAR(clear_module_state->__pyx_float_0_2);
   Py_CLEAR(clear_module_state->__pyx_float_0_3);
   Py_CLEAR(clear_module_state->__pyx_float_0_8);
@@ -3263,8 +3269,8 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   Py_VISIT(traverse_module_state->__pyx_FusedFunctionType);
   #endif
   for (int i=0; i<16; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_tuple[i]); }
-  for (int i=0; i<19; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<289; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<20; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<291; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_float_0_2);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_float_0_3);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_float_0_8);
@@ -3300,7 +3306,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 #endif
 /* #### Code section: module_code ### */
 
-/* "main.pyx":27
+/* "cyckleapp/main.pyx":27
  * 
  * cdef int modtokens
  * cdef tuple optimize():             # <<<<<<<<<<<<<<
@@ -3308,7 +3314,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
  *     cdef int logicores = psutil.cpu_count(logical=True)
 */
 
-static PyObject *__pyx_f_4main_optimize(void) {
+static PyObject *__pyx_f_9cyckleapp_4main_optimize(void) {
   int __pyx_v_physcores;
   int __pyx_v_logicores;
   PyObject *__pyx_r = NULL;
@@ -3324,7 +3330,7 @@ static PyObject *__pyx_f_4main_optimize(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("optimize", 0);
 
-  /* "main.pyx":28
+  /* "cyckleapp/main.pyx":28
  * cdef int modtokens
  * cdef tuple optimize():
  *     cdef int physcores = psutil.cpu_count(logical=False)             # <<<<<<<<<<<<<<
@@ -3365,7 +3371,7 @@ static PyObject *__pyx_f_4main_optimize(void) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_physcores = __pyx_t_6;
 
-  /* "main.pyx":29
+  /* "cyckleapp/main.pyx":29
  * cdef tuple optimize():
  *     cdef int physcores = psutil.cpu_count(logical=False)
  *     cdef int logicores = psutil.cpu_count(logical=True)             # <<<<<<<<<<<<<<
@@ -3406,7 +3412,7 @@ static PyObject *__pyx_f_4main_optimize(void) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_logicores = __pyx_t_6;
 
-  /* "main.pyx":30
+  /* "cyckleapp/main.pyx":30
  *     cdef int physcores = psutil.cpu_count(logical=False)
  *     cdef int logicores = psutil.cpu_count(logical=True)
  *     return physcores, logicores             # <<<<<<<<<<<<<<
@@ -3430,7 +3436,7 @@ static PyObject *__pyx_f_4main_optimize(void) {
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "main.pyx":27
+  /* "cyckleapp/main.pyx":27
  * 
  * cdef int modtokens
  * cdef tuple optimize():             # <<<<<<<<<<<<<<
@@ -3444,7 +3450,7 @@ static PyObject *__pyx_f_4main_optimize(void) {
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("main.optimize", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.optimize", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3452,7 +3458,7 @@ static PyObject *__pyx_f_4main_optimize(void) {
   return __pyx_r;
 }
 
-/* "main.pyx":36
+/* "cyckleapp/main.pyx":36
  * 
  * # token JSON function
  * cdef int read_tokens_from_json():             # <<<<<<<<<<<<<<
@@ -3460,7 +3466,7 @@ static PyObject *__pyx_f_4main_optimize(void) {
  *     try:
 */
 
-static int __pyx_f_4main_read_tokens_from_json(void) {
+static int __pyx_f_9cyckleapp_4main_read_tokens_from_json(void) {
   PyObject *__pyx_v_data = 0;
   PyObject *__pyx_v_f = NULL;
   int __pyx_r;
@@ -3486,7 +3492,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("read_tokens_from_json", 0);
 
-  /* "main.pyx":38
+  /* "cyckleapp/main.pyx":38
  * cdef int read_tokens_from_json():
  *     cdef dict data
  *     try:             # <<<<<<<<<<<<<<
@@ -3502,7 +3508,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "main.pyx":39
+      /* "cyckleapp/main.pyx":39
  *     cdef dict data
  *     try:
  *         with open("data.json", "r") as f:             # <<<<<<<<<<<<<<
@@ -3552,7 +3558,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
               __pyx_v_f = __pyx_t_8;
               __pyx_t_8 = 0;
 
-              /* "main.pyx":40
+              /* "cyckleapp/main.pyx":40
  *     try:
  *         with open("data.json", "r") as f:
  *             data = json.load(f)             # <<<<<<<<<<<<<<
@@ -3589,7 +3595,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
               __pyx_v_data = ((PyObject*)__pyx_t_8);
               __pyx_t_8 = 0;
 
-              /* "main.pyx":41
+              /* "cyckleapp/main.pyx":41
  *         with open("data.json", "r") as f:
  *             data = json.load(f)
  *             return data.get("tokens", 96)             # <<<<<<<<<<<<<<
@@ -3607,7 +3613,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
               __pyx_r = __pyx_t_13;
               goto __pyx_L17_try_return;
 
-              /* "main.pyx":39
+              /* "cyckleapp/main.pyx":39
  *     cdef dict data
  *     try:
  *         with open("data.json", "r") as f:             # <<<<<<<<<<<<<<
@@ -3621,7 +3627,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
             /*except:*/ {
-              __Pyx_AddTraceback("main.read_tokens_from_json", __pyx_clineno, __pyx_lineno, __pyx_filename);
+              __Pyx_AddTraceback("cyckleapp.main.read_tokens_from_json", __pyx_clineno, __pyx_lineno, __pyx_filename);
               if (__Pyx_GetException(&__pyx_t_8, &__pyx_t_7, &__pyx_t_4) < 0) __PYX_ERR(0, 39, __pyx_L15_except_error)
               __Pyx_XGOTREF(__pyx_t_8);
               __Pyx_XGOTREF(__pyx_t_7);
@@ -3701,7 +3707,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
         __pyx_L22:;
       }
 
-      /* "main.pyx":38
+      /* "cyckleapp/main.pyx":38
  * cdef int read_tokens_from_json():
  *     cdef dict data
  *     try:             # <<<<<<<<<<<<<<
@@ -3719,7 +3725,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "main.pyx":42
+    /* "cyckleapp/main.pyx":42
  *             data = json.load(f)
  *             return data.get("tokens", 96)
  *     except FileNotFoundError:             # <<<<<<<<<<<<<<
@@ -3730,7 +3736,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
     if (__pyx_t_13) {
       __Pyx_ErrRestore(0,0,0);
 
-      /* "main.pyx":43
+      /* "cyckleapp/main.pyx":43
  *             return data.get("tokens", 96)
  *     except FileNotFoundError:
  *         return 256             # <<<<<<<<<<<<<<
@@ -3742,7 +3748,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
     }
     goto __pyx_L5_except_error;
 
-    /* "main.pyx":38
+    /* "cyckleapp/main.pyx":38
  * cdef int read_tokens_from_json():
  *     cdef dict data
  *     try:             # <<<<<<<<<<<<<<
@@ -3770,7 +3776,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "main.pyx":36
+  /* "cyckleapp/main.pyx":36
  * 
  * # token JSON function
  * cdef int read_tokens_from_json():             # <<<<<<<<<<<<<<
@@ -3786,7 +3792,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("main.read_tokens_from_json", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.read_tokens_from_json", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_data);
@@ -3795,7 +3801,7 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
   return __pyx_r;
 }
 
-/* "main.pyx":62
+/* "cyckleapp/main.pyx":62
  * 
  * cdef str sentence_buffer = ""
  * def stream(token_id, token):             # <<<<<<<<<<<<<<
@@ -3804,15 +3810,15 @@ static int __pyx_f_4main_read_tokens_from_json(void) {
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_1stream(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_1stream(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_1stream = {"stream", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_1stream, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_1stream(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_1stream = {"stream", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_1stream, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_1stream(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3882,11 +3888,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.stream", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.stream", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_stream(__pyx_self, __pyx_v_token_id, __pyx_v_token);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_stream(__pyx_self, __pyx_v_token_id, __pyx_v_token);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -3896,7 +3902,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_token_id, PyObject *__pyx_v_token) {
+static PyObject *__pyx_pf_9cyckleapp_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_token_id, PyObject *__pyx_v_token) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3911,7 +3917,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("stream", 0);
 
-  /* "main.pyx":64
+  /* "cyckleapp/main.pyx":64
  * def stream(token_id, token):
  *     global sentence_buffer
  *     response_text.config(state=tk.NORMAL)             # <<<<<<<<<<<<<<
@@ -3956,7 +3962,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":65
+  /* "cyckleapp/main.pyx":65
  *     global sentence_buffer
  *     response_text.config(state=tk.NORMAL)
  *     response_text.insert(tk.END, token)             # <<<<<<<<<<<<<<
@@ -3997,7 +4003,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":66
+  /* "cyckleapp/main.pyx":66
  *     response_text.config(state=tk.NORMAL)
  *     response_text.insert(tk.END, token)
  *     response_text.config(state=tk.DISABLED)             # <<<<<<<<<<<<<<
@@ -4042,7 +4048,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":67
+  /* "cyckleapp/main.pyx":67
  *     response_text.insert(tk.END, token)
  *     response_text.config(state=tk.DISABLED)
  *     response_text.see(tk.END)             # <<<<<<<<<<<<<<
@@ -4083,7 +4089,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":68
+  /* "cyckleapp/main.pyx":68
  *     response_text.config(state=tk.DISABLED)
  *     response_text.see(tk.END)
  *     response_text.update_idletasks()             # <<<<<<<<<<<<<<
@@ -4118,22 +4124,22 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":70
+  /* "cyckleapp/main.pyx":70
  *     response_text.update_idletasks()
  * 
  *     sentence_buffer += token             # <<<<<<<<<<<<<<
  *     if re.search(r"[.!?]['\")\]]?\s$", sentence_buffer):
  *         tts_queue.put(sentence_buffer.strip())
 */
-  __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_4main_sentence_buffer, __pyx_v_token); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_9cyckleapp_4main_sentence_buffer, __pyx_v_token); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_1))) __PYX_ERR(0, 70, __pyx_L1_error)
-  __Pyx_XGOTREF(__pyx_v_4main_sentence_buffer);
-  __Pyx_DECREF_SET(__pyx_v_4main_sentence_buffer, ((PyObject*)__pyx_t_1));
+  __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_sentence_buffer);
+  __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_sentence_buffer, ((PyObject*)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "main.pyx":71
+  /* "cyckleapp/main.pyx":71
  * 
  *     sentence_buffer += token
  *     if re.search(r"[.!?]['\")\]]?\s$", sentence_buffer):             # <<<<<<<<<<<<<<
@@ -4159,7 +4165,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   }
   #endif
   {
-    PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_s, __pyx_v_4main_sentence_buffer};
+    PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_s, __pyx_v_9cyckleapp_4main_sentence_buffer};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (3-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -4170,16 +4176,16 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_7) {
 
-    /* "main.pyx":72
+    /* "cyckleapp/main.pyx":72
  *     sentence_buffer += token
  *     if re.search(r"[.!?]['\")\]]?\s$", sentence_buffer):
  *         tts_queue.put(sentence_buffer.strip())             # <<<<<<<<<<<<<<
  *         sentence_buffer = ""
  *     return True
 */
-    __pyx_t_5 = __pyx_v_4main_tts_queue;
+    __pyx_t_5 = __pyx_v_9cyckleapp_4main_tts_queue;
     __Pyx_INCREF(__pyx_t_5);
-    __pyx_t_4 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__strip, __pyx_v_4main_sentence_buffer); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 72, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__strip, __pyx_v_9cyckleapp_4main_sentence_buffer); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 72, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_6 = 0;
     {
@@ -4192,7 +4198,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":73
+    /* "cyckleapp/main.pyx":73
  *     if re.search(r"[.!?]['\")\]]?\s$", sentence_buffer):
  *         tts_queue.put(sentence_buffer.strip())
  *         sentence_buffer = ""             # <<<<<<<<<<<<<<
@@ -4200,11 +4206,11 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
  * 
 */
     __Pyx_INCREF(__pyx_mstate_global->__pyx_kp_u_);
-    __Pyx_XGOTREF(__pyx_v_4main_sentence_buffer);
-    __Pyx_DECREF_SET(__pyx_v_4main_sentence_buffer, __pyx_mstate_global->__pyx_kp_u_);
+    __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_sentence_buffer);
+    __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_sentence_buffer, __pyx_mstate_global->__pyx_kp_u_);
     __Pyx_GIVEREF(__pyx_mstate_global->__pyx_kp_u_);
 
-    /* "main.pyx":71
+    /* "cyckleapp/main.pyx":71
  * 
  *     sentence_buffer += token
  *     if re.search(r"[.!?]['\")\]]?\s$", sentence_buffer):             # <<<<<<<<<<<<<<
@@ -4213,7 +4219,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
 */
   }
 
-  /* "main.pyx":74
+  /* "cyckleapp/main.pyx":74
  *         tts_queue.put(sentence_buffer.strip())
  *         sentence_buffer = ""
  *     return True             # <<<<<<<<<<<<<<
@@ -4225,7 +4231,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   __pyx_r = Py_True;
   goto __pyx_L0;
 
-  /* "main.pyx":62
+  /* "cyckleapp/main.pyx":62
  * 
  * cdef str sentence_buffer = ""
  * def stream(token_id, token):             # <<<<<<<<<<<<<<
@@ -4240,7 +4246,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("main.stream", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.stream", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4248,7 +4254,7 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
   return __pyx_r;
 }
 
-/* "main.pyx":87
+/* "cyckleapp/main.pyx":87
  * cdef object tts_queue = queue.Queue()
  * 
  * cpdef tts_runner():             # <<<<<<<<<<<<<<
@@ -4256,8 +4262,8 @@ static PyObject *__pyx_pf_4main_stream(CYTHON_UNUSED PyObject *__pyx_self, CYTHO
  *     while not stop_tts:
 */
 
-static PyObject *__pyx_pw_4main_3tts_runner(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_9cyckleapp_4main_3tts_runner(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_v_chunk = NULL;
   PyObject *__pyx_v_e = NULL;
   PyObject *__pyx_r = NULL;
@@ -4290,7 +4296,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("tts_runner", 0);
 
-  /* "main.pyx":89
+  /* "cyckleapp/main.pyx":89
  * cpdef tts_runner():
  *     global stop_tts
  *     while not stop_tts:             # <<<<<<<<<<<<<<
@@ -4298,11 +4304,11 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
  *             chunk = tts_queue.get(timeout=1)
 */
   while (1) {
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_4main_stop_tts); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_9cyckleapp_4main_stop_tts); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 89, __pyx_L1_error)
     __pyx_t_2 = (!__pyx_t_1);
     if (!__pyx_t_2) break;
 
-    /* "main.pyx":90
+    /* "cyckleapp/main.pyx":90
  *     global stop_tts
  *     while not stop_tts:
  *         try:             # <<<<<<<<<<<<<<
@@ -4318,14 +4324,14 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
       __Pyx_XGOTREF(__pyx_t_5);
       /*try:*/ {
 
-        /* "main.pyx":91
+        /* "cyckleapp/main.pyx":91
  *     while not stop_tts:
  *         try:
  *             chunk = tts_queue.get(timeout=1)             # <<<<<<<<<<<<<<
  *             if chunk is None:
  *                 break
 */
-        __pyx_t_7 = __pyx_v_4main_tts_queue;
+        __pyx_t_7 = __pyx_v_9cyckleapp_4main_tts_queue;
         __Pyx_INCREF(__pyx_t_7);
         __pyx_t_8 = 0;
         {
@@ -4342,7 +4348,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
         __Pyx_XDECREF_SET(__pyx_v_chunk, __pyx_t_6);
         __pyx_t_6 = 0;
 
-        /* "main.pyx":92
+        /* "cyckleapp/main.pyx":92
  *         try:
  *             chunk = tts_queue.get(timeout=1)
  *             if chunk is None:             # <<<<<<<<<<<<<<
@@ -4352,7 +4358,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
         __pyx_t_2 = (__pyx_v_chunk == Py_None);
         if (__pyx_t_2) {
 
-          /* "main.pyx":93
+          /* "cyckleapp/main.pyx":93
  *             chunk = tts_queue.get(timeout=1)
  *             if chunk is None:
  *                 break             # <<<<<<<<<<<<<<
@@ -4361,7 +4367,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
 */
           goto __pyx_L10_try_break;
 
-          /* "main.pyx":92
+          /* "cyckleapp/main.pyx":92
  *         try:
  *             chunk = tts_queue.get(timeout=1)
  *             if chunk is None:             # <<<<<<<<<<<<<<
@@ -4370,7 +4376,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
 */
         }
 
-        /* "main.pyx":94
+        /* "cyckleapp/main.pyx":94
  *             if chunk is None:
  *                 break
  *             chunk += " ..."             # <<<<<<<<<<<<<<
@@ -4382,14 +4388,14 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
         __Pyx_DECREF_SET(__pyx_v_chunk, __pyx_t_6);
         __pyx_t_6 = 0;
 
-        /* "main.pyx":96
+        /* "cyckleapp/main.pyx":96
  *             chunk += " ..."
  * 
  *             tts_engine.say(chunk)             # <<<<<<<<<<<<<<
  *             tts_engine.runAndWait()
  *             tts_engine.stop()
 */
-        __pyx_t_9 = __pyx_v_4main_tts_engine;
+        __pyx_t_9 = __pyx_v_9cyckleapp_4main_tts_engine;
         __Pyx_INCREF(__pyx_t_9);
         __pyx_t_8 = 0;
         {
@@ -4401,14 +4407,14 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "main.pyx":97
+        /* "cyckleapp/main.pyx":97
  * 
  *             tts_engine.say(chunk)
  *             tts_engine.runAndWait()             # <<<<<<<<<<<<<<
  *             tts_engine.stop()
  *         except queue.Empty:
 */
-        __pyx_t_9 = __pyx_v_4main_tts_engine;
+        __pyx_t_9 = __pyx_v_9cyckleapp_4main_tts_engine;
         __Pyx_INCREF(__pyx_t_9);
         __pyx_t_8 = 0;
         {
@@ -4420,14 +4426,14 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "main.pyx":98
+        /* "cyckleapp/main.pyx":98
  *             tts_engine.say(chunk)
  *             tts_engine.runAndWait()
  *             tts_engine.stop()             # <<<<<<<<<<<<<<
  *         except queue.Empty:
  *             continue
 */
-        __pyx_t_9 = __pyx_v_4main_tts_engine;
+        __pyx_t_9 = __pyx_v_9cyckleapp_4main_tts_engine;
         __Pyx_INCREF(__pyx_t_9);
         __pyx_t_8 = 0;
         {
@@ -4439,7 +4445,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "main.pyx":90
+        /* "cyckleapp/main.pyx":90
  *     global stop_tts
  *     while not stop_tts:
  *         try:             # <<<<<<<<<<<<<<
@@ -4456,7 +4462,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "main.pyx":99
+      /* "cyckleapp/main.pyx":99
  *             tts_engine.runAndWait()
  *             tts_engine.stop()
  *         except queue.Empty:             # <<<<<<<<<<<<<<
@@ -4474,13 +4480,13 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
       __Pyx_ErrRestore(__pyx_t_6, __pyx_t_9, __pyx_t_7);
       __pyx_t_6 = 0; __pyx_t_9 = 0; __pyx_t_7 = 0;
       if (__pyx_t_12) {
-        __Pyx_AddTraceback("main.tts_runner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+        __Pyx_AddTraceback("cyckleapp.main.tts_runner", __pyx_clineno, __pyx_lineno, __pyx_filename);
         if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_9, &__pyx_t_6) < 0) __PYX_ERR(0, 99, __pyx_L7_except_error)
         __Pyx_XGOTREF(__pyx_t_7);
         __Pyx_XGOTREF(__pyx_t_9);
         __Pyx_XGOTREF(__pyx_t_6);
 
-        /* "main.pyx":100
+        /* "cyckleapp/main.pyx":100
  *             tts_engine.stop()
  *         except queue.Empty:
  *             continue             # <<<<<<<<<<<<<<
@@ -4495,7 +4501,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
         goto __pyx_L11_try_continue;
       }
 
-      /* "main.pyx":101
+      /* "cyckleapp/main.pyx":101
  *         except queue.Empty:
  *             continue
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -4504,7 +4510,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
 */
       __pyx_t_12 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
       if (__pyx_t_12) {
-        __Pyx_AddTraceback("main.tts_runner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+        __Pyx_AddTraceback("cyckleapp.main.tts_runner", __pyx_clineno, __pyx_lineno, __pyx_filename);
         if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_9, &__pyx_t_7) < 0) __PYX_ERR(0, 101, __pyx_L7_except_error)
         __Pyx_XGOTREF(__pyx_t_6);
         __Pyx_XGOTREF(__pyx_t_9);
@@ -4513,7 +4519,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
         __pyx_v_e = __pyx_t_9;
         /*try:*/ {
 
-          /* "main.pyx":102
+          /* "cyckleapp/main.pyx":102
  *             continue
  *         except Exception as e:
  *             print(f"[TTS] Error: {e}")             # <<<<<<<<<<<<<<
@@ -4541,7 +4547,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         }
 
-        /* "main.pyx":101
+        /* "cyckleapp/main.pyx":101
  *         except queue.Empty:
  *             continue
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -4596,7 +4602,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
       }
       goto __pyx_L7_except_error;
 
-      /* "main.pyx":90
+      /* "cyckleapp/main.pyx":90
  *     global stop_tts
  *     while not stop_tts:
  *         try:             # <<<<<<<<<<<<<<
@@ -4632,7 +4638,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
   }
   __pyx_L4_break:;
 
-  /* "main.pyx":87
+  /* "cyckleapp/main.pyx":87
  * cdef object tts_queue = queue.Queue()
  * 
  * cpdef tts_runner():             # <<<<<<<<<<<<<<
@@ -4652,7 +4658,7 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
   __Pyx_XDECREF(__pyx_t_15);
-  __Pyx_AddTraceback("main.tts_runner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.tts_runner", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_chunk);
@@ -4663,22 +4669,22 @@ static PyObject *__pyx_f_4main_tts_runner(CYTHON_UNUSED int __pyx_skip_dispatch)
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_3tts_runner(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4main_3tts_runner = {"tts_runner", (PyCFunction)__pyx_pw_4main_3tts_runner, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4main_3tts_runner(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9cyckleapp_4main_3tts_runner(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_3tts_runner = {"tts_runner", (PyCFunction)__pyx_pw_9cyckleapp_4main_3tts_runner, METH_NOARGS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_3tts_runner(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("tts_runner (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_4main_2tts_runner(__pyx_self);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_2tts_runner(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_2tts_runner(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_9cyckleapp_4main_2tts_runner(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4687,7 +4693,7 @@ static PyObject *__pyx_pf_4main_2tts_runner(CYTHON_UNUSED PyObject *__pyx_self) 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("tts_runner", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_tts_runner(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_tts_runner(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4696,7 +4702,7 @@ static PyObject *__pyx_pf_4main_2tts_runner(CYTHON_UNUSED PyObject *__pyx_self) 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.tts_runner", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.tts_runner", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4704,7 +4710,7 @@ static PyObject *__pyx_pf_4main_2tts_runner(CYTHON_UNUSED PyObject *__pyx_self) 
   return __pyx_r;
 }
 
-/* "main.pyx":104
+/* "cyckleapp/main.pyx":104
  *             print(f"[TTS] Error: {e}")
  * 
  * cpdef void handle_input(event=None):             # <<<<<<<<<<<<<<
@@ -4712,14 +4718,14 @@ static PyObject *__pyx_pf_4main_2tts_runner(CYTHON_UNUSED PyObject *__pyx_self) 
  *     global modtokens , cmdhistory, poshistory, usermodel
 */
 
-static PyObject *__pyx_pw_4main_5handle_input(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_5handle_input(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_4main_handle_input *__pyx_optional_args) {
+static void __pyx_f_9cyckleapp_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_9cyckleapp_4main_handle_input *__pyx_optional_args) {
   PyObject *__pyx_v_userinput = 0;
   PyObject *__pyx_v_current_limit = NULL;
   PyObject *__pyx_v_warning = NULL;
@@ -4752,7 +4758,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
   if (__pyx_optional_args) {
   }
 
-  /* "main.pyx":105
+  /* "cyckleapp/main.pyx":105
  * 
  * cpdef void handle_input(event=None):
  *     print(f"[DEBUG] Input registered.")             # <<<<<<<<<<<<<<
@@ -4773,7 +4779,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":108
+  /* "cyckleapp/main.pyx":108
  *     global modtokens , cmdhistory, poshistory, usermodel
  *     cdef str userinput
  *     userinput = entry.get()             # <<<<<<<<<<<<<<
@@ -4810,7 +4816,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
   __pyx_v_userinput = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "main.pyx":110
+  /* "cyckleapp/main.pyx":110
  *     userinput = entry.get()
  * 
  *     if userinput.strip():             # <<<<<<<<<<<<<<
@@ -4824,27 +4830,27 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_6) {
 
-    /* "main.pyx":111
+    /* "cyckleapp/main.pyx":111
  * 
  *     if userinput.strip():
  *         cmdhistory.append(userinput)             # <<<<<<<<<<<<<<
  *         poshistory = len(cmdhistory)
  * 
 */
-    if (unlikely(__pyx_v_4main_cmdhistory == Py_None)) {
+    if (unlikely(__pyx_v_9cyckleapp_4main_cmdhistory == Py_None)) {
       PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "append");
       __PYX_ERR(0, 111, __pyx_L1_error)
     }
-    __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_4main_cmdhistory, __pyx_v_userinput); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 111, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_9cyckleapp_4main_cmdhistory, __pyx_v_userinput); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 111, __pyx_L1_error)
 
-    /* "main.pyx":112
+    /* "cyckleapp/main.pyx":112
  *     if userinput.strip():
  *         cmdhistory.append(userinput)
  *         poshistory = len(cmdhistory)             # <<<<<<<<<<<<<<
  * 
  *     if userinput.lower() == "quit":
 */
-    __pyx_t_1 = __pyx_v_4main_cmdhistory;
+    __pyx_t_1 = __pyx_v_9cyckleapp_4main_cmdhistory;
     __Pyx_INCREF(__pyx_t_1);
     if (unlikely(__pyx_t_1 == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
@@ -4852,9 +4858,9 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __pyx_t_8 = __Pyx_PyList_GET_SIZE(__pyx_t_1); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_4main_poshistory = __pyx_t_8;
+    __pyx_v_9cyckleapp_4main_poshistory = __pyx_t_8;
 
-    /* "main.pyx":110
+    /* "cyckleapp/main.pyx":110
  *     userinput = entry.get()
  * 
  *     if userinput.strip():             # <<<<<<<<<<<<<<
@@ -4863,7 +4869,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
 */
   }
 
-  /* "main.pyx":114
+  /* "cyckleapp/main.pyx":114
  *         poshistory = len(cmdhistory)
  * 
  *     if userinput.lower() == "quit":             # <<<<<<<<<<<<<<
@@ -4876,7 +4882,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_6) {
 
-    /* "main.pyx":115
+    /* "cyckleapp/main.pyx":115
  * 
  *     if userinput.lower() == "quit":
  *         print(f"[DEBUG] User requested to quit.")             # <<<<<<<<<<<<<<
@@ -4897,7 +4903,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":116
+    /* "cyckleapp/main.pyx":116
  *     if userinput.lower() == "quit":
  *         print(f"[DEBUG] User requested to quit.")
  *         main.quit()             # <<<<<<<<<<<<<<
@@ -4932,7 +4938,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":117
+    /* "cyckleapp/main.pyx":117
  *         print(f"[DEBUG] User requested to quit.")
  *         main.quit()
  *         gc.collect()             # <<<<<<<<<<<<<<
@@ -4967,7 +4973,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":118
+    /* "cyckleapp/main.pyx":118
  *         main.quit()
  *         gc.collect()
  *         sys.exit(0)             # <<<<<<<<<<<<<<
@@ -5002,7 +5008,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":119
+    /* "cyckleapp/main.pyx":119
  *         gc.collect()
  *         sys.exit(0)
  *         return             # <<<<<<<<<<<<<<
@@ -5011,7 +5017,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
 */
     goto __pyx_L0;
 
-    /* "main.pyx":114
+    /* "cyckleapp/main.pyx":114
  *         poshistory = len(cmdhistory)
  * 
  *     if userinput.lower() == "quit":             # <<<<<<<<<<<<<<
@@ -5020,7 +5026,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
 */
   }
 
-  /* "main.pyx":121
+  /* "cyckleapp/main.pyx":121
  *         return
  * 
  *     elif userinput.lower() == "modtokens":             # <<<<<<<<<<<<<<
@@ -5033,7 +5039,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_6) {
 
-    /* "main.pyx":122
+    /* "cyckleapp/main.pyx":122
  * 
  *     elif userinput.lower() == "modtokens":
  *         print(f"[DEBUG] User requested to modify token limit.")             # <<<<<<<<<<<<<<
@@ -5054,14 +5060,14 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":123
+    /* "cyckleapp/main.pyx":123
  *     elif userinput.lower() == "modtokens":
  *         print(f"[DEBUG] User requested to modify token limit.")
  *         current_limit = f'Current token limit is set to {modtokens}'             # <<<<<<<<<<<<<<
  *         warning = 'WARNING: HIGHER TOKEN LIMITS MAY CAUSE HIGHER USAGE OF RESOURCES! DO THIS AT YOUR OWN RISK.'
  *         messagebox.showwarning("Modtokens", f"{current_limit}\n{warning}")
 */
-    __pyx_t_1 = __Pyx_PyUnicode_From_int(__pyx_v_4main_modtokens, 0, ' ', 'd'); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyUnicode_From_int(__pyx_v_9cyckleapp_4main_modtokens, 0, ' ', 'd'); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_5 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Current_token_limit_is_set_to, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 123, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -5069,7 +5075,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     __pyx_v_current_limit = ((PyObject*)__pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "main.pyx":124
+    /* "cyckleapp/main.pyx":124
  *         print(f"[DEBUG] User requested to modify token limit.")
  *         current_limit = f'Current token limit is set to {modtokens}'
  *         warning = 'WARNING: HIGHER TOKEN LIMITS MAY CAUSE HIGHER USAGE OF RESOURCES! DO THIS AT YOUR OWN RISK.'             # <<<<<<<<<<<<<<
@@ -5079,7 +5085,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     __Pyx_INCREF(__pyx_mstate_global->__pyx_kp_u_WARNING_HIGHER_TOKEN_LIMITS_MAY);
     __pyx_v_warning = __pyx_mstate_global->__pyx_kp_u_WARNING_HIGHER_TOKEN_LIMITS_MAY;
 
-    /* "main.pyx":125
+    /* "cyckleapp/main.pyx":125
  *         current_limit = f'Current token limit is set to {modtokens}'
  *         warning = 'WARNING: HIGHER TOKEN LIMITS MAY CAUSE HIGHER USAGE OF RESOURCES! DO THIS AT YOUR OWN RISK.'
  *         messagebox.showwarning("Modtokens", f"{current_limit}\n{warning}")             # <<<<<<<<<<<<<<
@@ -5121,7 +5127,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "main.pyx":126
+    /* "cyckleapp/main.pyx":126
  *         warning = 'WARNING: HIGHER TOKEN LIMITS MAY CAUSE HIGHER USAGE OF RESOURCES! DO THIS AT YOUR OWN RISK.'
  *         messagebox.showwarning("Modtokens", f"{current_limit}\n{warning}")
  *         new_limit = simpledialog.askinteger("Modtokens", "Enter new token limit:")             # <<<<<<<<<<<<<<
@@ -5139,7 +5145,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     __pyx_v_new_limit = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "main.pyx":127
+    /* "cyckleapp/main.pyx":127
  *         messagebox.showwarning("Modtokens", f"{current_limit}\n{warning}")
  *         new_limit = simpledialog.askinteger("Modtokens", "Enter new token limit:")
  *         if new_limit is not None:             # <<<<<<<<<<<<<<
@@ -5149,7 +5155,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     __pyx_t_6 = (__pyx_v_new_limit != Py_None);
     if (__pyx_t_6) {
 
-      /* "main.pyx":128
+      /* "cyckleapp/main.pyx":128
  *         new_limit = simpledialog.askinteger("Modtokens", "Enter new token limit:")
  *         if new_limit is not None:
  *             modtokens = new_limit             # <<<<<<<<<<<<<<
@@ -5157,16 +5163,16 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
  *             messagebox.showinfo("Modtokens", f"Token limit has been set to {modtokens}")
 */
       __pyx_t_10 = __Pyx_PyLong_As_int(__pyx_v_new_limit); if (unlikely((__pyx_t_10 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 128, __pyx_L1_error)
-      __pyx_v_4main_modtokens = __pyx_t_10;
+      __pyx_v_9cyckleapp_4main_modtokens = __pyx_t_10;
 
-      /* "main.pyx":129
+      /* "cyckleapp/main.pyx":129
  *         if new_limit is not None:
  *             modtokens = new_limit
  *             data["tokens"] = modtokens             # <<<<<<<<<<<<<<
  *             messagebox.showinfo("Modtokens", f"Token limit has been set to {modtokens}")
  *             filename = "data.json"
 */
-      __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_4main_modtokens); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 129, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_9cyckleapp_4main_modtokens); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 129, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
@@ -5174,7 +5180,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "main.pyx":130
+      /* "cyckleapp/main.pyx":130
  *             modtokens = new_limit
  *             data["tokens"] = modtokens
  *             messagebox.showinfo("Modtokens", f"Token limit has been set to {modtokens}")             # <<<<<<<<<<<<<<
@@ -5187,7 +5193,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_showinfo); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyUnicode_From_int(__pyx_v_4main_modtokens, 0, ' ', 'd'); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 130, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyUnicode_From_int(__pyx_v_9cyckleapp_4main_modtokens, 0, ' ', 'd'); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_11 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Token_limit_has_been_set_to, __pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
@@ -5215,7 +5221,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "main.pyx":131
+      /* "cyckleapp/main.pyx":131
  *             data["tokens"] = modtokens
  *             messagebox.showinfo("Modtokens", f"Token limit has been set to {modtokens}")
  *             filename = "data.json"             # <<<<<<<<<<<<<<
@@ -5225,7 +5231,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
       __Pyx_INCREF(__pyx_mstate_global->__pyx_kp_u_data_json);
       __pyx_v_filename = __pyx_mstate_global->__pyx_kp_u_data_json;
 
-      /* "main.pyx":132
+      /* "cyckleapp/main.pyx":132
  *             messagebox.showinfo("Modtokens", f"Token limit has been set to {modtokens}")
  *             filename = "data.json"
  *             with open(filename, 'w') as f:             # <<<<<<<<<<<<<<
@@ -5285,7 +5291,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
               __pyx_v_f = __pyx_t_2;
               __pyx_t_2 = 0;
 
-              /* "main.pyx":133
+              /* "cyckleapp/main.pyx":133
  *             filename = "data.json"
  *             with open(filename, 'w') as f:
  *                 json.dump(data, f, indent=4)             # <<<<<<<<<<<<<<
@@ -5327,7 +5333,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
               }
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-              /* "main.pyx":132
+              /* "cyckleapp/main.pyx":132
  *             messagebox.showinfo("Modtokens", f"Token limit has been set to {modtokens}")
  *             filename = "data.json"
  *             with open(filename, 'w') as f:             # <<<<<<<<<<<<<<
@@ -5346,7 +5352,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
             __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
             __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
             /*except:*/ {
-              __Pyx_AddTraceback("main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
+              __Pyx_AddTraceback("cyckleapp.main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
               if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 132, __pyx_L12_except_error)
               __Pyx_XGOTREF(__pyx_t_2);
               __Pyx_XGOTREF(__pyx_t_1);
@@ -5409,7 +5415,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
         __pyx_L19:;
       }
 
-      /* "main.pyx":127
+      /* "cyckleapp/main.pyx":127
  *         messagebox.showwarning("Modtokens", f"{current_limit}\n{warning}")
  *         new_limit = simpledialog.askinteger("Modtokens", "Enter new token limit:")
  *         if new_limit is not None:             # <<<<<<<<<<<<<<
@@ -5419,7 +5425,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
       goto __pyx_L5;
     }
 
-    /* "main.pyx":135
+    /* "cyckleapp/main.pyx":135
  *                 json.dump(data, f, indent=4)
  *         else:
  *             messagebox.showerror("Modtokens", f'The entry "{new_limit}" is not a valid integer. Please try again.')             # <<<<<<<<<<<<<<
@@ -5467,7 +5473,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __pyx_L5:;
 
-    /* "main.pyx":121
+    /* "cyckleapp/main.pyx":121
  *         return
  * 
  *     elif userinput.lower() == "modtokens":             # <<<<<<<<<<<<<<
@@ -5477,7 +5483,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     goto __pyx_L4;
   }
 
-  /* "main.pyx":138
+  /* "cyckleapp/main.pyx":138
  * 
  *     else:
  *         print(f"[AI] Forwarding input to model.")             # <<<<<<<<<<<<<<
@@ -5499,7 +5505,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "main.pyx":139
+    /* "cyckleapp/main.pyx":139
  *     else:
  *         print(f"[AI] Forwarding input to model.")
  *         label1.config(text="YOU>>> " + userinput)             # <<<<<<<<<<<<<<
@@ -5541,7 +5547,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "main.pyx":140
+    /* "cyckleapp/main.pyx":140
  *         print(f"[AI] Forwarding input to model.")
  *         label1.config(text="YOU>>> " + userinput)
  *         response_text.config(state=tk.NORMAL)             # <<<<<<<<<<<<<<
@@ -5586,7 +5592,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "main.pyx":141
+    /* "cyckleapp/main.pyx":141
  *         label1.config(text="YOU>>> " + userinput)
  *         response_text.config(state=tk.NORMAL)
  *         response_text.delete(1.0, tk.END)             # <<<<<<<<<<<<<<
@@ -5627,7 +5633,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "main.pyx":142
+    /* "cyckleapp/main.pyx":142
  *         response_text.config(state=tk.NORMAL)
  *         response_text.delete(1.0, tk.END)
  *         response_text.insert(tk.END, "\n")             # <<<<<<<<<<<<<<
@@ -5668,7 +5674,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "main.pyx":143
+    /* "cyckleapp/main.pyx":143
  *         response_text.delete(1.0, tk.END)
  *         response_text.insert(tk.END, "\n")
  *         response_text.config(state=tk.DISABLED)             # <<<<<<<<<<<<<<
@@ -5713,7 +5719,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "main.pyx":144
+    /* "cyckleapp/main.pyx":144
  *         response_text.insert(tk.END, "\n")
  *         response_text.config(state=tk.DISABLED)
  *         with usermodel.chat_session(system_prompt=system_prompt):             # <<<<<<<<<<<<<<
@@ -5721,7 +5727,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
  *             response_text.config(state=tk.NORMAL)
 */
     /*with:*/ {
-      __pyx_t_5 = __pyx_v_4main_usermodel;
+      __pyx_t_5 = __pyx_v_9cyckleapp_4main_usermodel;
       __Pyx_INCREF(__pyx_t_5);
       __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_system_prompt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 144, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
@@ -5775,16 +5781,16 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
           __Pyx_XGOTREF(__pyx_t_13);
           /*try:*/ {
 
-            /* "main.pyx":145
+            /* "cyckleapp/main.pyx":145
  *         response_text.config(state=tk.DISABLED)
  *         with usermodel.chat_session(system_prompt=system_prompt):
  *             response = usermodel.generate(userinput, max_tokens=modtokens, callback=stream, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)             # <<<<<<<<<<<<<<
  *             response_text.config(state=tk.NORMAL)
  *             response_text.delete(1.0, tk.END)
 */
-            __pyx_t_1 = __pyx_v_4main_usermodel;
+            __pyx_t_1 = __pyx_v_9cyckleapp_4main_usermodel;
             __Pyx_INCREF(__pyx_t_1);
-            __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_4main_modtokens); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 145, __pyx_L24_error)
+            __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_9cyckleapp_4main_modtokens); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 145, __pyx_L24_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_stream); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L24_error)
             __Pyx_GOTREF(__pyx_t_2);
@@ -5811,7 +5817,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
             __pyx_v_response = __pyx_t_3;
             __pyx_t_3 = 0;
 
-            /* "main.pyx":146
+            /* "cyckleapp/main.pyx":146
  *         with usermodel.chat_session(system_prompt=system_prompt):
  *             response = usermodel.generate(userinput, max_tokens=modtokens, callback=stream, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
  *             response_text.config(state=tk.NORMAL)             # <<<<<<<<<<<<<<
@@ -5856,7 +5862,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
             }
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-            /* "main.pyx":147
+            /* "cyckleapp/main.pyx":147
  *             response = usermodel.generate(userinput, max_tokens=modtokens, callback=stream, temp=0.3, top_k=25, top_p=0.9, repeat_penalty=1.1, n_batch=8)
  *             response_text.config(state=tk.NORMAL)
  *             response_text.delete(1.0, tk.END)             # <<<<<<<<<<<<<<
@@ -5897,7 +5903,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
             }
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-            /* "main.pyx":148
+            /* "cyckleapp/main.pyx":148
  *             response_text.config(state=tk.NORMAL)
  *             response_text.delete(1.0, tk.END)
  *             response_text.insert(tk.END, "Cyckle>>> " + response)             # <<<<<<<<<<<<<<
@@ -5941,7 +5947,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
             }
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-            /* "main.pyx":149
+            /* "cyckleapp/main.pyx":149
  *             response_text.delete(1.0, tk.END)
  *             response_text.insert(tk.END, "Cyckle>>> " + response)
  *             response_text.config(state=tk.DISABLED)             # <<<<<<<<<<<<<<
@@ -5986,7 +5992,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
             }
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-            /* "main.pyx":144
+            /* "cyckleapp/main.pyx":144
  *         response_text.insert(tk.END, "\n")
  *         response_text.config(state=tk.DISABLED)
  *         with usermodel.chat_session(system_prompt=system_prompt):             # <<<<<<<<<<<<<<
@@ -6005,7 +6011,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           /*except:*/ {
-            __Pyx_AddTraceback("main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
+            __Pyx_AddTraceback("cyckleapp.main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
             if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_11) < 0) __PYX_ERR(0, 144, __pyx_L26_except_error)
             __Pyx_XGOTREF(__pyx_t_3);
             __Pyx_XGOTREF(__pyx_t_2);
@@ -6070,7 +6076,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
   }
   __pyx_L4:;
 
-  /* "main.pyx":150
+  /* "cyckleapp/main.pyx":150
  *             response_text.insert(tk.END, "Cyckle>>> " + response)
  *             response_text.config(state=tk.DISABLED)
  *     entry.delete(0, tk.END)             # <<<<<<<<<<<<<<
@@ -6111,7 +6117,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
   }
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-  /* "main.pyx":104
+  /* "cyckleapp/main.pyx":104
  *             print(f"[TTS] Error: {e}")
  * 
  * cpdef void handle_input(event=None):             # <<<<<<<<<<<<<<
@@ -6127,7 +6133,7 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_11);
-  __Pyx_AddTraceback("main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_userinput);
   __Pyx_XDECREF(__pyx_v_current_limit);
@@ -6140,15 +6146,15 @@ static void __pyx_f_4main_handle_input(CYTHON_UNUSED int __pyx_skip_dispatch, st
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_5handle_input(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_5handle_input(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_5handle_input = {"handle_input", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_5handle_input, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_5handle_input(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_5handle_input = {"handle_input", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_5handle_input, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_5handle_input(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6213,11 +6219,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_4handle_input(__pyx_self, __pyx_v_event);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_4handle_input(__pyx_self, __pyx_v_event);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -6227,10 +6233,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_4handle_input(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
+static PyObject *__pyx_pf_9cyckleapp_4main_4handle_input(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  struct __pyx_opt_args_4main_handle_input __pyx_t_1;
+  struct __pyx_opt_args_9cyckleapp_4main_handle_input __pyx_t_1;
   PyObject *__pyx_t_2 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -6239,7 +6245,7 @@ static PyObject *__pyx_pf_4main_4handle_input(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1.__pyx_n = 1;
   __pyx_t_1.event = __pyx_v_event;
-  __pyx_f_4main_handle_input(1, &__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_f_9cyckleapp_4main_handle_input(1, &__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L1_error)
   __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
@@ -6249,7 +6255,7 @@ static PyObject *__pyx_pf_4main_4handle_input(CYTHON_UNUSED PyObject *__pyx_self
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.handle_input", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6257,7 +6263,7 @@ static PyObject *__pyx_pf_4main_4handle_input(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "main.pyx":152
+/* "cyckleapp/main.pyx":152
  *     entry.delete(0, tk.END)
  * 
  * cpdef void random_placeholder(event):             # <<<<<<<<<<<<<<
@@ -6265,14 +6271,14 @@ static PyObject *__pyx_pf_4main_4handle_input(CYTHON_UNUSED PyObject *__pyx_self
  *     placeholders = ["Ask anything", "Quench your wonder", "What's on your mind?", "Your query awaits", "Unleash your curiosity", "Seek information"]
 */
 
-static PyObject *__pyx_pw_4main_7random_placeholder(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_7random_placeholder(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static void __pyx_f_4main_random_placeholder(CYTHON_UNUSED PyObject *__pyx_v_event, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static void __pyx_f_9cyckleapp_4main_random_placeholder(CYTHON_UNUSED PyObject *__pyx_v_event, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_v_placeholders = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6285,7 +6291,7 @@ static void __pyx_f_4main_random_placeholder(CYTHON_UNUSED PyObject *__pyx_v_eve
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("random_placeholder", 0);
 
-  /* "main.pyx":154
+  /* "cyckleapp/main.pyx":154
  * cpdef void random_placeholder(event):
  *     global used_placeholder
  *     placeholders = ["Ask anything", "Quench your wonder", "What's on your mind?", "Your query awaits", "Unleash your curiosity", "Seek information"]             # <<<<<<<<<<<<<<
@@ -6315,7 +6321,7 @@ static void __pyx_f_4main_random_placeholder(CYTHON_UNUSED PyObject *__pyx_v_eve
   __pyx_v_placeholders = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "main.pyx":155
+  /* "cyckleapp/main.pyx":155
  *     global used_placeholder
  *     placeholders = ["Ask anything", "Quench your wonder", "What's on your mind?", "Your query awaits", "Unleash your curiosity", "Seek information"]
  *     used_placeholder = random.choice(placeholders)             # <<<<<<<<<<<<<<
@@ -6351,7 +6357,7 @@ static void __pyx_f_4main_random_placeholder(CYTHON_UNUSED PyObject *__pyx_v_eve
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_used_placeholder, __pyx_t_1) < 0) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":152
+  /* "cyckleapp/main.pyx":152
  *     entry.delete(0, tk.END)
  * 
  * cpdef void random_placeholder(event):             # <<<<<<<<<<<<<<
@@ -6366,22 +6372,22 @@ static void __pyx_f_4main_random_placeholder(CYTHON_UNUSED PyObject *__pyx_v_eve
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("main.random_placeholder", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.random_placeholder", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_placeholders);
   __Pyx_RefNannyFinishContext();
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_7random_placeholder(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_7random_placeholder(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_7random_placeholder = {"random_placeholder", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_7random_placeholder, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_7random_placeholder(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_7random_placeholder = {"random_placeholder", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_7random_placeholder, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_7random_placeholder(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6443,11 +6449,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.random_placeholder", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.random_placeholder", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_6random_placeholder(__pyx_self, __pyx_v_event);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_6random_placeholder(__pyx_self, __pyx_v_event);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -6457,7 +6463,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_6random_placeholder(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
+static PyObject *__pyx_pf_9cyckleapp_4main_6random_placeholder(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6466,7 +6472,7 @@ static PyObject *__pyx_pf_4main_6random_placeholder(CYTHON_UNUSED PyObject *__py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("random_placeholder", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_f_4main_random_placeholder(__pyx_v_event, 1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_f_9cyckleapp_4main_random_placeholder(__pyx_v_event, 1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
   __pyx_t_1 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
@@ -6476,7 +6482,7 @@ static PyObject *__pyx_pf_4main_6random_placeholder(CYTHON_UNUSED PyObject *__py
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.random_placeholder", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.random_placeholder", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6484,7 +6490,7 @@ static PyObject *__pyx_pf_4main_6random_placeholder(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "main.pyx":157
+/* "cyckleapp/main.pyx":157
  *     used_placeholder = random.choice(placeholders)
  * 
  * cpdef entry_focus(event):             # <<<<<<<<<<<<<<
@@ -6492,14 +6498,14 @@ static PyObject *__pyx_pf_4main_6random_placeholder(CYTHON_UNUSED PyObject *__py
  *         entry.delete(0, tk.END)
 */
 
-static PyObject *__pyx_pw_4main_9entry_focus(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_9entry_focus(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_4main_entry_focus(CYTHON_UNUSED PyObject *__pyx_v_event, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_9cyckleapp_4main_entry_focus(CYTHON_UNUSED PyObject *__pyx_v_event, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6514,7 +6520,7 @@ static PyObject *__pyx_f_4main_entry_focus(CYTHON_UNUSED PyObject *__pyx_v_event
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("entry_focus", 0);
 
-  /* "main.pyx":158
+  /* "cyckleapp/main.pyx":158
  * 
  * cpdef entry_focus(event):
  *     if entry.get() == used_placeholder:             # <<<<<<<<<<<<<<
@@ -6556,7 +6562,7 @@ static PyObject *__pyx_f_4main_entry_focus(CYTHON_UNUSED PyObject *__pyx_v_event
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_6) {
 
-    /* "main.pyx":159
+    /* "cyckleapp/main.pyx":159
  * cpdef entry_focus(event):
  *     if entry.get() == used_placeholder:
  *         entry.delete(0, tk.END)             # <<<<<<<<<<<<<<
@@ -6597,7 +6603,7 @@ static PyObject *__pyx_f_4main_entry_focus(CYTHON_UNUSED PyObject *__pyx_v_event
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "main.pyx":160
+    /* "cyckleapp/main.pyx":160
  *     if entry.get() == used_placeholder:
  *         entry.delete(0, tk.END)
  *         entry.config(foreground="#ffffff")             # <<<<<<<<<<<<<<
@@ -6636,7 +6642,7 @@ static PyObject *__pyx_f_4main_entry_focus(CYTHON_UNUSED PyObject *__pyx_v_event
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "main.pyx":158
+    /* "cyckleapp/main.pyx":158
  * 
  * cpdef entry_focus(event):
  *     if entry.get() == used_placeholder:             # <<<<<<<<<<<<<<
@@ -6645,7 +6651,7 @@ static PyObject *__pyx_f_4main_entry_focus(CYTHON_UNUSED PyObject *__pyx_v_event
 */
   }
 
-  /* "main.pyx":157
+  /* "cyckleapp/main.pyx":157
  *     used_placeholder = random.choice(placeholders)
  * 
  * cpdef entry_focus(event):             # <<<<<<<<<<<<<<
@@ -6662,7 +6668,7 @@ static PyObject *__pyx_f_4main_entry_focus(CYTHON_UNUSED PyObject *__pyx_v_event
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("main.entry_focus", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.entry_focus", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6671,15 +6677,15 @@ static PyObject *__pyx_f_4main_entry_focus(CYTHON_UNUSED PyObject *__pyx_v_event
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_9entry_focus(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_9entry_focus(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_9entry_focus = {"entry_focus", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_9entry_focus, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_9entry_focus(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_9entry_focus = {"entry_focus", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_9entry_focus, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_9entry_focus(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6741,11 +6747,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.entry_focus", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.entry_focus", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_8entry_focus(__pyx_self, __pyx_v_event);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_8entry_focus(__pyx_self, __pyx_v_event);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -6755,7 +6761,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_8entry_focus(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
+static PyObject *__pyx_pf_9cyckleapp_4main_8entry_focus(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6764,7 +6770,7 @@ static PyObject *__pyx_pf_4main_8entry_focus(CYTHON_UNUSED PyObject *__pyx_self,
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("entry_focus", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_entry_focus(__pyx_v_event, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_entry_focus(__pyx_v_event, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6773,7 +6779,7 @@ static PyObject *__pyx_pf_4main_8entry_focus(CYTHON_UNUSED PyObject *__pyx_self,
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.entry_focus", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.entry_focus", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6781,7 +6787,7 @@ static PyObject *__pyx_pf_4main_8entry_focus(CYTHON_UNUSED PyObject *__pyx_self,
   return __pyx_r;
 }
 
-/* "main.pyx":162
+/* "cyckleapp/main.pyx":162
  *         entry.config(foreground="#ffffff")
  * 
  * cpdef entry_unfocus(event):             # <<<<<<<<<<<<<<
@@ -6789,14 +6795,14 @@ static PyObject *__pyx_pf_4main_8entry_focus(CYTHON_UNUSED PyObject *__pyx_self,
  *         entry.insert(0, used_placeholder)
 */
 
-static PyObject *__pyx_pw_4main_11entry_unfocus(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_11entry_unfocus(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_4main_entry_unfocus(CYTHON_UNUSED PyObject *__pyx_v_event, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_9cyckleapp_4main_entry_unfocus(CYTHON_UNUSED PyObject *__pyx_v_event, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6810,7 +6816,7 @@ static PyObject *__pyx_f_4main_entry_unfocus(CYTHON_UNUSED PyObject *__pyx_v_eve
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("entry_unfocus", 0);
 
-  /* "main.pyx":163
+  /* "cyckleapp/main.pyx":163
  * 
  * cpdef entry_unfocus(event):
  *     if entry.get() == '':             # <<<<<<<<<<<<<<
@@ -6847,7 +6853,7 @@ static PyObject *__pyx_f_4main_entry_unfocus(CYTHON_UNUSED PyObject *__pyx_v_eve
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_6) {
 
-    /* "main.pyx":164
+    /* "cyckleapp/main.pyx":164
  * cpdef entry_unfocus(event):
  *     if entry.get() == '':
  *         entry.insert(0, used_placeholder)             # <<<<<<<<<<<<<<
@@ -6885,7 +6891,7 @@ static PyObject *__pyx_f_4main_entry_unfocus(CYTHON_UNUSED PyObject *__pyx_v_eve
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":165
+    /* "cyckleapp/main.pyx":165
  *     if entry.get() == '':
  *         entry.insert(0, used_placeholder)
  *         entry.config(foreground="#D3D3D3")             # <<<<<<<<<<<<<<
@@ -6924,7 +6930,7 @@ static PyObject *__pyx_f_4main_entry_unfocus(CYTHON_UNUSED PyObject *__pyx_v_eve
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":163
+    /* "cyckleapp/main.pyx":163
  * 
  * cpdef entry_unfocus(event):
  *     if entry.get() == '':             # <<<<<<<<<<<<<<
@@ -6933,7 +6939,7 @@ static PyObject *__pyx_f_4main_entry_unfocus(CYTHON_UNUSED PyObject *__pyx_v_eve
 */
   }
 
-  /* "main.pyx":162
+  /* "cyckleapp/main.pyx":162
  *         entry.config(foreground="#ffffff")
  * 
  * cpdef entry_unfocus(event):             # <<<<<<<<<<<<<<
@@ -6949,7 +6955,7 @@ static PyObject *__pyx_f_4main_entry_unfocus(CYTHON_UNUSED PyObject *__pyx_v_eve
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("main.entry_unfocus", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.entry_unfocus", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6958,15 +6964,15 @@ static PyObject *__pyx_f_4main_entry_unfocus(CYTHON_UNUSED PyObject *__pyx_v_eve
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_11entry_unfocus(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_11entry_unfocus(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_11entry_unfocus = {"entry_unfocus", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_11entry_unfocus, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_11entry_unfocus(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_11entry_unfocus = {"entry_unfocus", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_11entry_unfocus, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_11entry_unfocus(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7028,11 +7034,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.entry_unfocus", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.entry_unfocus", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_10entry_unfocus(__pyx_self, __pyx_v_event);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_10entry_unfocus(__pyx_self, __pyx_v_event);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -7042,7 +7048,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_10entry_unfocus(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
+static PyObject *__pyx_pf_9cyckleapp_4main_10entry_unfocus(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -7051,7 +7057,7 @@ static PyObject *__pyx_pf_4main_10entry_unfocus(CYTHON_UNUSED PyObject *__pyx_se
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("entry_unfocus", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_entry_unfocus(__pyx_v_event, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_entry_unfocus(__pyx_v_event, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7060,7 +7066,7 @@ static PyObject *__pyx_pf_4main_10entry_unfocus(CYTHON_UNUSED PyObject *__pyx_se
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.entry_unfocus", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.entry_unfocus", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -7068,7 +7074,7 @@ static PyObject *__pyx_pf_4main_10entry_unfocus(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "main.pyx":167
+/* "cyckleapp/main.pyx":167
  *         entry.config(foreground="#D3D3D3")
  * 
  * cpdef void handle_history(event):             # <<<<<<<<<<<<<<
@@ -7076,14 +7082,14 @@ static PyObject *__pyx_pf_4main_10entry_unfocus(CYTHON_UNUSED PyObject *__pyx_se
  *     if event.keysym == "Up":
 */
 
-static PyObject *__pyx_pw_4main_13handle_history(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_13handle_history(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static void __pyx_f_9cyckleapp_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED int __pyx_skip_dispatch) {
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_t_2;
@@ -7098,7 +7104,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("handle_history", 0);
 
-  /* "main.pyx":169
+  /* "cyckleapp/main.pyx":169
  * cpdef void handle_history(event):
  *     global poshistory
  *     if event.keysym == "Up":             # <<<<<<<<<<<<<<
@@ -7111,26 +7117,26 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "main.pyx":170
+    /* "cyckleapp/main.pyx":170
  *     global poshistory
  *     if event.keysym == "Up":
  *         if poshistory > 0:             # <<<<<<<<<<<<<<
  *             poshistory -= 1
  *             entry.delete(0, tk.END)
 */
-    __pyx_t_2 = (__pyx_v_4main_poshistory > 0);
+    __pyx_t_2 = (__pyx_v_9cyckleapp_4main_poshistory > 0);
     if (__pyx_t_2) {
 
-      /* "main.pyx":171
+      /* "cyckleapp/main.pyx":171
  *     if event.keysym == "Up":
  *         if poshistory > 0:
  *             poshistory -= 1             # <<<<<<<<<<<<<<
  *             entry.delete(0, tk.END)
  *             entry.insert(0, cmdhistory[poshistory])
 */
-      __pyx_v_4main_poshistory = (__pyx_v_4main_poshistory - 1);
+      __pyx_v_9cyckleapp_4main_poshistory = (__pyx_v_9cyckleapp_4main_poshistory - 1);
 
-      /* "main.pyx":172
+      /* "cyckleapp/main.pyx":172
  *         if poshistory > 0:
  *             poshistory -= 1
  *             entry.delete(0, tk.END)             # <<<<<<<<<<<<<<
@@ -7171,7 +7177,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "main.pyx":173
+      /* "cyckleapp/main.pyx":173
  *             poshistory -= 1
  *             entry.delete(0, tk.END)
  *             entry.insert(0, cmdhistory[poshistory])             # <<<<<<<<<<<<<<
@@ -7184,11 +7190,11 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
       __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_insert); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(__pyx_v_4main_cmdhistory == Py_None)) {
+      if (unlikely(__pyx_v_9cyckleapp_4main_cmdhistory == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
         __PYX_ERR(0, 173, __pyx_L1_error)
       }
-      __pyx_t_6 = __Pyx_GetItemInt_List(__pyx_v_4main_cmdhistory, __pyx_v_4main_poshistory, int, 1, __Pyx_PyLong_From_int, 1, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 173, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_GetItemInt_List(__pyx_v_9cyckleapp_4main_cmdhistory, __pyx_v_9cyckleapp_4main_poshistory, int, 1, __Pyx_PyLong_From_int, 1, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 173, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -7213,7 +7219,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "main.pyx":170
+      /* "cyckleapp/main.pyx":170
  *     global poshistory
  *     if event.keysym == "Up":
  *         if poshistory > 0:             # <<<<<<<<<<<<<<
@@ -7222,7 +7228,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
 */
     }
 
-    /* "main.pyx":169
+    /* "cyckleapp/main.pyx":169
  * cpdef void handle_history(event):
  *     global poshistory
  *     if event.keysym == "Up":             # <<<<<<<<<<<<<<
@@ -7232,7 +7238,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
     goto __pyx_L3;
   }
 
-  /* "main.pyx":174
+  /* "cyckleapp/main.pyx":174
  *             entry.delete(0, tk.END)
  *             entry.insert(0, cmdhistory[poshistory])
  *     elif event.keysym == "Down":             # <<<<<<<<<<<<<<
@@ -7245,14 +7251,14 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "main.pyx":175
+    /* "cyckleapp/main.pyx":175
  *             entry.insert(0, cmdhistory[poshistory])
  *     elif event.keysym == "Down":
  *         if poshistory < len(cmdhistory) - 1:             # <<<<<<<<<<<<<<
  *             poshistory += 1
  *             entry.delete(0, tk.END)
 */
-    __pyx_t_1 = __pyx_v_4main_cmdhistory;
+    __pyx_t_1 = __pyx_v_9cyckleapp_4main_cmdhistory;
     __Pyx_INCREF(__pyx_t_1);
     if (unlikely(__pyx_t_1 == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
@@ -7260,19 +7266,19 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
     }
     __pyx_t_8 = __Pyx_PyList_GET_SIZE(__pyx_t_1); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 175, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_2 = (__pyx_v_4main_poshistory < (__pyx_t_8 - 1));
+    __pyx_t_2 = (__pyx_v_9cyckleapp_4main_poshistory < (__pyx_t_8 - 1));
     if (__pyx_t_2) {
 
-      /* "main.pyx":176
+      /* "cyckleapp/main.pyx":176
  *     elif event.keysym == "Down":
  *         if poshistory < len(cmdhistory) - 1:
  *             poshistory += 1             # <<<<<<<<<<<<<<
  *             entry.delete(0, tk.END)
  *             entry.insert(0, cmdhistory[poshistory])
 */
-      __pyx_v_4main_poshistory = (__pyx_v_4main_poshistory + 1);
+      __pyx_v_9cyckleapp_4main_poshistory = (__pyx_v_9cyckleapp_4main_poshistory + 1);
 
-      /* "main.pyx":177
+      /* "cyckleapp/main.pyx":177
  *         if poshistory < len(cmdhistory) - 1:
  *             poshistory += 1
  *             entry.delete(0, tk.END)             # <<<<<<<<<<<<<<
@@ -7313,7 +7319,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "main.pyx":178
+      /* "cyckleapp/main.pyx":178
  *             poshistory += 1
  *             entry.delete(0, tk.END)
  *             entry.insert(0, cmdhistory[poshistory])             # <<<<<<<<<<<<<<
@@ -7326,11 +7332,11 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
       __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_insert); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 178, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(__pyx_v_4main_cmdhistory == Py_None)) {
+      if (unlikely(__pyx_v_9cyckleapp_4main_cmdhistory == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
         __PYX_ERR(0, 178, __pyx_L1_error)
       }
-      __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_4main_cmdhistory, __pyx_v_4main_poshistory, int, 1, __Pyx_PyLong_From_int, 1, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 178, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_9cyckleapp_4main_cmdhistory, __pyx_v_9cyckleapp_4main_poshistory, int, 1, __Pyx_PyLong_From_int, 1, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 178, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -7355,7 +7361,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "main.pyx":175
+      /* "cyckleapp/main.pyx":175
  *             entry.insert(0, cmdhistory[poshistory])
  *     elif event.keysym == "Down":
  *         if poshistory < len(cmdhistory) - 1:             # <<<<<<<<<<<<<<
@@ -7365,7 +7371,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
       goto __pyx_L5;
     }
 
-    /* "main.pyx":180
+    /* "cyckleapp/main.pyx":180
  *             entry.insert(0, cmdhistory[poshistory])
  *         else:
  *             poshistory = len(cmdhistory)             # <<<<<<<<<<<<<<
@@ -7373,7 +7379,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
  * 
 */
     /*else*/ {
-      __pyx_t_1 = __pyx_v_4main_cmdhistory;
+      __pyx_t_1 = __pyx_v_9cyckleapp_4main_cmdhistory;
       __Pyx_INCREF(__pyx_t_1);
       if (unlikely(__pyx_t_1 == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
@@ -7381,9 +7387,9 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
       }
       __pyx_t_8 = __Pyx_PyList_GET_SIZE(__pyx_t_1); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 180, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_v_4main_poshistory = __pyx_t_8;
+      __pyx_v_9cyckleapp_4main_poshistory = __pyx_t_8;
 
-      /* "main.pyx":181
+      /* "cyckleapp/main.pyx":181
  *         else:
  *             poshistory = len(cmdhistory)
  *             entry.delete(0, tk.END)             # <<<<<<<<<<<<<<
@@ -7426,7 +7432,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
     }
     __pyx_L5:;
 
-    /* "main.pyx":174
+    /* "cyckleapp/main.pyx":174
  *             entry.delete(0, tk.END)
  *             entry.insert(0, cmdhistory[poshistory])
  *     elif event.keysym == "Down":             # <<<<<<<<<<<<<<
@@ -7436,7 +7442,7 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
   }
   __pyx_L3:;
 
-  /* "main.pyx":167
+  /* "cyckleapp/main.pyx":167
  *         entry.config(foreground="#D3D3D3")
  * 
  * cpdef void handle_history(event):             # <<<<<<<<<<<<<<
@@ -7452,21 +7458,21 @@ static void __pyx_f_4main_handle_history(PyObject *__pyx_v_event, CYTHON_UNUSED 
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("main.handle_history", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.handle_history", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_13handle_history(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_13handle_history(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_13handle_history = {"handle_history", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_13handle_history, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_13handle_history(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_13handle_history = {"handle_history", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_13handle_history, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_13handle_history(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7528,11 +7534,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.handle_history", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.handle_history", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_12handle_history(__pyx_self, __pyx_v_event);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_12handle_history(__pyx_self, __pyx_v_event);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -7542,7 +7548,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_12handle_history(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
+static PyObject *__pyx_pf_9cyckleapp_4main_12handle_history(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -7551,7 +7557,7 @@ static PyObject *__pyx_pf_4main_12handle_history(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("handle_history", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_f_4main_handle_history(__pyx_v_event, 1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_f_9cyckleapp_4main_handle_history(__pyx_v_event, 1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 167, __pyx_L1_error)
   __pyx_t_1 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
@@ -7561,7 +7567,7 @@ static PyObject *__pyx_pf_4main_12handle_history(CYTHON_UNUSED PyObject *__pyx_s
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.handle_history", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.handle_history", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -7569,7 +7575,7 @@ static PyObject *__pyx_pf_4main_12handle_history(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "main.pyx":183
+/* "cyckleapp/main.pyx":183
  *             entry.delete(0, tk.END)
  * 
  * cpdef void handle_csv(event=None):             # <<<<<<<<<<<<<<
@@ -7577,14 +7583,14 @@ static PyObject *__pyx_pf_4main_12handle_history(CYTHON_UNUSED PyObject *__pyx_s
  *     main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV/TSV file",filetypes = (("CSV/TSV files","*.csv *.tsv"),("All files","*.*")))
 */
 
-static PyObject *__pyx_pw_4main_15handle_csv(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_15handle_csv(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_4main_handle_csv *__pyx_optional_args) {
+static void __pyx_f_9cyckleapp_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_9cyckleapp_4main_handle_csv *__pyx_optional_args) {
   PyObject *__pyx_v_tsvfile = NULL;
   PyObject *__pyx_v_reader = NULL;
   PyObject *__pyx_v_data = NULL;
@@ -7632,7 +7638,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
   if (__pyx_optional_args) {
   }
 
-  /* "main.pyx":185
+  /* "cyckleapp/main.pyx":185
  * cpdef void handle_csv(event=None):
  *     global response_text, main, label1
  *     main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV/TSV file",filetypes = (("CSV/TSV files","*.csv *.tsv"),("All files","*.*")))             # <<<<<<<<<<<<<<
@@ -7677,7 +7683,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "main.pyx":187
+  /* "cyckleapp/main.pyx":187
  *     main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV/TSV file",filetypes = (("CSV/TSV files","*.csv *.tsv"),("All files","*.*")))
  * 
  *     if main.filename.endswith(".tsv"):             # <<<<<<<<<<<<<<
@@ -7704,7 +7710,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (__pyx_t_6) {
 
-    /* "main.pyx":188
+    /* "cyckleapp/main.pyx":188
  * 
  *     if main.filename.endswith(".tsv"):
  *         try:             # <<<<<<<<<<<<<<
@@ -7720,7 +7726,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
       __Pyx_XGOTREF(__pyx_t_9);
       /*try:*/ {
 
-        /* "main.pyx":189
+        /* "cyckleapp/main.pyx":189
  *     if main.filename.endswith(".tsv"):
  *         try:
  *             with open(main.filename, newline='') as tsvfile:             # <<<<<<<<<<<<<<
@@ -7790,7 +7796,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __pyx_v_tsvfile = __pyx_t_10;
                 __pyx_t_10 = 0;
 
-                /* "main.pyx":190
+                /* "cyckleapp/main.pyx":190
  *         try:
  *             with open(main.filename, newline='') as tsvfile:
  *                 reader = csv.reader(tsvfile)             # <<<<<<<<<<<<<<
@@ -7826,7 +7832,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __pyx_v_reader = __pyx_t_10;
                 __pyx_t_10 = 0;
 
-                /* "main.pyx":191
+                /* "cyckleapp/main.pyx":191
  *             with open(main.filename, newline='') as tsvfile:
  *                 reader = csv.reader(tsvfile)
  *                 data = [row for row in reader]             # <<<<<<<<<<<<<<
@@ -7900,7 +7906,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __pyx_v_data = ((PyObject*)__pyx_t_10);
                 __pyx_t_10 = 0;
 
-                /* "main.pyx":192
+                /* "cyckleapp/main.pyx":192
  *                 reader = csv.reader(tsvfile)
  *                 data = [row for row in reader]
  *                 tsv_str = "\n".join([", ".join(row) for row in data])             # <<<<<<<<<<<<<<
@@ -7945,7 +7951,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __pyx_v_tsv_str = ((PyObject*)__pyx_t_3);
                 __pyx_t_3 = 0;
 
-                /* "main.pyx":193
+                /* "cyckleapp/main.pyx":193
  *                 data = [row for row in reader]
  *                 tsv_str = "\n".join([", ".join(row) for row in data])
  *                 response_text.config(state=tk.NORMAL)             # <<<<<<<<<<<<<<
@@ -7990,7 +7996,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-                /* "main.pyx":194
+                /* "cyckleapp/main.pyx":194
  *                 tsv_str = "\n".join([", ".join(row) for row in data])
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)             # <<<<<<<<<<<<<<
@@ -8031,7 +8037,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-                /* "main.pyx":195
+                /* "cyckleapp/main.pyx":195
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)
  *                 response_text.insert(tk.END, "Analyzing TSV...")             # <<<<<<<<<<<<<<
@@ -8072,7 +8078,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-                /* "main.pyx":196
+                /* "cyckleapp/main.pyx":196
  *                 response_text.delete(1.0, tk.END)
  *                 response_text.insert(tk.END, "Analyzing TSV...")
  *                 label1.config(text="TSV>>> " +main.filename)             # <<<<<<<<<<<<<<
@@ -8120,7 +8126,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-                /* "main.pyx":189
+                /* "cyckleapp/main.pyx":189
  *     if main.filename.endswith(".tsv"):
  *         try:
  *             with open(main.filename, newline='') as tsvfile:             # <<<<<<<<<<<<<<
@@ -8139,7 +8145,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
               __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
               __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
               /*except:*/ {
-                __Pyx_AddTraceback("main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+                __Pyx_AddTraceback("cyckleapp.main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
                 if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_2, &__pyx_t_10) < 0) __PYX_ERR(0, 189, __pyx_L16_except_error)
                 __Pyx_XGOTREF(__pyx_t_3);
                 __Pyx_XGOTREF(__pyx_t_2);
@@ -8202,7 +8208,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
           __pyx_L37:;
         }
 
-        /* "main.pyx":197
+        /* "cyckleapp/main.pyx":197
  *                 response_text.insert(tk.END, "Analyzing TSV...")
  *                 label1.config(text="TSV>>> " +main.filename)
  *             with usermodel.chat_session(system_prompt=system_prompt):             # <<<<<<<<<<<<<<
@@ -8210,7 +8216,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
  *                 tsvresponse = usermodel.generate(tsv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)
 */
         /*with:*/ {
-          __pyx_t_2 = __pyx_v_4main_usermodel;
+          __pyx_t_2 = __pyx_v_9cyckleapp_4main_usermodel;
           __Pyx_INCREF(__pyx_t_2);
           __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_system_prompt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 197, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_3);
@@ -8264,7 +8270,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
               __Pyx_XGOTREF(__pyx_t_12);
               /*try:*/ {
 
-                /* "main.pyx":198
+                /* "cyckleapp/main.pyx":198
  *                 label1.config(text="TSV>>> " +main.filename)
  *             with usermodel.chat_session(system_prompt=system_prompt):
  *                 print("[TSV] Generating analysis")             # <<<<<<<<<<<<<<
@@ -8285,17 +8291,17 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-                /* "main.pyx":199
+                /* "cyckleapp/main.pyx":199
  *             with usermodel.chat_session(system_prompt=system_prompt):
  *                 print("[TSV] Generating analysis")
  *                 tsvresponse = usermodel.generate(tsv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)             # <<<<<<<<<<<<<<
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)
 */
-                __pyx_t_2 = __pyx_v_4main_usermodel;
+                __pyx_t_2 = __pyx_v_9cyckleapp_4main_usermodel;
                 __Pyx_INCREF(__pyx_t_2);
                 if (unlikely(!__pyx_v_tsv_str)) { __Pyx_RaiseUnboundLocalError("tsv_str"); __PYX_ERR(0, 199, __pyx_L42_error) }
-                __pyx_t_4 = __Pyx_PyLong_From_int(__pyx_v_4main_modtokens); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 199, __pyx_L42_error)
+                __pyx_t_4 = __Pyx_PyLong_From_int(__pyx_v_9cyckleapp_4main_modtokens); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 199, __pyx_L42_error)
                 __Pyx_GOTREF(__pyx_t_4);
                 __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_stream); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 199, __pyx_L42_error)
                 __Pyx_GOTREF(__pyx_t_3);
@@ -8322,7 +8328,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __pyx_v_tsvresponse = __pyx_t_10;
                 __pyx_t_10 = 0;
 
-                /* "main.pyx":200
+                /* "cyckleapp/main.pyx":200
  *                 print("[TSV] Generating analysis")
  *                 tsvresponse = usermodel.generate(tsv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)
  *                 response_text.config(state=tk.NORMAL)             # <<<<<<<<<<<<<<
@@ -8367,7 +8373,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-                /* "main.pyx":201
+                /* "cyckleapp/main.pyx":201
  *                 tsvresponse = usermodel.generate(tsv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)             # <<<<<<<<<<<<<<
@@ -8408,7 +8414,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-                /* "main.pyx":202
+                /* "cyckleapp/main.pyx":202
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)
  *                 response_text.insert(tk.END, "Cyckle>>> " + tsvresponse)             # <<<<<<<<<<<<<<
@@ -8452,7 +8458,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-                /* "main.pyx":203
+                /* "cyckleapp/main.pyx":203
  *                 response_text.delete(1.0, tk.END)
  *                 response_text.insert(tk.END, "Cyckle>>> " + tsvresponse)
  *                 response_text.config(state=tk.DISABLED)             # <<<<<<<<<<<<<<
@@ -8497,7 +8503,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-                /* "main.pyx":197
+                /* "cyckleapp/main.pyx":197
  *                 response_text.insert(tk.END, "Analyzing TSV...")
  *                 label1.config(text="TSV>>> " +main.filename)
  *             with usermodel.chat_session(system_prompt=system_prompt):             # <<<<<<<<<<<<<<
@@ -8516,7 +8522,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
               __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
               __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
               /*except:*/ {
-                __Pyx_AddTraceback("main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+                __Pyx_AddTraceback("cyckleapp.main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
                 if (__Pyx_GetException(&__pyx_t_10, &__pyx_t_3, &__pyx_t_1) < 0) __PYX_ERR(0, 197, __pyx_L44_except_error)
                 __Pyx_XGOTREF(__pyx_t_10);
                 __Pyx_XGOTREF(__pyx_t_3);
@@ -8579,7 +8585,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
           __pyx_L51:;
         }
 
-        /* "main.pyx":188
+        /* "cyckleapp/main.pyx":188
  * 
  *     if main.filename.endswith(".tsv"):
  *         try:             # <<<<<<<<<<<<<<
@@ -8598,7 +8604,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "main.pyx":204
+      /* "cyckleapp/main.pyx":204
  *                 response_text.insert(tk.END, "Cyckle>>> " + tsvresponse)
  *                 response_text.config(state=tk.DISABLED)
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -8607,7 +8613,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
 */
       __pyx_t_19 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
       if (__pyx_t_19) {
-        __Pyx_AddTraceback("main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+        __Pyx_AddTraceback("cyckleapp.main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
         if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_3, &__pyx_t_10) < 0) __PYX_ERR(0, 204, __pyx_L6_except_error)
         __Pyx_XGOTREF(__pyx_t_1);
         __Pyx_XGOTREF(__pyx_t_3);
@@ -8616,7 +8622,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
         __pyx_v_e = __pyx_t_3;
         /*try:*/ {
 
-          /* "main.pyx":205
+          /* "cyckleapp/main.pyx":205
  *                 response_text.config(state=tk.DISABLED)
  *         except Exception as e:
  *             print(f"[TSV] Failed to read TSV file: {e}")             # <<<<<<<<<<<<<<
@@ -8644,7 +8650,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         }
 
-        /* "main.pyx":204
+        /* "cyckleapp/main.pyx":204
  *                 response_text.insert(tk.END, "Cyckle>>> " + tsvresponse)
  *                 response_text.config(state=tk.DISABLED)
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -8699,7 +8705,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
       }
       goto __pyx_L6_except_error;
 
-      /* "main.pyx":188
+      /* "cyckleapp/main.pyx":188
  * 
  *     if main.filename.endswith(".tsv"):
  *         try:             # <<<<<<<<<<<<<<
@@ -8720,7 +8726,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
       __pyx_L9_try_end:;
     }
 
-    /* "main.pyx":187
+    /* "cyckleapp/main.pyx":187
  *     main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV/TSV file",filetypes = (("CSV/TSV files","*.csv *.tsv"),("All files","*.*")))
  * 
  *     if main.filename.endswith(".tsv"):             # <<<<<<<<<<<<<<
@@ -8729,7 +8735,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
 */
   }
 
-  /* "main.pyx":207
+  /* "cyckleapp/main.pyx":207
  *             print(f"[TSV] Failed to read TSV file: {e}")
  * 
  *     if main.filename.endswith(".csv"):             # <<<<<<<<<<<<<<
@@ -8756,7 +8762,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   if (__pyx_t_6) {
 
-    /* "main.pyx":208
+    /* "cyckleapp/main.pyx":208
  * 
  *     if main.filename.endswith(".csv"):
  *         try:             # <<<<<<<<<<<<<<
@@ -8772,7 +8778,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
       __Pyx_XGOTREF(__pyx_t_7);
       /*try:*/ {
 
-        /* "main.pyx":209
+        /* "cyckleapp/main.pyx":209
  *     if main.filename.endswith(".csv"):
  *         try:
  *             with open(main.filename, newline='') as csvfile:             # <<<<<<<<<<<<<<
@@ -8842,7 +8848,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __pyx_v_csvfile = __pyx_t_20;
                 __pyx_t_20 = 0;
 
-                /* "main.pyx":210
+                /* "cyckleapp/main.pyx":210
  *         try:
  *             with open(main.filename, newline='') as csvfile:
  *                 reader = csv.reader(csvfile)             # <<<<<<<<<<<<<<
@@ -8878,7 +8884,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __Pyx_XDECREF_SET(__pyx_v_reader, __pyx_t_20);
                 __pyx_t_20 = 0;
 
-                /* "main.pyx":211
+                /* "cyckleapp/main.pyx":211
  *             with open(main.filename, newline='') as csvfile:
  *                 reader = csv.reader(csvfile)
  *                 data = [row for row in reader]             # <<<<<<<<<<<<<<
@@ -8952,7 +8958,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __Pyx_XDECREF_SET(__pyx_v_data, ((PyObject*)__pyx_t_20));
                 __pyx_t_20 = 0;
 
-                /* "main.pyx":212
+                /* "cyckleapp/main.pyx":212
  *                 reader = csv.reader(csvfile)
  *                 data = [row for row in reader]
  *                 csv_str = "\n".join([", ".join(row) for row in data])             # <<<<<<<<<<<<<<
@@ -8997,7 +9003,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __pyx_v_csv_str = ((PyObject*)__pyx_t_1);
                 __pyx_t_1 = 0;
 
-                /* "main.pyx":213
+                /* "cyckleapp/main.pyx":213
  *                 data = [row for row in reader]
  *                 csv_str = "\n".join([", ".join(row) for row in data])
  *                 response_text.config(state=tk.NORMAL)             # <<<<<<<<<<<<<<
@@ -9042,7 +9048,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-                /* "main.pyx":214
+                /* "cyckleapp/main.pyx":214
  *                 csv_str = "\n".join([", ".join(row) for row in data])
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)             # <<<<<<<<<<<<<<
@@ -9083,7 +9089,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-                /* "main.pyx":215
+                /* "cyckleapp/main.pyx":215
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)
  *                 response_text.insert(tk.END, "Analyzing CSV...")             # <<<<<<<<<<<<<<
@@ -9124,7 +9130,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-                /* "main.pyx":216
+                /* "cyckleapp/main.pyx":216
  *                 response_text.delete(1.0, tk.END)
  *                 response_text.insert(tk.END, "Analyzing CSV...")
  *                 label1.config(text="CSV>>> " +main.filename)             # <<<<<<<<<<<<<<
@@ -9172,7 +9178,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-                /* "main.pyx":209
+                /* "cyckleapp/main.pyx":209
  *     if main.filename.endswith(".csv"):
  *         try:
  *             with open(main.filename, newline='') as csvfile:             # <<<<<<<<<<<<<<
@@ -9194,7 +9200,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
               __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
               __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
               /*except:*/ {
-                __Pyx_AddTraceback("main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+                __Pyx_AddTraceback("cyckleapp.main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
                 if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_2, &__pyx_t_20) < 0) __PYX_ERR(0, 209, __pyx_L76_except_error)
                 __Pyx_XGOTREF(__pyx_t_1);
                 __Pyx_XGOTREF(__pyx_t_2);
@@ -9257,7 +9263,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
           __pyx_L97:;
         }
 
-        /* "main.pyx":217
+        /* "cyckleapp/main.pyx":217
  *                 response_text.insert(tk.END, "Analyzing CSV...")
  *                 label1.config(text="CSV>>> " +main.filename)
  *             with usermodel.chat_session(system_prompt=system_prompt):             # <<<<<<<<<<<<<<
@@ -9265,7 +9271,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
  *                 csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)
 */
         /*with:*/ {
-          __pyx_t_2 = __pyx_v_4main_usermodel;
+          __pyx_t_2 = __pyx_v_9cyckleapp_4main_usermodel;
           __Pyx_INCREF(__pyx_t_2);
           __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_system_prompt); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L64_error)
           __Pyx_GOTREF(__pyx_t_1);
@@ -9319,7 +9325,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
               __Pyx_XGOTREF(__pyx_t_17);
               /*try:*/ {
 
-                /* "main.pyx":218
+                /* "cyckleapp/main.pyx":218
  *                 label1.config(text="CSV>>> " +main.filename)
  *             with usermodel.chat_session(system_prompt=system_prompt):
  *                 print("[CSV] Generating analysis")             # <<<<<<<<<<<<<<
@@ -9340,17 +9346,17 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
 
-                /* "main.pyx":219
+                /* "cyckleapp/main.pyx":219
  *             with usermodel.chat_session(system_prompt=system_prompt):
  *                 print("[CSV] Generating analysis")
  *                 csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)             # <<<<<<<<<<<<<<
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)
 */
-                __pyx_t_2 = __pyx_v_4main_usermodel;
+                __pyx_t_2 = __pyx_v_9cyckleapp_4main_usermodel;
                 __Pyx_INCREF(__pyx_t_2);
                 if (unlikely(!__pyx_v_csv_str)) { __Pyx_RaiseUnboundLocalError("csv_str"); __PYX_ERR(0, 219, __pyx_L102_error) }
-                __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_4main_modtokens); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 219, __pyx_L102_error)
+                __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_9cyckleapp_4main_modtokens); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 219, __pyx_L102_error)
                 __Pyx_GOTREF(__pyx_t_10);
                 __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_stream); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L102_error)
                 __Pyx_GOTREF(__pyx_t_1);
@@ -9377,7 +9383,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 __pyx_v_csvresponse = __pyx_t_20;
                 __pyx_t_20 = 0;
 
-                /* "main.pyx":220
+                /* "cyckleapp/main.pyx":220
  *                 print("[CSV] Generating analysis")
  *                 csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)
  *                 response_text.config(state=tk.NORMAL)             # <<<<<<<<<<<<<<
@@ -9422,7 +9428,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
 
-                /* "main.pyx":221
+                /* "cyckleapp/main.pyx":221
  *                 csvresponse = usermodel.generate(csv_str, max_tokens=modtokens, callback=stream, temp=0.2, top_k=25, top_p=0.9, repeat_penalty=1.18, n_batch=8)
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)             # <<<<<<<<<<<<<<
@@ -9463,7 +9469,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
 
-                /* "main.pyx":222
+                /* "cyckleapp/main.pyx":222
  *                 response_text.config(state=tk.NORMAL)
  *                 response_text.delete(1.0, tk.END)
  *                 response_text.insert(tk.END, "Cyckle>>> " + csvresponse)             # <<<<<<<<<<<<<<
@@ -9507,7 +9513,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
 
-                /* "main.pyx":223
+                /* "cyckleapp/main.pyx":223
  *                 response_text.delete(1.0, tk.END)
  *                 response_text.insert(tk.END, "Cyckle>>> " + csvresponse)
  *                 response_text.config(state=tk.DISABLED)             # <<<<<<<<<<<<<<
@@ -9552,7 +9558,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
                 }
                 __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
 
-                /* "main.pyx":217
+                /* "cyckleapp/main.pyx":217
  *                 response_text.insert(tk.END, "Analyzing CSV...")
  *                 label1.config(text="CSV>>> " +main.filename)
  *             with usermodel.chat_session(system_prompt=system_prompt):             # <<<<<<<<<<<<<<
@@ -9574,7 +9580,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
               __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
               __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
               /*except:*/ {
-                __Pyx_AddTraceback("main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+                __Pyx_AddTraceback("cyckleapp.main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
                 if (__Pyx_GetException(&__pyx_t_20, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 217, __pyx_L104_except_error)
                 __Pyx_XGOTREF(__pyx_t_20);
                 __Pyx_XGOTREF(__pyx_t_1);
@@ -9637,7 +9643,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
           __pyx_L111:;
         }
 
-        /* "main.pyx":208
+        /* "cyckleapp/main.pyx":208
  * 
  *     if main.filename.endswith(".csv"):
  *         try:             # <<<<<<<<<<<<<<
@@ -9659,7 +9665,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "main.pyx":224
+      /* "cyckleapp/main.pyx":224
  *                 response_text.insert(tk.END, "Cyckle>>> " + csvresponse)
  *                 response_text.config(state=tk.DISABLED)
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -9668,7 +9674,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
 */
       __pyx_t_23 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
       if (__pyx_t_23) {
-        __Pyx_AddTraceback("main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+        __Pyx_AddTraceback("cyckleapp.main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
         if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_1, &__pyx_t_20) < 0) __PYX_ERR(0, 224, __pyx_L66_except_error)
         __Pyx_XGOTREF(__pyx_t_3);
         __Pyx_XGOTREF(__pyx_t_1);
@@ -9677,7 +9683,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
         __pyx_v_e = __pyx_t_1;
         /*try:*/ {
 
-          /* "main.pyx":225
+          /* "cyckleapp/main.pyx":225
  *                 response_text.config(state=tk.DISABLED)
  *         except Exception as e:
  *             print(f"[CSV] Failed to read CSV file: {e}")             # <<<<<<<<<<<<<<
@@ -9705,7 +9711,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         }
 
-        /* "main.pyx":224
+        /* "cyckleapp/main.pyx":224
  *                 response_text.insert(tk.END, "Cyckle>>> " + csvresponse)
  *                 response_text.config(state=tk.DISABLED)
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -9760,7 +9766,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
       }
       goto __pyx_L66_except_error;
 
-      /* "main.pyx":208
+      /* "cyckleapp/main.pyx":208
  * 
  *     if main.filename.endswith(".csv"):
  *         try:             # <<<<<<<<<<<<<<
@@ -9781,7 +9787,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
       __pyx_L69_try_end:;
     }
 
-    /* "main.pyx":207
+    /* "cyckleapp/main.pyx":207
  *             print(f"[TSV] Failed to read TSV file: {e}")
  * 
  *     if main.filename.endswith(".csv"):             # <<<<<<<<<<<<<<
@@ -9790,7 +9796,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
 */
   }
 
-  /* "main.pyx":183
+  /* "cyckleapp/main.pyx":183
  *             entry.delete(0, tk.END)
  * 
  * cpdef void handle_csv(event=None):             # <<<<<<<<<<<<<<
@@ -9809,7 +9815,7 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
   __Pyx_XDECREF(__pyx_t_20);
   __Pyx_XDECREF(__pyx_t_21);
   __Pyx_XDECREF(__pyx_t_22);
-  __Pyx_AddTraceback("main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_tsvfile);
   __Pyx_XDECREF(__pyx_v_reader);
@@ -9828,15 +9834,15 @@ static void __pyx_f_4main_handle_csv(CYTHON_UNUSED int __pyx_skip_dispatch, stru
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_15handle_csv(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_15handle_csv(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_15handle_csv = {"handle_csv", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_15handle_csv, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_15handle_csv(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_15handle_csv = {"handle_csv", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_15handle_csv, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_15handle_csv(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9901,11 +9907,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_14handle_csv(__pyx_self, __pyx_v_event);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_14handle_csv(__pyx_self, __pyx_v_event);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -9915,10 +9921,10 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_14handle_csv(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
+static PyObject *__pyx_pf_9cyckleapp_4main_14handle_csv(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_event) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  struct __pyx_opt_args_4main_handle_csv __pyx_t_1;
+  struct __pyx_opt_args_9cyckleapp_4main_handle_csv __pyx_t_1;
   PyObject *__pyx_t_2 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -9927,7 +9933,7 @@ static PyObject *__pyx_pf_4main_14handle_csv(CYTHON_UNUSED PyObject *__pyx_self,
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1.__pyx_n = 1;
   __pyx_t_1.event = __pyx_v_event;
-  __pyx_f_4main_handle_csv(1, &__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_f_9cyckleapp_4main_handle_csv(1, &__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L1_error)
   __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
@@ -9937,7 +9943,7 @@ static PyObject *__pyx_pf_4main_14handle_csv(CYTHON_UNUSED PyObject *__pyx_self,
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.handle_csv", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -9945,7 +9951,7 @@ static PyObject *__pyx_pf_4main_14handle_csv(CYTHON_UNUSED PyObject *__pyx_self,
   return __pyx_r;
 }
 
-/* "main.pyx":230
+/* "cyckleapp/main.pyx":230
  * root.withdraw()
  * 
  * def maingui():             # <<<<<<<<<<<<<<
@@ -9954,22 +9960,22 @@ static PyObject *__pyx_pf_4main_14handle_csv(CYTHON_UNUSED PyObject *__pyx_self,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_17maingui(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4main_17maingui = {"maingui", (PyCFunction)__pyx_pw_4main_17maingui, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4main_17maingui(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9cyckleapp_4main_17maingui(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_17maingui = {"maingui", (PyCFunction)__pyx_pw_9cyckleapp_4main_17maingui, METH_NOARGS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_17maingui(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("maingui (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_4main_16maingui(__pyx_self);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_16maingui(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "main.pyx":289
+/* "cyckleapp/main.pyx":289
  * 
  *     # redraw system
  *     main.bind("<Map>", lambda e: force_redraw())             # <<<<<<<<<<<<<<
@@ -9978,15 +9984,15 @@ static PyObject *__pyx_pw_4main_17maingui(PyObject *__pyx_self, CYTHON_UNUSED Py
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_7maingui_lambda(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_7maingui_lambda(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_7maingui_lambda = {"lambda", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_7maingui_lambda, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_7maingui_lambda(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_7maingui_lambda = {"lambda", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_7maingui_lambda, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_7maingui_lambda(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10048,7 +10054,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.maingui.lambda", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.maingui.lambda", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -10071,7 +10077,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("lambda", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_force_redraw(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_force_redraw(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10080,7 +10086,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.maingui.lambda", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.maingui.lambda", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10088,7 +10094,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   return __pyx_r;
 }
 
-/* "main.pyx":290
+/* "cyckleapp/main.pyx":290
  *     # redraw system
  *     main.bind("<Map>", lambda e: force_redraw())
  *     main.bind("<Visibility>", lambda e: force_redraw())             # <<<<<<<<<<<<<<
@@ -10097,15 +10103,15 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_7maingui_1lambda1(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_7maingui_1lambda1(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_7maingui_1lambda1 = {"lambda1", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_7maingui_1lambda1, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_7maingui_1lambda1(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_7maingui_1lambda1 = {"lambda1", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_7maingui_1lambda1, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_7maingui_1lambda1(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10167,7 +10173,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.maingui.lambda1", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.maingui.lambda1", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -10190,7 +10196,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("lambda1", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_force_redraw(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_force_redraw(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10199,7 +10205,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(CYTHON_UNUSED PyObject *__pyx_self
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.maingui.lambda1", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.maingui.lambda1", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10207,7 +10213,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "main.pyx":293
+/* "cyckleapp/main.pyx":293
  * 
  *     # me when my code has had undetected memory leaks for 3 months
  *     main.protocol("WM_DELETE_WINDOW", lambda: (clean_up(), main.destroy()))             # <<<<<<<<<<<<<<
@@ -10216,9 +10222,9 @@ static PyObject *__pyx_lambda_funcdef_lambda1(CYTHON_UNUSED PyObject *__pyx_self
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_7maingui_2lambda2(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4main_7maingui_2lambda2 = {"lambda2", (PyCFunction)__pyx_pw_4main_7maingui_2lambda2, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4main_7maingui_2lambda2(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9cyckleapp_4main_7maingui_2lambda2(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_7maingui_2lambda2 = {"lambda2", (PyCFunction)__pyx_pw_9cyckleapp_4main_7maingui_2lambda2, METH_NOARGS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_7maingui_2lambda2(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -10245,7 +10251,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("lambda2", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_clean_up(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_clean_up(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_main); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 293, __pyx_L1_error)
@@ -10292,7 +10298,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("main.maingui.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.maingui.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10300,7 +10306,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "main.pyx":230
+/* "cyckleapp/main.pyx":230
  * root.withdraw()
  * 
  * def maingui():             # <<<<<<<<<<<<<<
@@ -10308,7 +10314,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
  *     splash.destroy()
 */
 
-static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_9cyckleapp_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_v_icon = NULL;
   PyObject *__pyx_v_style = NULL;
   PyObject *__pyx_v_sw = NULL;
@@ -10333,7 +10339,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("maingui", 0);
 
-  /* "main.pyx":232
+  /* "cyckleapp/main.pyx":232
  * def maingui():
  *     global main, label1, entry, response_text
  *     splash.destroy()             # <<<<<<<<<<<<<<
@@ -10368,7 +10374,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":234
+  /* "cyckleapp/main.pyx":234
  *     splash.destroy()
  * 
  *     main = tk.Toplevel()             # <<<<<<<<<<<<<<
@@ -10404,7 +10410,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_main, __pyx_t_1) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":235
+  /* "cyckleapp/main.pyx":235
  * 
  *     main = tk.Toplevel()
  *     main.config(bg="#092332")             # <<<<<<<<<<<<<<
@@ -10443,7 +10449,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":236
+  /* "cyckleapp/main.pyx":236
  *     main = tk.Toplevel()
  *     main.config(bg="#092332")
  *     main.title("Cyckle")             # <<<<<<<<<<<<<<
@@ -10478,7 +10484,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":237
+  /* "cyckleapp/main.pyx":237
  *     main.config(bg="#092332")
  *     main.title("Cyckle")
  *     main.resizable(False, False)             # <<<<<<<<<<<<<<
@@ -10495,7 +10501,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":239
+  /* "cyckleapp/main.pyx":239
  *     main.resizable(False, False)
  * 
  *     icon = pi(file="assets/icon.png")             # <<<<<<<<<<<<<<
@@ -10532,7 +10538,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_v_icon = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":240
+  /* "cyckleapp/main.pyx":240
  * 
  *     icon = pi(file="assets/icon.png")
  *     main.iconphoto(True, icon)             # <<<<<<<<<<<<<<
@@ -10567,7 +10573,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":242
+  /* "cyckleapp/main.pyx":242
  *     main.iconphoto(True, icon)
  * 
  *     style = ttk.Style(main)             # <<<<<<<<<<<<<<
@@ -10606,7 +10612,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_v_style = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":243
+  /* "cyckleapp/main.pyx":243
  * 
  *     style = ttk.Style(main)
  *     style.theme_use("clam")             # <<<<<<<<<<<<<<
@@ -10625,7 +10631,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":244
+  /* "cyckleapp/main.pyx":244
  *     style = ttk.Style(main)
  *     style.theme_use("clam")
  *     style.configure("TButton", background="#1c1c1c", foreground="#ffffff")             # <<<<<<<<<<<<<<
@@ -10649,7 +10655,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":245
+  /* "cyckleapp/main.pyx":245
  *     style.theme_use("clam")
  *     style.configure("TButton", background="#1c1c1c", foreground="#ffffff")
  *     style.configure("TLabel", foreground="#ffffff", background="#092332")             # <<<<<<<<<<<<<<
@@ -10673,7 +10679,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":246
+  /* "cyckleapp/main.pyx":246
  *     style.configure("TButton", background="#1c1c1c", foreground="#ffffff")
  *     style.configure("TLabel", foreground="#ffffff", background="#092332")
  *     style.configure("TEntry", foreground="#ffffff", fieldbackground="#092332", background="#092332")             # <<<<<<<<<<<<<<
@@ -10698,18 +10704,18 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":248
+  /* "cyckleapp/main.pyx":248
  *     style.configure("TEntry", foreground="#ffffff", fieldbackground="#092332", background="#092332")
  * 
  *     periodic_redraw()             # <<<<<<<<<<<<<<
  * 
  *     # window geometries
 */
-  __pyx_t_1 = __pyx_f_4main_periodic_redraw(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 248, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_periodic_redraw(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 248, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":251
+  /* "cyckleapp/main.pyx":251
  * 
  *     # window geometries
  *     sw = main.winfo_screenwidth()             # <<<<<<<<<<<<<<
@@ -10745,7 +10751,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_v_sw = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":252
+  /* "cyckleapp/main.pyx":252
  *     # window geometries
  *     sw = main.winfo_screenwidth()
  *     sh = main.winfo_screenheight()             # <<<<<<<<<<<<<<
@@ -10781,7 +10787,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_v_sh = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":253
+  /* "cyckleapp/main.pyx":253
  *     sw = main.winfo_screenwidth()
  *     sh = main.winfo_screenheight()
  *     swutil = sw*0.8             # <<<<<<<<<<<<<<
@@ -10793,7 +10799,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_v_swutil = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":254
+  /* "cyckleapp/main.pyx":254
  *     sh = main.winfo_screenheight()
  *     swutil = sw*0.8
  *     shutil = sh*0.9             # <<<<<<<<<<<<<<
@@ -10805,7 +10811,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_v_shutil = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":255
+  /* "cyckleapp/main.pyx":255
  *     swutil = sw*0.8
  *     shutil = sh*0.9
  *     main.geometry(f"{int(swutil)}x{int(shutil)}+50+50")             # <<<<<<<<<<<<<<
@@ -10860,7 +10866,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":258
+  /* "cyckleapp/main.pyx":258
  * 
  *     # grid config
  *     main.grid_rowconfigure(0, weight=2)             # <<<<<<<<<<<<<<
@@ -10899,7 +10905,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":259
+  /* "cyckleapp/main.pyx":259
  *     # grid config
  *     main.grid_rowconfigure(0, weight=2)
  *     main.grid_rowconfigure(1, weight=5)             # <<<<<<<<<<<<<<
@@ -10938,7 +10944,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":260
+  /* "cyckleapp/main.pyx":260
  *     main.grid_rowconfigure(0, weight=2)
  *     main.grid_rowconfigure(1, weight=5)
  *     main.grid_rowconfigure(2, weight=0)             # <<<<<<<<<<<<<<
@@ -10977,7 +10983,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":261
+  /* "cyckleapp/main.pyx":261
  *     main.grid_rowconfigure(1, weight=5)
  *     main.grid_rowconfigure(2, weight=0)
  *     main.grid_columnconfigure(0, weight=1)             # <<<<<<<<<<<<<<
@@ -11016,7 +11022,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":262
+  /* "cyckleapp/main.pyx":262
  *     main.grid_rowconfigure(2, weight=0)
  *     main.grid_columnconfigure(0, weight=1)
  *     main.grid_rowconfigure(0, minsize=50)             # <<<<<<<<<<<<<<
@@ -11055,7 +11061,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":264
+  /* "cyckleapp/main.pyx":264
  *     main.grid_rowconfigure(0, minsize=50)
  * 
  *     label1 = ttk.Label(master=main, text="YOU>>>", anchor="w")             # <<<<<<<<<<<<<<
@@ -11100,7 +11106,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_label1, __pyx_t_1) < 0) __PYX_ERR(0, 264, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":265
+  /* "cyckleapp/main.pyx":265
  * 
  *     label1 = ttk.Label(master=main, text="YOU>>>", anchor="w")
  *     label1.config(font=("DejaVu Sans", 20))             # <<<<<<<<<<<<<<
@@ -11139,7 +11145,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":266
+  /* "cyckleapp/main.pyx":266
  *     label1 = ttk.Label(master=main, text="YOU>>>", anchor="w")
  *     label1.config(font=("DejaVu Sans", 20))
  *     label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=(20, 10))             # <<<<<<<<<<<<<<
@@ -11182,7 +11188,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":267
+  /* "cyckleapp/main.pyx":267
  *     label1.config(font=("DejaVu Sans", 20))
  *     label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=(20, 10))
  *     main.grid_rowconfigure(0, minsize=70)             # <<<<<<<<<<<<<<
@@ -11221,7 +11227,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":270
+  /* "cyckleapp/main.pyx":270
  * 
  *     # text label
  *     response_text = tk.Text(master=main, wrap=tk.WORD, bg="#1c1c1c", fg="#ffffff", font=("DejaVu Sans", 20), relief=tk.FLAT)             # <<<<<<<<<<<<<<
@@ -11281,7 +11287,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_response_text, __pyx_t_1) < 0) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":271
+  /* "cyckleapp/main.pyx":271
  *     # text label
  *     response_text = tk.Text(master=main, wrap=tk.WORD, bg="#1c1c1c", fg="#ffffff", font=("DejaVu Sans", 20), relief=tk.FLAT)
  *     response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)             # <<<<<<<<<<<<<<
@@ -11324,7 +11330,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":272
+  /* "cyckleapp/main.pyx":272
  *     response_text = tk.Text(master=main, wrap=tk.WORD, bg="#1c1c1c", fg="#ffffff", font=("DejaVu Sans", 20), relief=tk.FLAT)
  *     response_text.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
  *     response_text.config(state=tk.DISABLED)             # <<<<<<<<<<<<<<
@@ -11369,7 +11375,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":275
+  /* "cyckleapp/main.pyx":275
  * 
  *     # entry box
  *     entry = ttk.Entry(master=main, font=("DejaVu Sans", 15))             # <<<<<<<<<<<<<<
@@ -11413,7 +11419,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_entry, __pyx_t_1) < 0) __PYX_ERR(0, 275, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":276
+  /* "cyckleapp/main.pyx":276
  *     # entry box
  *     entry = ttk.Entry(master=main, font=("DejaVu Sans", 15))
  *     entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)             # <<<<<<<<<<<<<<
@@ -11456,16 +11462,16 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":277
+  /* "cyckleapp/main.pyx":277
  *     entry = ttk.Entry(master=main, font=("DejaVu Sans", 15))
  *     entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
  *     random_placeholder(None)             # <<<<<<<<<<<<<<
  *     entry.bind("<Return>", handle_input)
  *     entry.bind("<FocusIn>", entry_focus)
 */
-  __pyx_f_4main_random_placeholder(Py_None, 0); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 277, __pyx_L1_error)
+  __pyx_f_9cyckleapp_4main_random_placeholder(Py_None, 0); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 277, __pyx_L1_error)
 
-  /* "main.pyx":278
+  /* "cyckleapp/main.pyx":278
  *     entry.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
  *     random_placeholder(None)
  *     entry.bind("<Return>", handle_input)             # <<<<<<<<<<<<<<
@@ -11503,7 +11509,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":279
+  /* "cyckleapp/main.pyx":279
  *     random_placeholder(None)
  *     entry.bind("<Return>", handle_input)
  *     entry.bind("<FocusIn>", entry_focus)             # <<<<<<<<<<<<<<
@@ -11541,7 +11547,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":280
+  /* "cyckleapp/main.pyx":280
  *     entry.bind("<Return>", handle_input)
  *     entry.bind("<FocusIn>", entry_focus)
  *     entry.bind("<FocusOut>", entry_unfocus)             # <<<<<<<<<<<<<<
@@ -11579,7 +11585,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":281
+  /* "cyckleapp/main.pyx":281
  *     entry.bind("<FocusIn>", entry_focus)
  *     entry.bind("<FocusOut>", entry_unfocus)
  *     entry.bind("<Up>", handle_history)             # <<<<<<<<<<<<<<
@@ -11617,7 +11623,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":282
+  /* "cyckleapp/main.pyx":282
  *     entry.bind("<FocusOut>", entry_unfocus)
  *     entry.bind("<Up>", handle_history)
  *     entry.bind("<Down>", handle_history)             # <<<<<<<<<<<<<<
@@ -11655,7 +11661,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":285
+  /* "cyckleapp/main.pyx":285
  * 
  *     # analysis button
  *     csv_button = ttk.Button(master=main, text="Analyze CSV", command=handle_csv, style="TButton")             # <<<<<<<<<<<<<<
@@ -11704,7 +11710,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_v_csv_button = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":286
+  /* "cyckleapp/main.pyx":286
  *     # analysis button
  *     csv_button = ttk.Button(master=main, text="Analyze CSV", command=handle_csv, style="TButton")
  *     csv_button.grid(row=3, column=0, sticky="ew", padx=10, pady=(10, 10))             # <<<<<<<<<<<<<<
@@ -11731,7 +11737,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":289
+  /* "cyckleapp/main.pyx":289
  * 
  *     # redraw system
  *     main.bind("<Map>", lambda e: force_redraw())             # <<<<<<<<<<<<<<
@@ -11744,7 +11750,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_bind); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_4main_7maingui_lambda, 0, __pyx_mstate_global->__pyx_n_u_maingui_locals_lambda, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_7maingui_lambda, 0, __pyx_mstate_global->__pyx_n_u_maingui_locals_lambda, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -11769,7 +11775,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":290
+  /* "cyckleapp/main.pyx":290
  *     # redraw system
  *     main.bind("<Map>", lambda e: force_redraw())
  *     main.bind("<Visibility>", lambda e: force_redraw())             # <<<<<<<<<<<<<<
@@ -11782,7 +11788,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_bind); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_4main_7maingui_1lambda1, 0, __pyx_mstate_global->__pyx_n_u_maingui_locals_lambda, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 290, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_7maingui_1lambda1, 0, __pyx_mstate_global->__pyx_n_u_maingui_locals_lambda, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -11807,7 +11813,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":293
+  /* "cyckleapp/main.pyx":293
  * 
  *     # me when my code has had undetected memory leaks for 3 months
  *     main.protocol("WM_DELETE_WINDOW", lambda: (clean_up(), main.destroy()))             # <<<<<<<<<<<<<<
@@ -11820,7 +11826,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_protocol); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_4main_7maingui_2lambda2, 0, __pyx_mstate_global->__pyx_n_u_maingui_locals_lambda, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_7maingui_2lambda2, 0, __pyx_mstate_global->__pyx_n_u_maingui_locals_lambda, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -11845,18 +11851,18 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":296
+  /* "cyckleapp/main.pyx":296
  * 
  *     # function calls
  *     sys_watchdog()             # <<<<<<<<<<<<<<
  *     tts_thread = threading.Thread(target=tts_runner, daemon=True)
  *     tts_thread.start()
 */
-  __pyx_t_1 = __pyx_f_4main_sys_watchdog(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_sys_watchdog(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":297
+  /* "cyckleapp/main.pyx":297
  *     # function calls
  *     sys_watchdog()
  *     tts_thread = threading.Thread(target=tts_runner, daemon=True)             # <<<<<<<<<<<<<<
@@ -11900,7 +11906,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __pyx_v_tts_thread = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":298
+  /* "cyckleapp/main.pyx":298
  *     sys_watchdog()
  *     tts_thread = threading.Thread(target=tts_runner, daemon=True)
  *     tts_thread.start()             # <<<<<<<<<<<<<<
@@ -11919,7 +11925,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":300
+  /* "cyckleapp/main.pyx":300
  *     tts_thread.start()
  * 
  *     main.mainloop()             # <<<<<<<<<<<<<<
@@ -11954,7 +11960,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":230
+  /* "cyckleapp/main.pyx":230
  * root.withdraw()
  * 
  * def maingui():             # <<<<<<<<<<<<<<
@@ -11973,7 +11979,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("main.maingui", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.maingui", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_icon);
@@ -11989,7 +11995,7 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
   return __pyx_r;
 }
 
-/* "main.pyx":302
+/* "cyckleapp/main.pyx":302
  *     main.mainloop()
  * 
  * cpdef force_redraw():             # <<<<<<<<<<<<<<
@@ -11997,8 +12003,8 @@ static PyObject *__pyx_pf_4main_16maingui(CYTHON_UNUSED PyObject *__pyx_self) {
  *     main.update()
 */
 
-static PyObject *__pyx_pw_4main_19force_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_f_4main_force_redraw(CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_9cyckleapp_4main_19force_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_force_redraw(CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12011,7 +12017,7 @@ static PyObject *__pyx_f_4main_force_redraw(CYTHON_UNUSED int __pyx_skip_dispatc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("force_redraw", 0);
 
-  /* "main.pyx":303
+  /* "cyckleapp/main.pyx":303
  * 
  * cpdef force_redraw():
  *     main.update_idletasks()             # <<<<<<<<<<<<<<
@@ -12046,7 +12052,7 @@ static PyObject *__pyx_f_4main_force_redraw(CYTHON_UNUSED int __pyx_skip_dispatc
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":304
+  /* "cyckleapp/main.pyx":304
  * cpdef force_redraw():
  *     main.update_idletasks()
  *     main.update()             # <<<<<<<<<<<<<<
@@ -12081,7 +12087,7 @@ static PyObject *__pyx_f_4main_force_redraw(CYTHON_UNUSED int __pyx_skip_dispatc
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":302
+  /* "cyckleapp/main.pyx":302
  *     main.mainloop()
  * 
  * cpdef force_redraw():             # <<<<<<<<<<<<<<
@@ -12097,7 +12103,7 @@ static PyObject *__pyx_f_4main_force_redraw(CYTHON_UNUSED int __pyx_skip_dispatc
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("main.force_redraw", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.force_redraw", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -12106,22 +12112,22 @@ static PyObject *__pyx_f_4main_force_redraw(CYTHON_UNUSED int __pyx_skip_dispatc
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_19force_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4main_19force_redraw = {"force_redraw", (PyCFunction)__pyx_pw_4main_19force_redraw, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4main_19force_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9cyckleapp_4main_19force_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_19force_redraw = {"force_redraw", (PyCFunction)__pyx_pw_9cyckleapp_4main_19force_redraw, METH_NOARGS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_19force_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("force_redraw (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_4main_18force_redraw(__pyx_self);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_18force_redraw(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_18force_redraw(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_9cyckleapp_4main_18force_redraw(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12130,7 +12136,7 @@ static PyObject *__pyx_pf_4main_18force_redraw(CYTHON_UNUSED PyObject *__pyx_sel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("force_redraw", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_force_redraw(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_force_redraw(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12139,7 +12145,7 @@ static PyObject *__pyx_pf_4main_18force_redraw(CYTHON_UNUSED PyObject *__pyx_sel
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.force_redraw", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.force_redraw", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -12147,7 +12153,7 @@ static PyObject *__pyx_pf_4main_18force_redraw(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "main.pyx":306
+/* "cyckleapp/main.pyx":306
  *     main.update()
  * 
  * cpdef periodic_redraw():             # <<<<<<<<<<<<<<
@@ -12155,8 +12161,8 @@ static PyObject *__pyx_pf_4main_18force_redraw(CYTHON_UNUSED PyObject *__pyx_sel
  *     main.after(1000, periodic_redraw)
 */
 
-static PyObject *__pyx_pw_4main_21periodic_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_f_4main_periodic_redraw(CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_9cyckleapp_4main_21periodic_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_periodic_redraw(CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12169,18 +12175,18 @@ static PyObject *__pyx_f_4main_periodic_redraw(CYTHON_UNUSED int __pyx_skip_disp
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("periodic_redraw", 0);
 
-  /* "main.pyx":307
+  /* "cyckleapp/main.pyx":307
  * 
  * cpdef periodic_redraw():
  *     force_redraw()             # <<<<<<<<<<<<<<
  *     main.after(1000, periodic_redraw)
  * 
 */
-  __pyx_t_1 = __pyx_f_4main_force_redraw(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_force_redraw(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":308
+  /* "cyckleapp/main.pyx":308
  * cpdef periodic_redraw():
  *     force_redraw()
  *     main.after(1000, periodic_redraw)             # <<<<<<<<<<<<<<
@@ -12218,7 +12224,7 @@ static PyObject *__pyx_f_4main_periodic_redraw(CYTHON_UNUSED int __pyx_skip_disp
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":306
+  /* "cyckleapp/main.pyx":306
  *     main.update()
  * 
  * cpdef periodic_redraw():             # <<<<<<<<<<<<<<
@@ -12234,7 +12240,7 @@ static PyObject *__pyx_f_4main_periodic_redraw(CYTHON_UNUSED int __pyx_skip_disp
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("main.periodic_redraw", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.periodic_redraw", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -12243,22 +12249,22 @@ static PyObject *__pyx_f_4main_periodic_redraw(CYTHON_UNUSED int __pyx_skip_disp
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_21periodic_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4main_21periodic_redraw = {"periodic_redraw", (PyCFunction)__pyx_pw_4main_21periodic_redraw, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4main_21periodic_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9cyckleapp_4main_21periodic_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_21periodic_redraw = {"periodic_redraw", (PyCFunction)__pyx_pw_9cyckleapp_4main_21periodic_redraw, METH_NOARGS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_21periodic_redraw(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("periodic_redraw (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_4main_20periodic_redraw(__pyx_self);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_20periodic_redraw(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_20periodic_redraw(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_9cyckleapp_4main_20periodic_redraw(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12267,7 +12273,7 @@ static PyObject *__pyx_pf_4main_20periodic_redraw(CYTHON_UNUSED PyObject *__pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("periodic_redraw", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_periodic_redraw(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_periodic_redraw(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12276,7 +12282,7 @@ static PyObject *__pyx_pf_4main_20periodic_redraw(CYTHON_UNUSED PyObject *__pyx_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.periodic_redraw", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.periodic_redraw", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -12284,7 +12290,7 @@ static PyObject *__pyx_pf_4main_20periodic_redraw(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "main.pyx":310
+/* "cyckleapp/main.pyx":310
  *     main.after(1000, periodic_redraw)
  * 
  * cpdef center_window(win, width, height):             # <<<<<<<<<<<<<<
@@ -12292,14 +12298,14 @@ static PyObject *__pyx_pf_4main_20periodic_redraw(CYTHON_UNUSED PyObject *__pyx_
  *     screen_height = win.winfo_screenheight()
 */
 
-static PyObject *__pyx_pw_4main_23center_window(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_23center_window(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_4main_center_window(PyObject *__pyx_v_win, PyObject *__pyx_v_width, PyObject *__pyx_v_height, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_9cyckleapp_4main_center_window(PyObject *__pyx_v_win, PyObject *__pyx_v_width, PyObject *__pyx_v_height, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_v_screen_width = NULL;
   PyObject *__pyx_v_screen_height = NULL;
   PyObject *__pyx_v_x = NULL;
@@ -12320,7 +12326,7 @@ static PyObject *__pyx_f_4main_center_window(PyObject *__pyx_v_win, PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("center_window", 0);
 
-  /* "main.pyx":311
+  /* "cyckleapp/main.pyx":311
  * 
  * cpdef center_window(win, width, height):
  *     screen_width = win.winfo_screenwidth()             # <<<<<<<<<<<<<<
@@ -12340,7 +12346,7 @@ static PyObject *__pyx_f_4main_center_window(PyObject *__pyx_v_win, PyObject *__
   __pyx_v_screen_width = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":312
+  /* "cyckleapp/main.pyx":312
  * cpdef center_window(win, width, height):
  *     screen_width = win.winfo_screenwidth()
  *     screen_height = win.winfo_screenheight()             # <<<<<<<<<<<<<<
@@ -12360,7 +12366,7 @@ static PyObject *__pyx_f_4main_center_window(PyObject *__pyx_v_win, PyObject *__
   __pyx_v_screen_height = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":314
+  /* "cyckleapp/main.pyx":314
  *     screen_height = win.winfo_screenheight()
  * 
  *     x = (screen_width // 2) - (width // 2)             # <<<<<<<<<<<<<<
@@ -12378,7 +12384,7 @@ static PyObject *__pyx_f_4main_center_window(PyObject *__pyx_v_win, PyObject *__
   __pyx_v_x = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "main.pyx":315
+  /* "cyckleapp/main.pyx":315
  * 
  *     x = (screen_width // 2) - (width // 2)
  *     y = (screen_height // 2) - (height // 2)             # <<<<<<<<<<<<<<
@@ -12396,7 +12402,7 @@ static PyObject *__pyx_f_4main_center_window(PyObject *__pyx_v_win, PyObject *__
   __pyx_v_y = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":317
+  /* "cyckleapp/main.pyx":317
  *     y = (screen_height // 2) - (height // 2)
  * 
  *     win.geometry(f"{width}x{height}+{x}+{y}")             # <<<<<<<<<<<<<<
@@ -12438,7 +12444,7 @@ static PyObject *__pyx_f_4main_center_window(PyObject *__pyx_v_win, PyObject *__
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":310
+  /* "cyckleapp/main.pyx":310
  *     main.after(1000, periodic_redraw)
  * 
  * cpdef center_window(win, width, height):             # <<<<<<<<<<<<<<
@@ -12457,7 +12463,7 @@ static PyObject *__pyx_f_4main_center_window(PyObject *__pyx_v_win, PyObject *__
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("main.center_window", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.center_window", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_screen_width);
@@ -12470,15 +12476,15 @@ static PyObject *__pyx_f_4main_center_window(PyObject *__pyx_v_win, PyObject *__
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_23center_window(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_23center_window(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_23center_window = {"center_window", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_23center_window, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_23center_window(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_23center_window = {"center_window", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_23center_window, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_23center_window(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12556,11 +12562,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.center_window", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.center_window", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_22center_window(__pyx_self, __pyx_v_win, __pyx_v_width, __pyx_v_height);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_22center_window(__pyx_self, __pyx_v_win, __pyx_v_width, __pyx_v_height);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -12570,7 +12576,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_22center_window(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_win, PyObject *__pyx_v_width, PyObject *__pyx_v_height) {
+static PyObject *__pyx_pf_9cyckleapp_4main_22center_window(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_win, PyObject *__pyx_v_width, PyObject *__pyx_v_height) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12579,7 +12585,7 @@ static PyObject *__pyx_pf_4main_22center_window(CYTHON_UNUSED PyObject *__pyx_se
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("center_window", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_center_window(__pyx_v_win, __pyx_v_width, __pyx_v_height, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 310, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_center_window(__pyx_v_win, __pyx_v_width, __pyx_v_height, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 310, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12588,7 +12594,7 @@ static PyObject *__pyx_pf_4main_22center_window(CYTHON_UNUSED PyObject *__pyx_se
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.center_window", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.center_window", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -12596,7 +12602,7 @@ static PyObject *__pyx_pf_4main_22center_window(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "main.pyx":319
+/* "cyckleapp/main.pyx":319
  *     win.geometry(f"{width}x{height}+{x}+{y}")
  * 
  * cpdef clean_up():             # <<<<<<<<<<<<<<
@@ -12604,8 +12610,8 @@ static PyObject *__pyx_pf_4main_22center_window(CYTHON_UNUSED PyObject *__pyx_se
  *     try:
 */
 
-static PyObject *__pyx_pw_4main_25clean_up(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_9cyckleapp_4main_25clean_up(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12621,7 +12627,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("clean_up", 0);
 
-  /* "main.pyx":321
+  /* "cyckleapp/main.pyx":321
  * cpdef clean_up():
  *     global usermodel, response_text, entry, label1
  *     try:             # <<<<<<<<<<<<<<
@@ -12632,7 +12638,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
     (void)__pyx_t_1; (void)__pyx_t_2; (void)__pyx_t_3; /* mark used */
     /*try:*/ {
 
-      /* "main.pyx":322
+      /* "cyckleapp/main.pyx":322
  *     global usermodel, response_text, entry, label1
  *     try:
  *         usermodel = None             # <<<<<<<<<<<<<<
@@ -12640,11 +12646,11 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
  * 
 */
       __Pyx_INCREF(Py_None);
-      __Pyx_XGOTREF(__pyx_v_4main_usermodel);
-      __Pyx_DECREF_SET(__pyx_v_4main_usermodel, Py_None);
+      __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_usermodel);
+      __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_usermodel, Py_None);
       __Pyx_GIVEREF(Py_None);
 
-      /* "main.pyx":321
+      /* "cyckleapp/main.pyx":321
  * cpdef clean_up():
  *     global usermodel, response_text, entry, label1
  *     try:             # <<<<<<<<<<<<<<
@@ -12654,7 +12660,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
     }
   }
 
-  /* "main.pyx":325
+  /* "cyckleapp/main.pyx":325
  *     except: pass
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -12670,7 +12676,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
     __Pyx_XGOTREF(__pyx_t_1);
     /*try:*/ {
 
-      /* "main.pyx":326
+      /* "cyckleapp/main.pyx":326
  * 
  *     try:
  *         response_text.destroy()             # <<<<<<<<<<<<<<
@@ -12705,7 +12711,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "main.pyx":327
+      /* "cyckleapp/main.pyx":327
  *     try:
  *         response_text.destroy()
  *         entry.destroy()             # <<<<<<<<<<<<<<
@@ -12740,7 +12746,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "main.pyx":328
+      /* "cyckleapp/main.pyx":328
  *         response_text.destroy()
  *         entry.destroy()
  *         label1.destroy()             # <<<<<<<<<<<<<<
@@ -12775,7 +12781,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "main.pyx":329
+      /* "cyckleapp/main.pyx":329
  *         entry.destroy()
  *         label1.destroy()
  *         main.destroy()             # <<<<<<<<<<<<<<
@@ -12810,7 +12816,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "main.pyx":330
+      /* "cyckleapp/main.pyx":330
  *         label1.destroy()
  *         main.destroy()
  *         gc.collect()             # <<<<<<<<<<<<<<
@@ -12845,7 +12851,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "main.pyx":331
+      /* "cyckleapp/main.pyx":331
  *         main.destroy()
  *         gc.collect()
  *         sys.exit(0)             # <<<<<<<<<<<<<<
@@ -12880,7 +12886,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "main.pyx":332
+      /* "cyckleapp/main.pyx":332
  *         gc.collect()
  *         sys.exit(0)
  *         quit()             # <<<<<<<<<<<<<<
@@ -12901,7 +12907,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "main.pyx":333
+      /* "cyckleapp/main.pyx":333
  *         sys.exit(0)
  *         quit()
  *         return             # <<<<<<<<<<<<<<
@@ -12912,7 +12918,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
       __pyx_r = Py_None; __Pyx_INCREF(Py_None);
       goto __pyx_L13_try_return;
 
-      /* "main.pyx":325
+      /* "cyckleapp/main.pyx":325
  *     except: pass
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -12926,7 +12932,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "main.pyx":334
+    /* "cyckleapp/main.pyx":334
  *         quit()
  *         return
  *     except: pass             # <<<<<<<<<<<<<<
@@ -12938,7 +12944,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
       goto __pyx_L10_exception_handled;
     }
 
-    /* "main.pyx":325
+    /* "cyckleapp/main.pyx":325
  *     except: pass
  * 
  *     try:             # <<<<<<<<<<<<<<
@@ -12958,7 +12964,7 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
     __Pyx_ExceptionReset(__pyx_t_3, __pyx_t_2, __pyx_t_1);
   }
 
-  /* "main.pyx":319
+  /* "cyckleapp/main.pyx":319
  *     win.geometry(f"{width}x{height}+{x}+{y}")
  * 
  * cpdef clean_up():             # <<<<<<<<<<<<<<
@@ -12975,22 +12981,22 @@ static PyObject *__pyx_f_4main_clean_up(CYTHON_UNUSED int __pyx_skip_dispatch) {
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_25clean_up(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4main_25clean_up = {"clean_up", (PyCFunction)__pyx_pw_4main_25clean_up, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4main_25clean_up(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9cyckleapp_4main_25clean_up(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_25clean_up = {"clean_up", (PyCFunction)__pyx_pw_9cyckleapp_4main_25clean_up, METH_NOARGS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_25clean_up(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("clean_up (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_4main_24clean_up(__pyx_self);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_24clean_up(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_24clean_up(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_9cyckleapp_4main_24clean_up(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12999,7 +13005,7 @@ static PyObject *__pyx_pf_4main_24clean_up(CYTHON_UNUSED PyObject *__pyx_self) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("clean_up", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_clean_up(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_clean_up(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -13008,7 +13014,7 @@ static PyObject *__pyx_pf_4main_24clean_up(CYTHON_UNUSED PyObject *__pyx_self) {
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.clean_up", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.clean_up", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -13016,7 +13022,7 @@ static PyObject *__pyx_pf_4main_24clean_up(CYTHON_UNUSED PyObject *__pyx_self) {
   return __pyx_r;
 }
 
-/* "main.pyx":336
+/* "cyckleapp/main.pyx":336
  *     except: pass
  * 
  * cpdef low_mem_warn(mem_warn_mb=1024):             # <<<<<<<<<<<<<<
@@ -13024,14 +13030,14 @@ static PyObject *__pyx_pf_4main_24clean_up(CYTHON_UNUSED PyObject *__pyx_self) {
  *     return unalloc_mem < mem_warn_mb
 */
 
-static PyObject *__pyx_pw_4main_27low_mem_warn(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_27low_mem_warn(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_4main_low_mem_warn(CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_4main_low_mem_warn *__pyx_optional_args) {
+static PyObject *__pyx_f_9cyckleapp_4main_low_mem_warn(CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_9cyckleapp_4main_low_mem_warn *__pyx_optional_args) {
   PyObject *__pyx_v_mem_warn_mb = ((PyObject *)__pyx_mstate_global->__pyx_int_1024);
   PyObject *__pyx_v_unalloc_mem = NULL;
   PyObject *__pyx_r = NULL;
@@ -13051,7 +13057,7 @@ static PyObject *__pyx_f_4main_low_mem_warn(CYTHON_UNUSED int __pyx_skip_dispatc
     }
   }
 
-  /* "main.pyx":337
+  /* "cyckleapp/main.pyx":337
  * 
  * cpdef low_mem_warn(mem_warn_mb=1024):
  *     unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)             # <<<<<<<<<<<<<<
@@ -13093,7 +13099,7 @@ static PyObject *__pyx_f_4main_low_mem_warn(CYTHON_UNUSED int __pyx_skip_dispatc
   __pyx_v_unalloc_mem = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":338
+  /* "cyckleapp/main.pyx":338
  * cpdef low_mem_warn(mem_warn_mb=1024):
  *     unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
  *     return unalloc_mem < mem_warn_mb             # <<<<<<<<<<<<<<
@@ -13106,7 +13112,7 @@ static PyObject *__pyx_f_4main_low_mem_warn(CYTHON_UNUSED int __pyx_skip_dispatc
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "main.pyx":336
+  /* "cyckleapp/main.pyx":336
  *     except: pass
  * 
  * cpdef low_mem_warn(mem_warn_mb=1024):             # <<<<<<<<<<<<<<
@@ -13120,7 +13126,7 @@ static PyObject *__pyx_f_4main_low_mem_warn(CYTHON_UNUSED int __pyx_skip_dispatc
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("main.low_mem_warn", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.low_mem_warn", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_unalloc_mem);
@@ -13130,15 +13136,15 @@ static PyObject *__pyx_f_4main_low_mem_warn(CYTHON_UNUSED int __pyx_skip_dispatc
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_27low_mem_warn(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_27low_mem_warn(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_27low_mem_warn = {"low_mem_warn", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_27low_mem_warn, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_27low_mem_warn(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_27low_mem_warn = {"low_mem_warn", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_27low_mem_warn, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_27low_mem_warn(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13203,11 +13209,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.low_mem_warn", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.low_mem_warn", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_26low_mem_warn(__pyx_self, __pyx_v_mem_warn_mb);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_26low_mem_warn(__pyx_self, __pyx_v_mem_warn_mb);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -13217,11 +13223,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_26low_mem_warn(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mem_warn_mb) {
+static PyObject *__pyx_pf_9cyckleapp_4main_26low_mem_warn(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mem_warn_mb) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_4main_low_mem_warn __pyx_t_2;
+  struct __pyx_opt_args_9cyckleapp_4main_low_mem_warn __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -13229,7 +13235,7 @@ static PyObject *__pyx_pf_4main_26low_mem_warn(CYTHON_UNUSED PyObject *__pyx_sel
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.mem_warn_mb = __pyx_v_mem_warn_mb;
-  __pyx_t_1 = __pyx_f_4main_low_mem_warn(1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_low_mem_warn(1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -13238,7 +13244,7 @@ static PyObject *__pyx_pf_4main_26low_mem_warn(CYTHON_UNUSED PyObject *__pyx_sel
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.low_mem_warn", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.low_mem_warn", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -13246,7 +13252,7 @@ static PyObject *__pyx_pf_4main_26low_mem_warn(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "main.pyx":340
+/* "cyckleapp/main.pyx":340
  *     return unalloc_mem < mem_warn_mb
  * 
  * cpdef bint low_mem_crticial(mem_warn_mb=512):             # <<<<<<<<<<<<<<
@@ -13254,14 +13260,14 @@ static PyObject *__pyx_pf_4main_26low_mem_warn(CYTHON_UNUSED PyObject *__pyx_sel
  *     return unalloc_mem < mem_warn_mb
 */
 
-static PyObject *__pyx_pw_4main_29low_mem_crticial(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_29low_mem_crticial(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static int __pyx_f_4main_low_mem_crticial(CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_4main_low_mem_crticial *__pyx_optional_args) {
+static int __pyx_f_9cyckleapp_4main_low_mem_crticial(CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_9cyckleapp_4main_low_mem_crticial *__pyx_optional_args) {
   PyObject *__pyx_v_mem_warn_mb = ((PyObject *)__pyx_mstate_global->__pyx_int_512);
   PyObject *__pyx_v_unalloc_mem = NULL;
   int __pyx_r;
@@ -13282,7 +13288,7 @@ static int __pyx_f_4main_low_mem_crticial(CYTHON_UNUSED int __pyx_skip_dispatch,
     }
   }
 
-  /* "main.pyx":341
+  /* "cyckleapp/main.pyx":341
  * 
  * cpdef bint low_mem_crticial(mem_warn_mb=512):
  *     unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)             # <<<<<<<<<<<<<<
@@ -13324,7 +13330,7 @@ static int __pyx_f_4main_low_mem_crticial(CYTHON_UNUSED int __pyx_skip_dispatch,
   __pyx_v_unalloc_mem = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "main.pyx":342
+  /* "cyckleapp/main.pyx":342
  * cpdef bint low_mem_crticial(mem_warn_mb=512):
  *     unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
  *     return unalloc_mem < mem_warn_mb             # <<<<<<<<<<<<<<
@@ -13337,7 +13343,7 @@ static int __pyx_f_4main_low_mem_crticial(CYTHON_UNUSED int __pyx_skip_dispatch,
   __pyx_r = __pyx_t_6;
   goto __pyx_L0;
 
-  /* "main.pyx":340
+  /* "cyckleapp/main.pyx":340
  *     return unalloc_mem < mem_warn_mb
  * 
  * cpdef bint low_mem_crticial(mem_warn_mb=512):             # <<<<<<<<<<<<<<
@@ -13351,7 +13357,7 @@ static int __pyx_f_4main_low_mem_crticial(CYTHON_UNUSED int __pyx_skip_dispatch,
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("main.low_mem_crticial", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.low_mem_crticial", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_unalloc_mem);
@@ -13360,15 +13366,15 @@ static int __pyx_f_4main_low_mem_crticial(CYTHON_UNUSED int __pyx_skip_dispatch,
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_29low_mem_crticial(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9cyckleapp_4main_29low_mem_crticial(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_4main_29low_mem_crticial = {"low_mem_crticial", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_4main_29low_mem_crticial, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_4main_29low_mem_crticial(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_29low_mem_crticial = {"low_mem_crticial", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9cyckleapp_4main_29low_mem_crticial, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_29low_mem_crticial(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13433,11 +13439,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("main.low_mem_crticial", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.low_mem_crticial", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_4main_28low_mem_crticial(__pyx_self, __pyx_v_mem_warn_mb);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_28low_mem_crticial(__pyx_self, __pyx_v_mem_warn_mb);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -13447,11 +13453,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_28low_mem_crticial(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mem_warn_mb) {
+static PyObject *__pyx_pf_9cyckleapp_4main_28low_mem_crticial(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mem_warn_mb) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
-  struct __pyx_opt_args_4main_low_mem_crticial __pyx_t_2;
+  struct __pyx_opt_args_9cyckleapp_4main_low_mem_crticial __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -13460,7 +13466,7 @@ static PyObject *__pyx_pf_4main_28low_mem_crticial(CYTHON_UNUSED PyObject *__pyx
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.mem_warn_mb = __pyx_v_mem_warn_mb;
-  __pyx_t_1 = __pyx_f_4main_low_mem_crticial(1, &__pyx_t_2); if (unlikely(__pyx_t_1 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_low_mem_crticial(1, &__pyx_t_2); if (unlikely(__pyx_t_1 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 340, __pyx_L1_error)
   __pyx_t_3 = __Pyx_PyBool_FromLong(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 340, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
@@ -13470,7 +13476,7 @@ static PyObject *__pyx_pf_4main_28low_mem_crticial(CYTHON_UNUSED PyObject *__pyx
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("main.low_mem_crticial", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.low_mem_crticial", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -13478,7 +13484,7 @@ static PyObject *__pyx_pf_4main_28low_mem_crticial(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "main.pyx":344
+/* "cyckleapp/main.pyx":344
  *     return unalloc_mem < mem_warn_mb
  * 
  * cpdef sys_watchdog():             # <<<<<<<<<<<<<<
@@ -13486,24 +13492,24 @@ static PyObject *__pyx_pf_4main_28low_mem_crticial(CYTHON_UNUSED PyObject *__pyx
  *         print(f"[WATCHDOG] Low memory detected, please attempt to free resources outside of the main Cyckle application.")
 */
 
-static PyObject *__pyx_pw_4main_31sys_watchdog(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_9cyckleapp_4main_31sys_watchdog(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_9cyckleapp_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_4main_low_mem_warn __pyx_t_2;
+  struct __pyx_opt_args_9cyckleapp_4main_low_mem_warn __pyx_t_2;
   int __pyx_t_3;
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   size_t __pyx_t_6;
-  struct __pyx_opt_args_4main_low_mem_crticial __pyx_t_7;
+  struct __pyx_opt_args_9cyckleapp_4main_low_mem_crticial __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("sys_watchdog", 0);
 
-  /* "main.pyx":345
+  /* "cyckleapp/main.pyx":345
  * 
  * cpdef sys_watchdog():
  *     if low_mem_warn(1024):             # <<<<<<<<<<<<<<
@@ -13512,13 +13518,13 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
 */
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.mem_warn_mb = __pyx_mstate_global->__pyx_int_1024;
-  __pyx_t_1 = __pyx_f_4main_low_mem_warn(0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_low_mem_warn(0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 345, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_3) {
 
-    /* "main.pyx":346
+    /* "cyckleapp/main.pyx":346
  * cpdef sys_watchdog():
  *     if low_mem_warn(1024):
  *         print(f"[WATCHDOG] Low memory detected, please attempt to free resources outside of the main Cyckle application.")             # <<<<<<<<<<<<<<
@@ -13539,7 +13545,7 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":345
+    /* "cyckleapp/main.pyx":345
  * 
  * cpdef sys_watchdog():
  *     if low_mem_warn(1024):             # <<<<<<<<<<<<<<
@@ -13548,7 +13554,7 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
 */
   }
 
-  /* "main.pyx":347
+  /* "cyckleapp/main.pyx":347
  *     if low_mem_warn(1024):
  *         print(f"[WATCHDOG] Low memory detected, please attempt to free resources outside of the main Cyckle application.")
  *     if low_mem_crticial(512):             # <<<<<<<<<<<<<<
@@ -13557,10 +13563,10 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
 */
   __pyx_t_7.__pyx_n = 1;
   __pyx_t_7.mem_warn_mb = __pyx_mstate_global->__pyx_int_512;
-  __pyx_t_3 = __pyx_f_4main_low_mem_crticial(0, &__pyx_t_7); if (unlikely(__pyx_t_3 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 347, __pyx_L1_error)
+  __pyx_t_3 = __pyx_f_9cyckleapp_4main_low_mem_crticial(0, &__pyx_t_7); if (unlikely(__pyx_t_3 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 347, __pyx_L1_error)
   if (__pyx_t_3) {
 
-    /* "main.pyx":348
+    /* "cyckleapp/main.pyx":348
  *         print(f"[WATCHDOG] Low memory detected, please attempt to free resources outside of the main Cyckle application.")
  *     if low_mem_crticial(512):
  *         print(f"[WATCHDOG] Memory is critically low, exiting main Cyckle application.")             # <<<<<<<<<<<<<<
@@ -13581,7 +13587,7 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":349
+    /* "cyckleapp/main.pyx":349
  *     if low_mem_crticial(512):
  *         print(f"[WATCHDOG] Memory is critically low, exiting main Cyckle application.")
  *         gc.collect()             # <<<<<<<<<<<<<<
@@ -13616,7 +13622,7 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":350
+    /* "cyckleapp/main.pyx":350
  *         print(f"[WATCHDOG] Memory is critically low, exiting main Cyckle application.")
  *         gc.collect()
  *         sys.exit(1)             # <<<<<<<<<<<<<<
@@ -13651,7 +13657,7 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "main.pyx":347
+    /* "cyckleapp/main.pyx":347
  *     if low_mem_warn(1024):
  *         print(f"[WATCHDOG] Low memory detected, please attempt to free resources outside of the main Cyckle application.")
  *     if low_mem_crticial(512):             # <<<<<<<<<<<<<<
@@ -13661,7 +13667,7 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
     goto __pyx_L4;
   }
 
-  /* "main.pyx":352
+  /* "cyckleapp/main.pyx":352
  *         sys.exit(1)
  *     else:
  *         print(f"[WATCHDOG] Memory is sufficient, continuing operation.")             # <<<<<<<<<<<<<<
@@ -13685,7 +13691,7 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
   }
   __pyx_L4:;
 
-  /* "main.pyx":353
+  /* "cyckleapp/main.pyx":353
  *     else:
  *         print(f"[WATCHDOG] Memory is sufficient, continuing operation.")
  *     main.after(5000, sys_watchdog)             # <<<<<<<<<<<<<<
@@ -13723,7 +13729,7 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "main.pyx":344
+  /* "cyckleapp/main.pyx":344
  *     return unalloc_mem < mem_warn_mb
  * 
  * cpdef sys_watchdog():             # <<<<<<<<<<<<<<
@@ -13739,7 +13745,7 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("main.sys_watchdog", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.sys_watchdog", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -13748,22 +13754,22 @@ static PyObject *__pyx_f_4main_sys_watchdog(CYTHON_UNUSED int __pyx_skip_dispatc
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_4main_31sys_watchdog(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_4main_31sys_watchdog = {"sys_watchdog", (PyCFunction)__pyx_pw_4main_31sys_watchdog, METH_NOARGS, 0};
-static PyObject *__pyx_pw_4main_31sys_watchdog(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_9cyckleapp_4main_31sys_watchdog(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_31sys_watchdog = {"sys_watchdog", (PyCFunction)__pyx_pw_9cyckleapp_4main_31sys_watchdog, METH_NOARGS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_31sys_watchdog(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sys_watchdog (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_4main_30sys_watchdog(__pyx_self);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_30sys_watchdog(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_4main_30sys_watchdog(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_9cyckleapp_4main_30sys_watchdog(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -13772,7 +13778,7 @@ static PyObject *__pyx_pf_4main_30sys_watchdog(CYTHON_UNUSED PyObject *__pyx_sel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("sys_watchdog", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_4main_sys_watchdog(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 344, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9cyckleapp_4main_sys_watchdog(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 344, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -13781,7 +13787,173 @@ static PyObject *__pyx_pf_4main_30sys_watchdog(CYTHON_UNUSED PyObject *__pyx_sel
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("main.sys_watchdog", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyckleapp.main.sys_watchdog", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cyckleapp/main.pyx":364
+ * 
+ * # satisfies pip
+ * def main():             # <<<<<<<<<<<<<<
+ *     global root, splash
+ *     root.deiconify()
+*/
+
+/* Python wrapper */
+static PyObject *__pyx_pw_9cyckleapp_4main_33main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_9cyckleapp_4main_33main = {"main", (PyCFunction)__pyx_pw_9cyckleapp_4main_33main, METH_NOARGS, 0};
+static PyObject *__pyx_pw_9cyckleapp_4main_33main(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("main (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_9cyckleapp_4main_32main(__pyx_self);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_9cyckleapp_4main_32main(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  size_t __pyx_t_5;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("main", 0);
+
+  /* "cyckleapp/main.pyx":366
+ * def main():
+ *     global root, splash
+ *     root.deiconify()             # <<<<<<<<<<<<<<
+ *     splash.after(5000, maingui)
+ *     splash.mainloop()
+*/
+  __pyx_t_2 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_root); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 366, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_deiconify); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 366, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_5 = 1;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
+    assert(__pyx_t_2);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
+    __Pyx_INCREF(__pyx_t_2);
+    __Pyx_INCREF(__pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
+    __pyx_t_5 = 0;
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 366, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cyckleapp/main.pyx":367
+ *     global root, splash
+ *     root.deiconify()
+ *     splash.after(5000, maingui)             # <<<<<<<<<<<<<<
+ *     splash.mainloop()
+*/
+  __pyx_t_4 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_splash); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 367, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_after); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 367, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_maingui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 367, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_5 = 1;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    assert(__pyx_t_4);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_3);
+    __Pyx_INCREF(__pyx_t_4);
+    __Pyx_INCREF(__pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_3, __pyx__function);
+    __pyx_t_5 = 0;
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_mstate_global->__pyx_int_5000, __pyx_t_2};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_5, (3-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 367, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cyckleapp/main.pyx":368
+ *     root.deiconify()
+ *     splash.after(5000, maingui)
+ *     splash.mainloop()             # <<<<<<<<<<<<<<
+*/
+  __pyx_t_3 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_splash); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 368, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_mainloop); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 368, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_5 = 1;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+    assert(__pyx_t_3);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
+    __Pyx_INCREF(__pyx_t_3);
+    __Pyx_INCREF(__pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
+    __pyx_t_5 = 0;
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cyckleapp/main.pyx":364
+ * 
+ * # satisfies pip
+ * def main():             # <<<<<<<<<<<<<<
+ *     global root, splash
+ *     root.deiconify()
+*/
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("cyckleapp.main.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -13813,14 +13985,14 @@ static int __Pyx_modinit_global_init_code(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   __Pyx_RefNannySetupContext("__Pyx_modinit_global_init_code", 0);
   /*--- Global init code ---*/
-  __pyx_v_4main_cmdhistory = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  __pyx_v_4main_usermodel = Py_None; Py_INCREF(Py_None);
-  __pyx_v_4main_sentence_buffer = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  __pyx_v_4main_tts_engine = Py_None; Py_INCREF(Py_None);
-  __pyx_v_4main_tts_buffer = ((PyObject*)Py_None); Py_INCREF(Py_None);
-  __pyx_v_4main_tts_lock = Py_None; Py_INCREF(Py_None);
-  __pyx_v_4main_stop_tts = Py_None; Py_INCREF(Py_None);
-  __pyx_v_4main_tts_queue = Py_None; Py_INCREF(Py_None);
+  __pyx_v_9cyckleapp_4main_cmdhistory = ((PyObject*)Py_None); Py_INCREF(Py_None);
+  __pyx_v_9cyckleapp_4main_usermodel = Py_None; Py_INCREF(Py_None);
+  __pyx_v_9cyckleapp_4main_sentence_buffer = ((PyObject*)Py_None); Py_INCREF(Py_None);
+  __pyx_v_9cyckleapp_4main_tts_engine = Py_None; Py_INCREF(Py_None);
+  __pyx_v_9cyckleapp_4main_tts_buffer = ((PyObject*)Py_None); Py_INCREF(Py_None);
+  __pyx_v_9cyckleapp_4main_tts_lock = Py_None; Py_INCREF(Py_None);
+  __pyx_v_9cyckleapp_4main_stop_tts = Py_None; Py_INCREF(Py_None);
+  __pyx_v_9cyckleapp_4main_tts_queue = Py_None; Py_INCREF(Py_None);
   __Pyx_RefNannyFinishContext();
   return 0;
 }
@@ -14144,13 +14316,13 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (__Pyx_InitConstants(__pyx_mstate) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   stringtab_initialized = 1;
   if (__Pyx_InitGlobals() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (__pyx_module_is_main_main) {
+  if (__pyx_module_is_main_cyckleapp__main) {
     if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_name, __pyx_mstate_global->__pyx_n_u_main_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "main")) {
-      if (unlikely((PyDict_SetItemString(modules, "main", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "cyckleapp.main")) {
+      if (unlikely((PyDict_SetItemString(modules, "cyckleapp.main", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   /*--- Builtin init code ---*/
@@ -14168,7 +14340,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "main.pyx":10
+  /* "cyckleapp/main.pyx":10
  * 
  * import cython
  * import csv             # <<<<<<<<<<<<<<
@@ -14180,7 +14352,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_csv, __pyx_t_2) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":11
+  /* "cyckleapp/main.pyx":11
  * import cython
  * import csv
  * import tkinter as tk             # <<<<<<<<<<<<<<
@@ -14192,7 +14364,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_tk, __pyx_t_2) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":12
+  /* "cyckleapp/main.pyx":12
  * import csv
  * import tkinter as tk
  * from tkinter import filedialog as fd             # <<<<<<<<<<<<<<
@@ -14210,7 +14382,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "main.pyx":13
+  /* "cyckleapp/main.pyx":13
  * import tkinter as tk
  * from tkinter import filedialog as fd
  * from tkinter import PhotoImage as pi             # <<<<<<<<<<<<<<
@@ -14228,7 +14400,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":14
+  /* "cyckleapp/main.pyx":14
  * from tkinter import filedialog as fd
  * from tkinter import PhotoImage as pi
  * from tkinter import simpledialog, messagebox, ttk             # <<<<<<<<<<<<<<
@@ -14254,7 +14426,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "main.pyx":15
+  /* "cyckleapp/main.pyx":15
  * from tkinter import PhotoImage as pi
  * from tkinter import simpledialog, messagebox, ttk
  * import psutil             # <<<<<<<<<<<<<<
@@ -14266,7 +14438,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_psutil, __pyx_t_3) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "main.pyx":16
+  /* "cyckleapp/main.pyx":16
  * from tkinter import simpledialog, messagebox, ttk
  * import psutil
  * from gpt4all import GPT4All             # <<<<<<<<<<<<<<
@@ -14284,7 +14456,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":17
+  /* "cyckleapp/main.pyx":17
  * import psutil
  * from gpt4all import GPT4All
  * import json             # <<<<<<<<<<<<<<
@@ -14296,7 +14468,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_json, __pyx_t_2) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":18
+  /* "cyckleapp/main.pyx":18
  * from gpt4all import GPT4All
  * import json
  * import gc             # <<<<<<<<<<<<<<
@@ -14308,7 +14480,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_gc, __pyx_t_2) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":19
+  /* "cyckleapp/main.pyx":19
  * import json
  * import gc
  * import sys             # <<<<<<<<<<<<<<
@@ -14320,7 +14492,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_sys, __pyx_t_2) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":20
+  /* "cyckleapp/main.pyx":20
  * import gc
  * import sys
  * import random             # <<<<<<<<<<<<<<
@@ -14332,7 +14504,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_random, __pyx_t_2) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":21
+  /* "cyckleapp/main.pyx":21
  * import sys
  * import random
  * import threading             # <<<<<<<<<<<<<<
@@ -14344,7 +14516,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_threading, __pyx_t_2) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":22
+  /* "cyckleapp/main.pyx":22
  * import random
  * import threading
  * import pyttsx3             # <<<<<<<<<<<<<<
@@ -14356,7 +14528,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_pyttsx3, __pyx_t_2) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":23
+  /* "cyckleapp/main.pyx":23
  * import threading
  * import pyttsx3
  * import queue             # <<<<<<<<<<<<<<
@@ -14368,7 +14540,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_queue, __pyx_t_2) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":24
+  /* "cyckleapp/main.pyx":24
  * import pyttsx3
  * import queue
  * import re             # <<<<<<<<<<<<<<
@@ -14380,7 +14552,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_re, __pyx_t_2) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":32
+  /* "cyckleapp/main.pyx":32
  *     return physcores, logicores
  * 
  * cdef list cmdhistory = []             # <<<<<<<<<<<<<<
@@ -14389,38 +14561,38 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
 */
   __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_XGOTREF(__pyx_v_4main_cmdhistory);
-  __Pyx_DECREF_SET(__pyx_v_4main_cmdhistory, ((PyObject*)__pyx_t_2));
+  __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_cmdhistory);
+  __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_cmdhistory, ((PyObject*)__pyx_t_2));
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "main.pyx":33
+  /* "cyckleapp/main.pyx":33
  * 
  * cdef list cmdhistory = []
  * cdef int poshistory = -1             # <<<<<<<<<<<<<<
  * 
  * # token JSON function
 */
-  __pyx_v_4main_poshistory = -1;
+  __pyx_v_9cyckleapp_4main_poshistory = -1;
 
-  /* "main.pyx":45
+  /* "cyckleapp/main.pyx":45
  *         return 256
  * 
  * modtokens = read_tokens_from_json()             # <<<<<<<<<<<<<<
  * 
  * physcores, logicores = optimize()
 */
-  __pyx_t_4 = __pyx_f_4main_read_tokens_from_json(); if (unlikely(__pyx_t_4 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
-  __pyx_v_4main_modtokens = __pyx_t_4;
+  __pyx_t_4 = __pyx_f_9cyckleapp_4main_read_tokens_from_json(); if (unlikely(__pyx_t_4 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_v_9cyckleapp_4main_modtokens = __pyx_t_4;
 
-  /* "main.pyx":47
+  /* "cyckleapp/main.pyx":47
  * modtokens = read_tokens_from_json()
  * 
  * physcores, logicores = optimize()             # <<<<<<<<<<<<<<
  * threads = min(logicores, 8)
  * 
 */
-  __pyx_t_2 = __pyx_f_4main_optimize(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_2 = __pyx_f_9cyckleapp_4main_optimize(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (likely(__pyx_t_2 != Py_None)) {
     PyObject* sequence = __pyx_t_2;
@@ -14450,7 +14622,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_logicores, __pyx_t_5) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "main.pyx":48
+  /* "cyckleapp/main.pyx":48
  * 
  * physcores, logicores = optimize()
  * threads = min(logicores, 8)             # <<<<<<<<<<<<<<
@@ -14482,7 +14654,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_threads, __pyx_t_2) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":50
+  /* "cyckleapp/main.pyx":50
  * threads = min(logicores, 8)
  * 
  * print(f"[DEBUG] {threads} threads in use.")             # <<<<<<<<<<<<<<
@@ -14516,7 +14688,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":53
+  /* "cyckleapp/main.pyx":53
  * 
  * data = {
  *     "tokens": modtokens             # <<<<<<<<<<<<<<
@@ -14525,14 +14697,14 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
 */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_4main_modtokens); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_9cyckleapp_4main_modtokens); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_tokens, __pyx_t_7) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_data, __pyx_t_2) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":56
+  /* "cyckleapp/main.pyx":56
  * }
  * 
  * system_prompt = '''You are Cyckle, a helpful AI assistant. Your responses should be clear, direct, and relevant to the user's questions. Aim to be informative yet concise.'''             # <<<<<<<<<<<<<<
@@ -14541,7 +14713,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_system_prompt, __pyx_mstate_global->__pyx_kp_u_You_are_Cyckle_a_helpful_AI_assi) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
 
-  /* "main.pyx":59
+  /* "cyckleapp/main.pyx":59
  * 
  * cdef object usermodel
  * usermodel = GPT4All("Phi-3-mini-4k-instruct.Q4_0.gguf", model_path="models", n_threads=threads)             # <<<<<<<<<<<<<<
@@ -14568,12 +14740,12 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
-  __Pyx_XGOTREF(__pyx_v_4main_usermodel);
-  __Pyx_DECREF_SET(__pyx_v_4main_usermodel, __pyx_t_2);
+  __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_usermodel);
+  __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_usermodel, __pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "main.pyx":61
+  /* "cyckleapp/main.pyx":61
  * usermodel = GPT4All("Phi-3-mini-4k-instruct.Q4_0.gguf", model_path="models", n_threads=threads)
  * 
  * cdef str sentence_buffer = ""             # <<<<<<<<<<<<<<
@@ -14581,23 +14753,23 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
  *     global sentence_buffer
 */
   __Pyx_INCREF(__pyx_mstate_global->__pyx_kp_u_);
-  __Pyx_XGOTREF(__pyx_v_4main_sentence_buffer);
-  __Pyx_DECREF_SET(__pyx_v_4main_sentence_buffer, __pyx_mstate_global->__pyx_kp_u_);
+  __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_sentence_buffer);
+  __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_sentence_buffer, __pyx_mstate_global->__pyx_kp_u_);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_kp_u_);
 
-  /* "main.pyx":62
+  /* "cyckleapp/main.pyx":62
  * 
  * cdef str sentence_buffer = ""
  * def stream(token_id, token):             # <<<<<<<<<<<<<<
  *     global sentence_buffer
  *     response_text.config(state=tk.NORMAL)
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_1stream, 0, __pyx_mstate_global->__pyx_n_u_stream, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_1stream, 0, __pyx_mstate_global->__pyx_n_u_stream, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_stream, __pyx_t_2) < 0) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":76
+  /* "cyckleapp/main.pyx":76
  *     return True
  * 
  * cdef object tts_engine = pyttsx3.init()             # <<<<<<<<<<<<<<
@@ -14619,47 +14791,47 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
-  __Pyx_XGOTREF(__pyx_v_4main_tts_engine);
-  __Pyx_DECREF_SET(__pyx_v_4main_tts_engine, __pyx_t_2);
+  __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_tts_engine);
+  __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_tts_engine, __pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "main.pyx":77
+  /* "cyckleapp/main.pyx":77
  * 
  * cdef object tts_engine = pyttsx3.init()
  * tts_engine.setProperty('rate', 150)             # <<<<<<<<<<<<<<
  * tts_engine.setProperty('volume', 0.85)
  * voices = tts_engine.getProperty('voices')
 */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_4main_tts_engine, __pyx_mstate_global->__pyx_n_u_setProperty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_9cyckleapp_4main_tts_engine, __pyx_mstate_global->__pyx_n_u_setProperty); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_mstate_global->__pyx_tuple[11], NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "main.pyx":78
+  /* "cyckleapp/main.pyx":78
  * cdef object tts_engine = pyttsx3.init()
  * tts_engine.setProperty('rate', 150)
  * tts_engine.setProperty('volume', 0.85)             # <<<<<<<<<<<<<<
  * voices = tts_engine.getProperty('voices')
  * tts_engine.setProperty('voice', voices[33].id)
 */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_4main_tts_engine, __pyx_mstate_global->__pyx_n_u_setProperty); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_9cyckleapp_4main_tts_engine, __pyx_mstate_global->__pyx_n_u_setProperty); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_mstate_global->__pyx_tuple[12], NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":79
+  /* "cyckleapp/main.pyx":79
  * tts_engine.setProperty('rate', 150)
  * tts_engine.setProperty('volume', 0.85)
  * voices = tts_engine.getProperty('voices')             # <<<<<<<<<<<<<<
  * tts_engine.setProperty('voice', voices[33].id)
  * 
 */
-  __pyx_t_5 = __pyx_v_4main_tts_engine;
+  __pyx_t_5 = __pyx_v_9cyckleapp_4main_tts_engine;
   __Pyx_INCREF(__pyx_t_5);
   __pyx_t_11 = 0;
   {
@@ -14672,14 +14844,14 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_voices, __pyx_t_2) < 0) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":80
+  /* "cyckleapp/main.pyx":80
  * tts_engine.setProperty('volume', 0.85)
  * voices = tts_engine.getProperty('voices')
  * tts_engine.setProperty('voice', voices[33].id)             # <<<<<<<<<<<<<<
  * 
  * cdef str tts_buffer = ""
 */
-  __pyx_t_5 = __pyx_v_4main_tts_engine;
+  __pyx_t_5 = __pyx_v_9cyckleapp_4main_tts_engine;
   __Pyx_INCREF(__pyx_t_5);
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_voices); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -14700,7 +14872,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":82
+  /* "cyckleapp/main.pyx":82
  * tts_engine.setProperty('voice', voices[33].id)
  * 
  * cdef str tts_buffer = ""             # <<<<<<<<<<<<<<
@@ -14708,11 +14880,11 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
  * cdef stop_tts = False
 */
   __Pyx_INCREF(__pyx_mstate_global->__pyx_kp_u_);
-  __Pyx_XGOTREF(__pyx_v_4main_tts_buffer);
-  __Pyx_DECREF_SET(__pyx_v_4main_tts_buffer, __pyx_mstate_global->__pyx_kp_u_);
+  __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_tts_buffer);
+  __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_tts_buffer, __pyx_mstate_global->__pyx_kp_u_);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_kp_u_);
 
-  /* "main.pyx":83
+  /* "cyckleapp/main.pyx":83
  * 
  * cdef str tts_buffer = ""
  * cdef object tts_lock = threading.Lock()             # <<<<<<<<<<<<<<
@@ -14734,12 +14906,12 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
-  __Pyx_XGOTREF(__pyx_v_4main_tts_lock);
-  __Pyx_DECREF_SET(__pyx_v_4main_tts_lock, __pyx_t_2);
+  __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_tts_lock);
+  __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_tts_lock, __pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "main.pyx":84
+  /* "cyckleapp/main.pyx":84
  * cdef str tts_buffer = ""
  * cdef object tts_lock = threading.Lock()
  * cdef stop_tts = False             # <<<<<<<<<<<<<<
@@ -14747,11 +14919,11 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
  * 
 */
   __Pyx_INCREF(Py_False);
-  __Pyx_XGOTREF(__pyx_v_4main_stop_tts);
-  __Pyx_DECREF_SET(__pyx_v_4main_stop_tts, Py_False);
+  __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_stop_tts);
+  __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_stop_tts, Py_False);
   __Pyx_GIVEREF(Py_False);
 
-  /* "main.pyx":85
+  /* "cyckleapp/main.pyx":85
  * cdef object tts_lock = threading.Lock()
  * cdef stop_tts = False
  * cdef object tts_queue = queue.Queue()             # <<<<<<<<<<<<<<
@@ -14773,98 +14945,98 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
-  __Pyx_XGOTREF(__pyx_v_4main_tts_queue);
-  __Pyx_DECREF_SET(__pyx_v_4main_tts_queue, __pyx_t_2);
+  __Pyx_XGOTREF(__pyx_v_9cyckleapp_4main_tts_queue);
+  __Pyx_DECREF_SET(__pyx_v_9cyckleapp_4main_tts_queue, __pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "main.pyx":87
+  /* "cyckleapp/main.pyx":87
  * cdef object tts_queue = queue.Queue()
  * 
  * cpdef tts_runner():             # <<<<<<<<<<<<<<
  *     global stop_tts
  *     while not stop_tts:
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_3tts_runner, 0, __pyx_mstate_global->__pyx_n_u_tts_runner, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_3tts_runner, 0, __pyx_mstate_global->__pyx_n_u_tts_runner, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_tts_runner, __pyx_t_2) < 0) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":104
+  /* "cyckleapp/main.pyx":104
  *             print(f"[TTS] Error: {e}")
  * 
  * cpdef void handle_input(event=None):             # <<<<<<<<<<<<<<
  *     print(f"[DEBUG] Input registered.")
  *     global modtokens , cmdhistory, poshistory, usermodel
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_5handle_input, 0, __pyx_mstate_global->__pyx_n_u_handle_input, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[5])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_5handle_input, 0, __pyx_mstate_global->__pyx_n_u_handle_input, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[5])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_mstate_global->__pyx_tuple[13]);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_handle_input, __pyx_t_2) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":152
+  /* "cyckleapp/main.pyx":152
  *     entry.delete(0, tk.END)
  * 
  * cpdef void random_placeholder(event):             # <<<<<<<<<<<<<<
  *     global used_placeholder
  *     placeholders = ["Ask anything", "Quench your wonder", "What's on your mind?", "Your query awaits", "Unleash your curiosity", "Seek information"]
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_7random_placeholder, 0, __pyx_mstate_global->__pyx_n_u_random_placeholder, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[6])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_7random_placeholder, 0, __pyx_mstate_global->__pyx_n_u_random_placeholder, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[6])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_random_placeholder, __pyx_t_2) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":157
+  /* "cyckleapp/main.pyx":157
  *     used_placeholder = random.choice(placeholders)
  * 
  * cpdef entry_focus(event):             # <<<<<<<<<<<<<<
  *     if entry.get() == used_placeholder:
  *         entry.delete(0, tk.END)
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_9entry_focus, 0, __pyx_mstate_global->__pyx_n_u_entry_focus, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[7])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_9entry_focus, 0, __pyx_mstate_global->__pyx_n_u_entry_focus, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[7])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_entry_focus, __pyx_t_2) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":162
+  /* "cyckleapp/main.pyx":162
  *         entry.config(foreground="#ffffff")
  * 
  * cpdef entry_unfocus(event):             # <<<<<<<<<<<<<<
  *     if entry.get() == '':
  *         entry.insert(0, used_placeholder)
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_11entry_unfocus, 0, __pyx_mstate_global->__pyx_n_u_entry_unfocus, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[8])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_11entry_unfocus, 0, __pyx_mstate_global->__pyx_n_u_entry_unfocus, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[8])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_entry_unfocus, __pyx_t_2) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":167
+  /* "cyckleapp/main.pyx":167
  *         entry.config(foreground="#D3D3D3")
  * 
  * cpdef void handle_history(event):             # <<<<<<<<<<<<<<
  *     global poshistory
  *     if event.keysym == "Up":
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_13handle_history, 0, __pyx_mstate_global->__pyx_n_u_handle_history, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[9])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_13handle_history, 0, __pyx_mstate_global->__pyx_n_u_handle_history, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[9])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_handle_history, __pyx_t_2) < 0) __PYX_ERR(0, 167, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":183
+  /* "cyckleapp/main.pyx":183
  *             entry.delete(0, tk.END)
  * 
  * cpdef void handle_csv(event=None):             # <<<<<<<<<<<<<<
  *     global response_text, main, label1
  *     main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV/TSV file",filetypes = (("CSV/TSV files","*.csv *.tsv"),("All files","*.*")))
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_15handle_csv, 0, __pyx_mstate_global->__pyx_n_u_handle_csv, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[10])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_15handle_csv, 0, __pyx_mstate_global->__pyx_n_u_handle_csv, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[10])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_mstate_global->__pyx_tuple[13]);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_handle_csv, __pyx_t_2) < 0) __PYX_ERR(0, 183, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":227
+  /* "cyckleapp/main.pyx":227
  *             print(f"[CSV] Failed to read CSV file: {e}")
  * 
  * root = tk.Tk()             # <<<<<<<<<<<<<<
@@ -14889,7 +15061,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_root, __pyx_t_2) < 0) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":228
+  /* "cyckleapp/main.pyx":228
  * 
  * root = tk.Tk()
  * root.withdraw()             # <<<<<<<<<<<<<<
@@ -14913,105 +15085,105 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":230
+  /* "cyckleapp/main.pyx":230
  * root.withdraw()
  * 
  * def maingui():             # <<<<<<<<<<<<<<
  *     global main, label1, entry, response_text
  *     splash.destroy()
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_17maingui, 0, __pyx_mstate_global->__pyx_n_u_maingui, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[11])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_17maingui, 0, __pyx_mstate_global->__pyx_n_u_maingui, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[11])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_maingui, __pyx_t_2) < 0) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":302
+  /* "cyckleapp/main.pyx":302
  *     main.mainloop()
  * 
  * cpdef force_redraw():             # <<<<<<<<<<<<<<
  *     main.update_idletasks()
  *     main.update()
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_19force_redraw, 0, __pyx_mstate_global->__pyx_n_u_force_redraw, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[12])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_19force_redraw, 0, __pyx_mstate_global->__pyx_n_u_force_redraw, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[12])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_force_redraw, __pyx_t_2) < 0) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":306
+  /* "cyckleapp/main.pyx":306
  *     main.update()
  * 
  * cpdef periodic_redraw():             # <<<<<<<<<<<<<<
  *     force_redraw()
  *     main.after(1000, periodic_redraw)
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_21periodic_redraw, 0, __pyx_mstate_global->__pyx_n_u_periodic_redraw, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_21periodic_redraw, 0, __pyx_mstate_global->__pyx_n_u_periodic_redraw, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_periodic_redraw, __pyx_t_2) < 0) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":310
+  /* "cyckleapp/main.pyx":310
  *     main.after(1000, periodic_redraw)
  * 
  * cpdef center_window(win, width, height):             # <<<<<<<<<<<<<<
  *     screen_width = win.winfo_screenwidth()
  *     screen_height = win.winfo_screenheight()
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_23center_window, 0, __pyx_mstate_global->__pyx_n_u_center_window, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[14])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 310, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_23center_window, 0, __pyx_mstate_global->__pyx_n_u_center_window, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[14])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 310, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_center_window, __pyx_t_2) < 0) __PYX_ERR(0, 310, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":319
+  /* "cyckleapp/main.pyx":319
  *     win.geometry(f"{width}x{height}+{x}+{y}")
  * 
  * cpdef clean_up():             # <<<<<<<<<<<<<<
  *     global usermodel, response_text, entry, label1
  *     try:
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_25clean_up, 0, __pyx_mstate_global->__pyx_n_u_clean_up, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[15])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 319, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_25clean_up, 0, __pyx_mstate_global->__pyx_n_u_clean_up, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[15])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_clean_up, __pyx_t_2) < 0) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":336
+  /* "cyckleapp/main.pyx":336
  *     except: pass
  * 
  * cpdef low_mem_warn(mem_warn_mb=1024):             # <<<<<<<<<<<<<<
  *     unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
  *     return unalloc_mem < mem_warn_mb
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_27low_mem_warn, 0, __pyx_mstate_global->__pyx_n_u_low_mem_warn, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[16])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_27low_mem_warn, 0, __pyx_mstate_global->__pyx_n_u_low_mem_warn, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[16])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_mstate_global->__pyx_tuple[14]);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_low_mem_warn, __pyx_t_2) < 0) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":340
+  /* "cyckleapp/main.pyx":340
  *     return unalloc_mem < mem_warn_mb
  * 
  * cpdef bint low_mem_crticial(mem_warn_mb=512):             # <<<<<<<<<<<<<<
  *     unalloc_mem = psutil.virtual_memory().available / (1024 ** 2)
  *     return unalloc_mem < mem_warn_mb
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_29low_mem_crticial, 0, __pyx_mstate_global->__pyx_n_u_low_mem_crticial, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[17])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_29low_mem_crticial, 0, __pyx_mstate_global->__pyx_n_u_low_mem_crticial, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[17])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 340, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_mstate_global->__pyx_tuple[15]);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_low_mem_crticial, __pyx_t_2) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":344
+  /* "cyckleapp/main.pyx":344
  *     return unalloc_mem < mem_warn_mb
  * 
  * cpdef sys_watchdog():             # <<<<<<<<<<<<<<
  *     if low_mem_warn(1024):
  *         print(f"[WATCHDOG] Low memory detected, please attempt to free resources outside of the main Cyckle application.")
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_4main_31sys_watchdog, 0, __pyx_mstate_global->__pyx_n_u_sys_watchdog, NULL, __pyx_mstate_global->__pyx_n_u_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[18])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 344, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_31sys_watchdog, 0, __pyx_mstate_global->__pyx_n_u_sys_watchdog, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[18])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 344, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_sys_watchdog, __pyx_t_2) < 0) __PYX_ERR(0, 344, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":355
+  /* "cyckleapp/main.pyx":355
  *     main.after(5000, sys_watchdog)
  * 
  * splash = tk.Toplevel()             # <<<<<<<<<<<<<<
@@ -15036,7 +15208,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_splash, __pyx_t_2) < 0) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":356
+  /* "cyckleapp/main.pyx":356
  * 
  * splash = tk.Toplevel()
  * splash.overrideredirect(True)             # <<<<<<<<<<<<<<
@@ -15060,7 +15232,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "main.pyx":357
+  /* "cyckleapp/main.pyx":357
  * splash = tk.Toplevel()
  * splash.overrideredirect(True)
  * center_window(splash, 600, 384)             # <<<<<<<<<<<<<<
@@ -15069,12 +15241,12 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
 */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_splash); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 357, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_f_4main_center_window(__pyx_t_2, __pyx_mstate_global->__pyx_int_600, __pyx_mstate_global->__pyx_int_384, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 357, __pyx_L1_error)
+  __pyx_t_3 = __pyx_f_9cyckleapp_4main_center_window(__pyx_t_2, __pyx_mstate_global->__pyx_int_600, __pyx_mstate_global->__pyx_int_384, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 357, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "main.pyx":358
+  /* "cyckleapp/main.pyx":358
  * splash.overrideredirect(True)
  * center_window(splash, 600, 384)
  * splashimg = pi(file="assets/splash.png")             # <<<<<<<<<<<<<<
@@ -15100,7 +15272,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_splashimg, __pyx_t_3) < 0) __PYX_ERR(0, 358, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "main.pyx":360
+  /* "cyckleapp/main.pyx":360
  * splashimg = pi(file="assets/splash.png")
  * 
  * splash_label = tk.Label(splash, image=splashimg)             # <<<<<<<<<<<<<<
@@ -15135,12 +15307,12 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_splash_label, __pyx_t_3) < 0) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "main.pyx":361
+  /* "cyckleapp/main.pyx":361
  * 
  * splash_label = tk.Label(splash, image=splashimg)
  * splash_label.pack()             # <<<<<<<<<<<<<<
  * 
- * # start the main loop
+ * # satisfies pip
 */
   __pyx_t_2 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_mstate_global->__pyx_n_u_splash_label); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 361, __pyx_L1_error)
@@ -15159,56 +15331,19 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "main.pyx":364
+  /* "cyckleapp/main.pyx":364
  * 
- * # start the main loop
- * splash.after(5000, maingui)             # <<<<<<<<<<<<<<
- * 
- * splash.mainloop()
+ * # satisfies pip
+ * def main():             # <<<<<<<<<<<<<<
+ *     global root, splash
+ *     root.deiconify()
 */
-  __pyx_t_7 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_splash); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_after); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 364, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_12);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_maingui); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_11 = 1;
-  {
-    PyObject *__pyx_callargs[3] = {__pyx_t_7, __pyx_mstate_global->__pyx_int_5000, __pyx_t_2};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_12, __pyx_callargs+__pyx_t_11, (3-__pyx_t_11) | (__pyx_t_11*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 364, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9cyckleapp_4main_33main, 0, __pyx_mstate_global->__pyx_n_u_main, NULL, __pyx_mstate_global->__pyx_n_u_cyckleapp_main, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[19])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 364, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_main, __pyx_t_3) < 0) __PYX_ERR(0, 364, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "main.pyx":366
- * splash.after(5000, maingui)
- * 
- * splash.mainloop()             # <<<<<<<<<<<<<<
-*/
-  __pyx_t_12 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_splash); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 366, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_mainloop); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 366, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_11 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_12, NULL};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_11, (1-__pyx_t_11) | (__pyx_t_11*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 366, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-  /* "main.pyx":1
+  /* "cyckleapp/main.pyx":1
  * # cython: language_level=3, boundscheck=True, wraparound=True             # <<<<<<<<<<<<<<
  * # Note to self: here's how to start a venv:
  * """
@@ -15230,7 +15365,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
   __Pyx_XDECREF(__pyx_t_12);
   if (__pyx_m) {
     if (__pyx_mstate->__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init main", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init cyckleapp.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -15244,7 +15379,7 @@ __Pyx_RefNannySetupContext("PyInit_main", 0);
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init main");
+    PyErr_SetString(PyExc_ImportError, "init cyckleapp.main");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -15393,9 +15528,12 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_csv_2, sizeof(__pyx_k_csv_2), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_csv_2 */
   {__pyx_k_csv_button, sizeof(__pyx_k_csv_button), 0, 1, 1}, /* PyObject cname: __pyx_n_u_csv_button */
   {__pyx_k_csv_tsv, sizeof(__pyx_k_csv_tsv), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_csv_tsv */
+  {__pyx_k_cyckleapp_main, sizeof(__pyx_k_cyckleapp_main), 0, 1, 1}, /* PyObject cname: __pyx_n_u_cyckleapp_main */
+  {__pyx_k_cyckleapp_main_pyx, sizeof(__pyx_k_cyckleapp_main_pyx), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_cyckleapp_main_pyx */
   {__pyx_k_daemon, sizeof(__pyx_k_daemon), 0, 1, 1}, /* PyObject cname: __pyx_n_u_daemon */
   {__pyx_k_data, sizeof(__pyx_k_data), 0, 1, 1}, /* PyObject cname: __pyx_n_u_data */
   {__pyx_k_data_json, sizeof(__pyx_k_data_json), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_data_json */
+  {__pyx_k_deiconify, sizeof(__pyx_k_deiconify), 0, 1, 1}, /* PyObject cname: __pyx_n_u_deiconify */
   {__pyx_k_delete, sizeof(__pyx_k_delete), 0, 1, 1}, /* PyObject cname: __pyx_n_u_delete */
   {__pyx_k_destroy, sizeof(__pyx_k_destroy), 0, 1, 1}, /* PyObject cname: __pyx_n_u_destroy */
   {__pyx_k_dump, sizeof(__pyx_k_dump), 0, 1, 1}, /* PyObject cname: __pyx_n_u_dump */
@@ -15458,7 +15596,6 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_lower, sizeof(__pyx_k_lower), 0, 1, 1}, /* PyObject cname: __pyx_n_u_lower */
   {__pyx_k_main, sizeof(__pyx_k_main), 0, 1, 1}, /* PyObject cname: __pyx_n_u_main */
   {__pyx_k_main_2, sizeof(__pyx_k_main_2), 0, 1, 1}, /* PyObject cname: __pyx_n_u_main_2 */
-  {__pyx_k_main_pyx, sizeof(__pyx_k_main_pyx), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_main_pyx */
   {__pyx_k_maingui, sizeof(__pyx_k_maingui), 0, 1, 1}, /* PyObject cname: __pyx_n_u_maingui */
   {__pyx_k_maingui_locals_lambda, sizeof(__pyx_k_maingui_locals_lambda), 0, 1, 1}, /* PyObject cname: __pyx_n_u_maingui_locals_lambda */
   {__pyx_k_mainloop, sizeof(__pyx_k_mainloop), 0, 1, 1}, /* PyObject cname: __pyx_n_u_mainloop */
@@ -15594,7 +15731,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "main.pyx":39
+  /* "cyckleapp/main.pyx":39
  *     cdef dict data
  *     try:
  *         with open("data.json", "r") as f:             # <<<<<<<<<<<<<<
@@ -15608,7 +15745,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
 
-  /* "main.pyx":126
+  /* "cyckleapp/main.pyx":126
  *         warning = 'WARNING: HIGHER TOKEN LIMITS MAY CAUSE HIGHER USAGE OF RESOURCES! DO THIS AT YOUR OWN RISK.'
  *         messagebox.showwarning("Modtokens", f"{current_limit}\n{warning}")
  *         new_limit = simpledialog.askinteger("Modtokens", "Enter new token limit:")             # <<<<<<<<<<<<<<
@@ -15619,7 +15756,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[2]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[2]);
 
-  /* "main.pyx":185
+  /* "cyckleapp/main.pyx":185
  * cpdef void handle_csv(event=None):
  *     global response_text, main, label1
  *     main.filename = fd.askopenfilename(initialdir = "/home/",title = "Open CSV/TSV file",filetypes = (("CSV/TSV files","*.csv *.tsv"),("All files","*.*")))             # <<<<<<<<<<<<<<
@@ -15636,7 +15773,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[5]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[5]);
 
-  /* "main.pyx":237
+  /* "cyckleapp/main.pyx":237
  *     main.config(bg="#092332")
  *     main.title("Cyckle")
  *     main.resizable(False, False)             # <<<<<<<<<<<<<<
@@ -15647,7 +15784,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[6]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[6]);
 
-  /* "main.pyx":265
+  /* "cyckleapp/main.pyx":265
  * 
  *     label1 = ttk.Label(master=main, text="YOU>>>", anchor="w")
  *     label1.config(font=("DejaVu Sans", 20))             # <<<<<<<<<<<<<<
@@ -15658,7 +15795,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[7]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[7]);
 
-  /* "main.pyx":266
+  /* "cyckleapp/main.pyx":266
  *     label1 = ttk.Label(master=main, text="YOU>>>", anchor="w")
  *     label1.config(font=("DejaVu Sans", 20))
  *     label1.grid(row=0, column=0, sticky="nsew", padx=10, pady=(20, 10))             # <<<<<<<<<<<<<<
@@ -15669,7 +15806,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[8]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[8]);
 
-  /* "main.pyx":275
+  /* "cyckleapp/main.pyx":275
  * 
  *     # entry box
  *     entry = ttk.Entry(master=main, font=("DejaVu Sans", 15))             # <<<<<<<<<<<<<<
@@ -15680,7 +15817,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[9]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[9]);
 
-  /* "main.pyx":286
+  /* "cyckleapp/main.pyx":286
  *     # analysis button
  *     csv_button = ttk.Button(master=main, text="Analyze CSV", command=handle_csv, style="TButton")
  *     csv_button.grid(row=3, column=0, sticky="ew", padx=10, pady=(10, 10))             # <<<<<<<<<<<<<<
@@ -15691,7 +15828,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[10]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[10]);
 
-  /* "main.pyx":77
+  /* "cyckleapp/main.pyx":77
  * 
  * cdef object tts_engine = pyttsx3.init()
  * tts_engine.setProperty('rate', 150)             # <<<<<<<<<<<<<<
@@ -15702,7 +15839,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[11]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[11]);
 
-  /* "main.pyx":78
+  /* "cyckleapp/main.pyx":78
  * cdef object tts_engine = pyttsx3.init()
  * tts_engine.setProperty('rate', 150)
  * tts_engine.setProperty('volume', 0.85)             # <<<<<<<<<<<<<<
@@ -15713,7 +15850,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[12]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[12]);
 
-  /* "main.pyx":104
+  /* "cyckleapp/main.pyx":104
  *             print(f"[TTS] Error: {e}")
  * 
  * cpdef void handle_input(event=None):             # <<<<<<<<<<<<<<
@@ -15724,7 +15861,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[13]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[13]);
 
-  /* "main.pyx":336
+  /* "cyckleapp/main.pyx":336
  *     except: pass
  * 
  * cpdef low_mem_warn(mem_warn_mb=1024):             # <<<<<<<<<<<<<<
@@ -15735,7 +15872,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[14]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[14]);
 
-  /* "main.pyx":340
+  /* "cyckleapp/main.pyx":340
  *     return unalloc_mem < mem_warn_mb
  * 
  * cpdef bint low_mem_crticial(mem_warn_mb=512):             # <<<<<<<<<<<<<<
@@ -15826,97 +15963,102 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 289, 6};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_e};
-    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_k_z_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_k_z_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 290, 6};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_e};
-    __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_k_j_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_k_j_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {0, 0, 0, 0, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 293, 12};
     PyObject* varnames[] = {0};
-    __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_k_ixt4xq, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_lambda, __pyx_k_ixt4xq, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 62, 105};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_token_id, __pyx_mstate->__pyx_n_u_token};
-    __pyx_mstate_global->__pyx_codeobj_tab[3] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_stream, __pyx_k_r_6_r_Qb_q_r_q_QoV1_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[3])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[3] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_stream, __pyx_k_r_6_r_Qb_q_r_q_QoV1_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[3])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {0, 0, 0, 0, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 87, 95};
     PyObject* varnames[] = {0};
-    __pyx_mstate_global->__pyx_codeobj_tab[4] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_tts_runner, __pyx_k_a_IT_vS_Q_d_1_k_e1_A_A_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[4])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[4] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_tts_runner, __pyx_k_a_IT_vS_Q_d_1_k_e1_A_A_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[4])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 104, 468};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_event};
-    __pyx_mstate_global->__pyx_codeobj_tab[5] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_handle_input, __pyx_k_a_A_T_y_a_S_y_c_A_S_E_5_3a_S_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[5])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[5] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_handle_input, __pyx_k_a_A_T_y_a_S_y_c_A_S_E_5_3a_S_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[5])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 152, 47};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_event};
-    __pyx_mstate_global->__pyx_codeobj_tab[6] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_random_placeholder, __pyx_k_1_RRg_h_B_B_C_vWAQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[6])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[6] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_random_placeholder, __pyx_k_1_RRg_h_B_B_C_vWAQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[6])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 157, 39};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_event};
-    __pyx_mstate_global->__pyx_codeobj_tab[7] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_entry_focus, __pyx_k_uD_3a_WAS_WA, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[7])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[7] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_entry_focus, __pyx_k_uD_3a_WAS_WA, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[7])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 162, 37};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_event};
-    __pyx_mstate_global->__pyx_codeobj_tab[8] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_entry_unfocus, __pyx_k_uD_3a_WAS_WA_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[8])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[8] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_entry_unfocus, __pyx_k_uD_3a_WAS_WA_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[8])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 167, 139};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_event};
-    __pyx_mstate_global->__pyx_codeobj_tab[9] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_handle_history, __pyx_k_uHCq_b_Ba_Jaq_hc_b_1L_Ba_Jaq_AQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[9])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[9] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_handle_history, __pyx_k_uHCq_b_Ba_Jaq_hc_b_1L_Ba_Jaq_AQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[9])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 183, 659};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_event};
-    __pyx_mstate_global->__pyx_codeobj_tab[10] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_handle_csv, __pyx_k_A_B_a_IXEYYffggw_x_H_H_T_T_U_t9, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[10])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[10] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_handle_csv, __pyx_k_A_B_a_IXEYYffggw_x_H_H_T_T_U_t9, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[10])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {0, 0, 0, 8, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 230, 700};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_icon, __pyx_mstate->__pyx_n_u_style, __pyx_mstate->__pyx_n_u_sw, __pyx_mstate->__pyx_n_u_sh, __pyx_mstate->__pyx_n_u_swutil, __pyx_mstate->__pyx_n_u_shutil, __pyx_mstate->__pyx_n_u_csv_button, __pyx_mstate->__pyx_n_u_tts_thread};
-    __pyx_mstate_global->__pyx_codeobj_tab[11] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_maingui, __pyx_k_2Ya_q_1_aq_7_2Qe1_6_CvQa_1A_1K, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[11])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[11] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_maingui, __pyx_k_2Ya_q_1_aq_7_2Qe1_6_CvQa_1A_1K, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[11])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {0, 0, 0, 0, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 302, 17};
     PyObject* varnames[] = {0};
-    __pyx_mstate_global->__pyx_codeobj_tab[12] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_force_redraw, __pyx_k_q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[12])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[12] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_force_redraw, __pyx_k_q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[12])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {0, 0, 0, 0, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 306, 18};
     PyObject* varnames[] = {0};
-    __pyx_mstate_global->__pyx_codeobj_tab[13] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_periodic_redraw, __pyx_k_avQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[13])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[13] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_periodic_redraw, __pyx_k_avQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[13])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 310, 75};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_win, __pyx_mstate->__pyx_n_u_width, __pyx_mstate->__pyx_n_u_height};
-    __pyx_mstate_global->__pyx_codeobj_tab[14] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_center_window, __pyx_k_3_C_c_CvS_s_S_s_y_4xy_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[14])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[14] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_center_window, __pyx_k_3_C_c_CvS_s_S_s_y_4xy_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[14])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {0, 0, 0, 0, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 319, 70};
     PyObject* varnames[] = {0};
-    __pyx_mstate_global->__pyx_codeobj_tab[15] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_clean_up, __pyx_k_A_XQ_XQ_ha_HA_5_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[15])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[15] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_clean_up, __pyx_k_A_XQ_XQ_ha_HA_5_A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[15])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 336, 29};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_mem_warn_mb};
-    __pyx_mstate_global->__pyx_codeobj_tab[16] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_low_mem_warn, __pyx_k_q_r_HA_r, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[16])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[16] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_low_mem_warn, __pyx_k_q_r_HA_r, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[16])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 340, 31};
     PyObject* varnames[] = {__pyx_mstate->__pyx_n_u_mem_warn_mb};
-    __pyx_mstate_global->__pyx_codeobj_tab[17] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_low_mem_crticial, __pyx_k_r_HA_r, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[17])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[17] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_low_mem_crticial, __pyx_k_r_HA_r, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[17])) goto bad;
   }
   {
     __Pyx_PyCode_New_function_description descr = {0, 0, 0, 0, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 344, 69};
     PyObject* varnames[] = {0};
-    __pyx_mstate_global->__pyx_codeobj_tab[18] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_main_pyx, __pyx_mstate->__pyx_n_u_sys_watchdog, __pyx_k_1A_S_q_S_5_S_avQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[18])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[18] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_sys_watchdog, __pyx_k_1A_S_q_S_5_S_avQ, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[18])) goto bad;
+  }
+  {
+    __Pyx_PyCode_New_function_description descr = {0, 0, 0, 0, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 364, 30};
+    PyObject* varnames[] = {0};
+    __pyx_mstate_global->__pyx_codeobj_tab[19] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_cyckleapp_main_pyx, __pyx_mstate->__pyx_n_u_main, __pyx_k_q_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[19])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;

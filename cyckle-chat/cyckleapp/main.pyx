@@ -20,7 +20,6 @@ import sys
 import random
 import threading
 import pyttsx3
-import time
 import queue
 import re
 
@@ -57,7 +56,7 @@ data = {
 system_prompt = '''You are Cyckle, a helpful AI assistant. Your responses should be clear, direct, and relevant to the user's questions. Aim to be informative yet concise.'''
 
 cdef object usermodel
-usermodel = GPT4All("Phi-3.5-mini-instruct-IQ3_XS.gguf", model_path="models", n_threads=threads)
+usermodel = GPT4All("Phi-3-mini-4k-instruct.Q4_0.gguf", model_path="models", n_threads=threads)
 
 cdef str sentence_buffer = ""
 def stream(token_id, token):
@@ -361,7 +360,9 @@ splashimg = pi(file="assets/splash.png")
 splash_label = tk.Label(splash, image=splashimg)
 splash_label.pack()
 
-# start the main loop
-splash.after(5000, maingui)
-
-splash.mainloop()
+# satisfies pip
+def main():
+    global root, splash
+    root.deiconify() 
+    splash.after(5000, maingui)
+    splash.mainloop()

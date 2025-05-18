@@ -1,0 +1,15 @@
+MANIFEST.in
+pyproject.toml
+requirements.txt
+setup.py
+CyckleAI.egg-info/PKG-INFO
+CyckleAI.egg-info/SOURCES.txt
+CyckleAI.egg-info/dependency_links.txt
+CyckleAI.egg-info/entry_points.txt
+CyckleAI.egg-info/not-zip-safe
+CyckleAI.egg-info/requires.txt
+CyckleAI.egg-info/top_level.txt
+cyckleapp/__init__.py
+cyckleapp/data.json
+cyckleapp/main.c
+cyckleapp/main.pyx
