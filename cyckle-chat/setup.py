@@ -19,7 +19,7 @@ setup(
     package_data={"cyckleapp": ["data.json"]},
     entry_points={
         "console_scripts": [
-            "cyckle = cyckleapp.main:main",  # assumes you have def main() in .pyx
+            "cyckle = cyckleapp.main:main",
         ]
     },
     install_requires=[

@@ -1,4 +1,4 @@
 include requirements.txt
 include cyckleapp/*.pyx
 include cyckleapp/*.json
-recursive-include myapp *.json
+recursive-include cyckleapp/assets *

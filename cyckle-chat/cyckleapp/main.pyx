@@ -230,8 +230,9 @@ root.withdraw()
 def maingui():
     global main, label1, entry, response_text
     splash.destroy()
-    
-    main = tk.Toplevel()
+    root.deiconify() 
+
+    main = tk.Toplevel(root)
     main.config(bg="#092332")
     main.title("Cyckle")
     main.resizable(False, False)
@@ -352,7 +353,7 @@ cpdef sys_watchdog():
         print(f"[WATCHDOG] Memory is sufficient, continuing operation.")
     main.after(5000, sys_watchdog)
 
-splash = tk.Toplevel()
+splash = tk.Toplevel(root)
 splash.overrideredirect(True)
 center_window(splash, 600, 384)
 splashimg = pi(file="assets/splash.png")
@@ -363,6 +364,5 @@ splash_label.pack()
 # satisfies pip
 def main():
     global root, splash
-    root.deiconify() 
     splash.after(5000, maingui)
-    splash.mainloop()
+    root.mainloop()
