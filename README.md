@@ -4,6 +4,8 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/srcworks-software/Cyckle-ai?style=for-the-badge)
 ![GitHub license](https://img.shields.io/github/license/srcworks-software/Cyckle-ai?style=for-the-badge)
 
+***IMPORTANT*** - Development of Cyckle has been paused, since we are currently working on a BIG rewrite at the moment.
+
 # Cyckle Chat
 
 The graphical chatbot interface of Cyckle.
